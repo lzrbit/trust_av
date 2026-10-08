@@ -1,0 +1,9 @@
+{
+  "analysis_identity": "Post-review exploratory addendum after examination of the existing dataset, manuscript and prior association results. Not preregistered and not confirmatory.",
+  "formula": "D ~ mean_risk_z + excursion_z + late_change_z + positive_fraction_z + trust_pre_overall + trust_pre_acc + trust_pre_lks + accept_pre_delegate + accept_pre_monitor_raw + accept_pre_distract + age_10 + experience_10 + C(gender) + C(country)",
+  "interpretation_limits": [
+    "Associational bridge at participant level, not an explanation of opposite mean changes or a mediation model.",
+    "Does not resolve pre/post referent change or single-item measurement.",
+    "Conditional on saved cross-fitted features and sampled stimuli; HC1 does not propagate peak-selection, new-stimulus or refitting uncertainty."
+  ]
+}

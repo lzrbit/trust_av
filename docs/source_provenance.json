@@ -1,0 +1,159 @@
+{
+  "scope": "Portable scientific-code copies. This record does not distribute participant data or historical audit outputs.",
+  "files": [
+    {
+      "published_file": "analysis/describe_round2.py",
+      "source_file": "Scripts/nhb_round2_20261001/describe_round2.py",
+      "source_sha256": "b3677edd5b59ca805453f65279cb321b1bd5002fc025f5a1df93451e82389824",
+      "published_sha256": "38debddbae973f1dc4575dc1ae116655347776cf53228927f4ebf03c16b08465",
+      "changes": "Portable input/output paths; historical run-only guards removed where documented; scientific calculations retained."
+    },
+    {
+      "published_file": "analysis/analyse_dynamics.py",
+      "source_file": "Scripts/nhb_round2_20261001/analyse_dynamics.py",
+      "source_sha256": "7fb238c90699afac888c8ff436b20f071e86658d628e34c05726a6d53eef492b",
+      "published_sha256": "6870932298abdbd0ee71e521f6ff2704f95bd9f501734914ea6c05f4ac5edc40",
+      "changes": "Portable input/output paths; historical run-only guards removed where documented; scientific calculations retained."
+    },
+    {
+      "published_file": "analysis/country_standardization.py",
+      "source_file": "Scripts/nhb_round2_20261001/country_standardization.py",
+      "source_sha256": "0eb86f63ace848b68a2da32c965c8bec62d4edea6ecea7e955544ec6a487613c",
+      "published_sha256": "66887b7df0eef756d16dc6385e32af3d9f3d563f738aa2b14ef7bd0f8214f774",
+      "changes": "Portable input/output paths; historical run-only guards removed where documented; scientific calculations retained."
+    },
+    {
+      "published_file": "analysis/model_shap.py",
+      "source_file": "Scripts/nhb_round2_20261001/model_shap.py",
+      "source_sha256": "2a1612a16ad734bc6620a3d3d04d662b5bcff071f54da630853e0ae16c682c29",
+      "published_sha256": "76f355ec9cd5bb3578e4f48bf7d94d1ad6b35bec807964b4dc561c43517bec7f",
+      "changes": "Portable input/output paths; historical run-only guards removed where documented; scientific calculations retained."
+    },
+    {
+      "published_file": "analysis/trust_prediction.py",
+      "source_file": "Scripts/nhb_round2_20261001/trust_prediction.py",
+      "source_sha256": "86851f0cb70c5f36d0a531f47e410cd317ce663fc3525056bae05f0909c6de0e",
+      "published_sha256": "226c4ea42b9c7043571f78b7f0cf998791f57c8e4944979c4ae87308cbe743f0",
+      "changes": "Portable input/output paths; historical run-only guards removed where documented; scientific calculations retained."
+    },
+    {
+      "published_file": "analysis/trust_coefficient_contrasts.py",
+      "source_file": "Scripts/nhb_round2_20261001/trust_coefficient_contrasts.py",
+      "source_sha256": "cc0cc06189b6ee8e83531f973d129b154142f79004decc37306aadbd1ae43d93",
+      "published_sha256": "b6b9e281e1304706f2ddc011a4be2503bcd1cb9e5383fc65c0cea1c5a4b10b6e",
+      "changes": "Portable input/output paths; historical run-only guards removed where documented; scientific calculations retained."
+    },
+    {
+      "published_file": "analysis/multiplicity_sensitivity.py",
+      "source_file": "Scripts/nhb_round2_20261001/multiplicity_sensitivity.py",
+      "source_sha256": "1b8f08c8a31592d0590f023be4f5f4a2f77b49f342201551939ccbd24004a307",
+      "published_sha256": "7050d4caed935c63f8fc7f8a1422b91411ce47a7827be7e6a1aca443ba3131cf",
+      "changes": "Portable input/output paths; historical run-only guards removed where documented; scientific calculations retained."
+    },
+    {
+      "published_file": "analysis/risk_distribution.py",
+      "source_file": "Scripts/nhb_round2_20261001/risk_distribution.py",
+      "source_sha256": "f4da3405d30e0aaefad9c71149756c33441fcd861790ffbb0189b0c404c93a70",
+      "published_sha256": "e2722fd2dba4b4e7862eaf6cd8d5262c3c01c40c593a6bfc8477c05cef0d429d",
+      "changes": "Portable input/output paths; historical run-only guards removed where documented; scientific calculations retained."
+    },
+    {
+      "published_file": "analysis/mixed_components.py",
+      "source_file": "Scripts/nhb_round2_20261001/mixed_components.py",
+      "source_sha256": "6158174f751f4824e90539112deaa2aef4fbc8b9fec31c9bc873e60e6629fd14",
+      "published_sha256": "10e468578cde9b6f899272cf12004efa2f281f0460f1fc3b93092b8080aa54c8",
+      "changes": "Portable input/output paths; historical run-only guards removed where documented; scientific calculations retained."
+    },
+    {
+      "published_file": "analysis/build_data.py",
+      "source_file": "Scripts/nhb_round2_20261001/build_round2.py",
+      "source_sha256": "cc830efc804b1cb320228031e2f155f0313edc9fee99c9c9c4d6909d0c74a490",
+      "published_sha256": "aeb4a17138adcaf1b88df3c90189ae2bf05237012998be5ffa6b50a045046b28",
+      "changes": "Portable input/output paths; historical run-only guards removed where documented; scientific calculations retained."
+    },
+    {
+      "published_file": "analysis/analyse_parameters.py",
+      "source_file": "Scripts/manuscript_20261007_v5/analyse_controlled_parameters.py",
+      "source_sha256": "3d09945666590cf26d05050bb628632bd349a8faf70496d69063777df4c0fcc2",
+      "published_sha256": "c64e7ea5a36139817d91f10e3f5e3b27948f588862733fd2b60104d92ada0a95",
+      "changes": "Portable input/output paths; historical run-only guards removed where documented; scientific calculations retained."
+    },
+    {
+      "published_file": "analysis/analyse_trust_contrast.py",
+      "source_file": "Scripts/manuscript_20261007_v5/analyse_within_person_trust_contrast.py",
+      "source_sha256": "0e1dc1fdd355699195dc9009d7d58ea8422c942c371f9cacb4b82c44afe809b7",
+      "published_sha256": "1e652c58c9c91b5e0fc0cde22b5a3ace3a805a208e09e68dacdb9c78aa32d570",
+      "changes": "Portable input/output paths; historical run-only guards removed where documented; scientific calculations retained."
+    },
+    {
+      "published_file": "analysis/analyse_whatif.py",
+      "source_file": "Scripts/manuscript_20261007_v4/analyse_whatif.py",
+      "source_sha256": "24c4d3bc7fe41b5e00cd5aeb97158545d93f998628d055ff32722c92467b2a64",
+      "published_sha256": "b424da7a764204509bf2856a47dcbd6e88cc97874fdfbca4d4cf88edfc5d9c87",
+      "changes": "Portable input/output paths; historical run-only guards removed where documented; scientific calculations retained."
+    },
+    {
+      "published_file": "analysis/harmonize_prepost.py",
+      "source_file": "Scripts/manuscript_20261005/harmonize_prepost.py",
+      "source_sha256": "e0d4b9ed81cbca4707fe3b065116e38e7e720d92f9e406f73e82cadae30cb35e",
+      "published_sha256": "7eaefdf70c23b7db79036cbc10430cdcca9ce16e25fe42baac0556ebc94150e0",
+      "changes": "Portable input/output paths; historical run-only guards removed where documented; scientific calculations retained."
+    },
+    {
+      "published_file": "analysis/build_hb_boxstats.py",
+      "source_file": "Scripts/manuscript_20261007_v6/build_hb_braking_boxstats.py",
+      "source_sha256": "50294c5e82742386eee129a3c70fd4b3cb3ea17039263f1aaf684279e58d4f11",
+      "published_sha256": "a6eb0428bbe3bf1c9497899651846309e0fed0998dd7efef07553fb2b97c3a7c",
+      "changes": "Portable input/output paths; historical run-only guards removed where documented; scientific calculations retained."
+    },
+    {
+      "published_file": "data/aggregate/risk_prediction.csv",
+      "source_file": "Results/nhb_round2_20261001/tables/m2_performance.csv",
+      "source_sha256": "4557a8a48052df870981773f8b63eab03cdaae2d02550d6dd66943b05979df2d",
+      "published_sha256": "e3ee6c031b3e12d6e7aacd05a1f2bf24985220acaaef9056a77a112be7b67aec",
+      "changes": "CSV serialization; aggregate columns retained"
+    },
+    {
+      "published_file": "data/aggregate/hb_boxstats.csv",
+      "source_file": "Results/manuscript_20261007_v6/tables/figure_1_hb_braking_boxstats.csv",
+      "source_sha256": "51b7557ebd7aa9332ef4cc969d770ea139d4d3fe0c746eaffffaa48d949c590b",
+      "published_sha256": "6384c543ced0a47db668a18aa2e81a694b514cc91ca9a7d283ee6d21143d8f4e",
+      "changes": "CSV serialization; removed fliers_json"
+    },
+    {
+      "published_file": "data/aggregate/prepost.csv",
+      "source_file": "Results/manuscript_20261007_v5/tables/prepost_dispersion.csv",
+      "source_sha256": "0d5d03da4e9b3210bc15ee102608957ac425cc9a41662e0ef9be9b4999d8919a",
+      "published_sha256": "0d5d03da4e9b3210bc15ee102608957ac425cc9a41662e0ef9be9b4999d8919a",
+      "changes": "Byte-identical aggregate six-item summary; no participant records"
+    },
+    {
+      "published_file": "analysis/analyse_hb_tests.py",
+      "source_file": "Scripts/manuscript_20261008_v7/analyse_hb_braking_significance.py",
+      "source_sha256": "ce74c143e7f5d625ac528f532a97e1a8050ea59022a988bb6b9dbb5197b6dee0",
+      "published_sha256": "2cd551508f705677f0c2b295cc7e84d8f9d5e95b07d4055ada649b9896626eaf",
+      "changes": "Input/output paths only; paired tests and Holm correction unchanged."
+    },
+    {
+      "published_file": "data/aggregate/hb_paired_tests.csv",
+      "source_file": "Results/manuscript_20261008_v7/tables/hb_braking_paired_tests.csv",
+      "source_sha256": "3a6320c686e9410ad740a7bfd3172291541706875a1888f625dea64b874c7dc3",
+      "published_sha256": "3a6320c686e9410ad740a7bfd3172291541706875a1888f625dea64b874c7dc3",
+      "changes": "Byte-identical 15-row aggregate paired-test family; no participant records."
+    },
+    {
+      "published_file": "analysis/export_main_panels.py",
+      "source_file": "Scripts/manuscript_20261008_v7/export_main_panels.py",
+      "source_sha256": "d99b26e6519a293dd4b549d7396d6bba7f06e2a7f49d8ea119f0441622b22125",
+      "published_sha256": "d99b26e6519a293dd4b549d7396d6bba7f06e2a7f49d8ea119f0441622b22125",
+      "changes": "Byte-identical portable tool/config; manuscript PDFs are not bundled."
+    },
+    {
+      "published_file": "config/main_panel_export_config.json",
+      "source_file": "Scripts/manuscript_20261008_v7/main_panel_export_config.json",
+      "source_sha256": "11265d66ba35f207eca01ef9032ec7823eeab220970e0253dc43d3471700484b",
+      "published_sha256": "11265d66ba35f207eca01ef9032ec7823eeab220970e0253dc43d3471700484b",
+      "changes": "Byte-identical portable tool/config; manuscript PDFs are not bundled."
+    }
+  ]
+}

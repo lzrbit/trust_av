@@ -1,0 +1,71 @@
+{
+  "estimand": "Fixed-model predicted event-mean video-risk rating change, averaged first across observed events within each held-out participant and then equally across eligible participants; not a causal or crash-probability effect.",
+  "model": "Five existing participant-held-out LightGBM pipelines. No refitting or tuning. Exact event/stimulus identity and other inputs fixed.",
+  "primary": {
+    "items": [
+      "trust_pre_overall",
+      "trust_pre_acc",
+      "trust_pre_lks",
+      "accept_pre_delegate",
+      "accept_pre_monitor_raw",
+      "accept_pre_distract"
+    ],
+    "steps": [
+      -1,
+      1
+    ],
+    "eligible": "For each item, same participants for both signs: observed integer baseline and all of baseline/minus1/plus1 within 0..10 and supported. No clamping.",
+    "number_of_comparisons": 12
+  },
+  "support": {
+    "k": 100,
+    "unit": "Unique training participants from corresponding outer fold only. No outcome information used.",
+    "distance": "Equal-weight Gower over pre-task participant attributes, excluding changed item (23 remaining) or both ACC/LKS items for joint intervention (22 remaining). Scenario/event identity excluded because shared fixed stimuli, not participant support attributes.",
+    "numeric": "Per outer fold, impute missing using unique-training-participant median (0 only for all-missing column), scale absolute distance by training max-minus-min, cap contributions at 1. Constant range: 0 for equal values and 1 for unequal values. Record imputation and training bounds.",
+    "categorical": "0 if same, 1 if different, missing becomes __missing__ exactly as model. No country hard-match or size threshold.",
+    "ties": "Stable sorted participant_id order, stable nearest-neighbor sort.",
+    "radius": "Held-out d100 must be <= linear-interpolated p95 of training leave-one-person-out d100 using the same excluded-feature distance. Diagonal excluded.",
+    "local_count": "Each original and changed integer value must occur at least min_count times among 100 neighbors; joint uses exact two-item integer pairs at all four corners.",
+    "min_count_primary": 10,
+    "min_count_sensitivity": [
+      5,
+      20
+    ],
+    "minimum_eligible_people_for_effect_reporting": 30,
+    "too_small": "Report coverage and status only; no pooled effect, CI or interpretation.",
+    "raw_zero": "Valid in all six pre-task attitude items."
+  },
+  "secondary": {
+    "dose_items": [
+      "trust_pre_acc",
+      "trust_pre_lks"
+    ],
+    "dose_steps": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ],
+    "dose_eligible": "Per item, common support at all five values, primary min_count 10 and radius rule.",
+    "joint": "ACC+1,LKS+1, four-corner common support at min_count 10 using joint metric. Difference-in-differences f(both)-f(ACC)-f(LKS)+f(base), plus total and marginal increments.",
+    "by_block": "Repeat person-first aggregation within each questionnaire block; secondary pointwise CIs."
+  },
+  "bootstrap": {
+    "draws": 2000,
+    "seed": 20261007,
+    "sampling": "One shared 2000 x all-participant multinomial weight matrix, n=number of participants, equal probabilities. Each eligible-set statistic renormalizes these multiplicities; no isin deduplication.",
+    "pointwise": "Percentile 2.5/97.5 of finite weighted participant means.",
+    "simultaneous_primary": "12 primary pooled item/sign contrasts: bootstrap SE = replicate SD(ddof=1); max across contrasts of abs((replicate-estimate)/SE); linear p95 critical value and estimate +/- critical*SE. Fixed-SE standardized max-deviation bands, not per-replicate studentized/bootstrap-refit intervals.",
+    "zero_se": "If SE <= 1e-14 and all replicate deviations <= 1e-12, exclude from max statistic and return degenerate interval at estimate; otherwise fail validation.",
+    "coverage": "Available estimable contrasts included; if any of planned 12 has N<30, report number estimable and label band incomplete, never imply all 12 were estimated.",
+    "uncertainty_scope": "Conditional on fitted models, realized stimulus library, and frozen support rule; does not include model refit, country-level or stimulus sampling uncertainty."
+  },
+  "validation": {
+    "baseline_first": "Before perturbations, reproduce original saved OOF predictions by unique row_key for every fold; abs tolerance 1e-10. Assert participant train/test disjointness and exact row-key sets.",
+    "immutability": "Compare source and model hashes before and after. Do not alter models, original data, manuscript, or figures.",
+    "audit_caches": "Save event rows and participant aggregates with original/changed inputs, original/changed predictions, fold, support and boundary flags, and n observed events. Save shared bootstrap weights and participant IDs."
+  },
+  "outputs": "<workspace>/outputs/whatif/{tables,data,reports}; no figure or manuscript edits.",
+  "public_reproduction_note": "Historical rules retained. Running this code is not prospective preregistration."
+}

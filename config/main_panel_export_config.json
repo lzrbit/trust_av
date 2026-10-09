@@ -1,11 +1,11 @@
 {
   "coordinate_system": "millimetres, origin lower left on supplied parent PDF; components always unscaled",
   "source_sha256": {
-    "figure_1_dataset.pdf": "c595cd33da1fe4bdb3b1dbabf211debc6af95a6f2b4baf4dbad4674009968306",
-    "figure_2_dynamics.pdf": "10263d23fd4778861ebc6ae7390a64f3ad81c2f9fc80f1ee9f844e1ad958dfb4",
-    "figure_3_shap.pdf": "3a94b40f74040103285810d98326dec0f041bbfc22aaf1f12a68eca9c63cfce5",
-    "figure_4_profiles.pdf": "6e4d7f376bfcf247d5288ecde527a2bbd4256bb19747a51ea9648ffc22a1c046",
-    "figure_5_trust.pdf": "401d3d5904fd27d09b08ff11ba8ff1840d92f4cc0b3b79e069d36c5ec681ed4c"
+    "figure_1_dataset.pdf": "083f8b48fe962132e80b5fe5d0f33f8c0ad0a763b7b8f3a615a3491cf417ecd4",
+    "figure_2_dynamics.pdf": "5dfd6a3bcf261e16316e6ef3989b7307e3cf5790171e36b200c317427d15b252",
+    "figure_3_shap.pdf": "4cb042bd89b03c547eba4dd38bbe9bf2d15a9f7a0da1662ebe72a1523c943937",
+    "figure_4_profiles.pdf": "082de3fc083f0b6073b10fd37b5e74e810afee85dc5765b26a02a22daedcb7d0",
+    "figure_5_trust.pdf": "3e5fbe2b86ee8accafe0f4dd7e97a38ad1f77b61167b690effc1d7090dc59d85"
   },
   "panels": [
     {
@@ -84,12 +84,44 @@
             [
               104,
               63.2022
+            ],
+            [
+              3,
+              175.9454
+            ],
+            [
+              103,
+              175.9454
+            ],
+            [
+              103,
+              127.9454
+            ],
+            [
+              3,
+              99.9454
+            ],
+            [
+              89,
+              99.9454
+            ],
+            [
+              136,
+              99.9454
+            ],
+            [
+              3,
+              63.9454
+            ],
+            [
+              99,
+              62.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig1b",
@@ -97,13 +129,13 @@
       "source_pdf": "figure_1_dataset.pdf",
       "canvas_mm": [
         79.6,
-        54.1
+        51.199999999999996
       ],
       "components": [
         {
           "crop_mm": [
             102,
-            126.5,
+            129.4,
             180,
             179
           ],
@@ -167,12 +199,44 @@
             [
               104,
               63.2022
+            ],
+            [
+              3,
+              175.9454
+            ],
+            [
+              103,
+              175.9454
+            ],
+            [
+              103,
+              127.9454
+            ],
+            [
+              3,
+              99.9454
+            ],
+            [
+              89,
+              99.9454
+            ],
+            [
+              136,
+              99.9454
+            ],
+            [
+              3,
+              63.9454
+            ],
+            [
+              99,
+              62.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig1c",
@@ -180,15 +244,15 @@
       "source_pdf": "figure_1_dataset.pdf",
       "canvas_mm": [
         74.6,
-        24.800000000000004
+        27.6
       ],
       "components": [
         {
           "crop_mm": [
             102,
-            102.8,
+            104,
             175,
-            126
+            130
           ],
           "at_mm": [
             0.8,
@@ -250,12 +314,46 @@
             [
               104,
               63.2022
+            ],
+            [
+              3,
+              175.9454
+            ],
+            [
+              103,
+              175.9454
+            ],
+            [
+              103,
+              127.9454
+            ],
+            [
+              3,
+              99.9454
+            ],
+            [
+              89,
+              99.9454
+            ],
+            [
+              136,
+              99.9454
+            ],
+            [
+              3,
+              63.9454
+            ],
+            [
+              99,
+              62.9454
             ]
           ],
-          "exclude_text_prefixes": []
+          "exclude_text_prefixes": [
+            "Age (years)"
+          ]
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig1d",
@@ -333,6 +431,38 @@
             [
               104,
               63.2022
+            ],
+            [
+              3,
+              175.9454
+            ],
+            [
+              103,
+              175.9454
+            ],
+            [
+              103,
+              127.9454
+            ],
+            [
+              3,
+              99.9454
+            ],
+            [
+              89,
+              99.9454
+            ],
+            [
+              136,
+              99.9454
+            ],
+            [
+              3,
+              63.9454
+            ],
+            [
+              99,
+              62.9454
             ]
           ],
           "exclude_text_prefixes": [
@@ -340,7 +470,7 @@
           ]
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig1e",
@@ -418,6 +548,38 @@
             [
               104,
               63.2022
+            ],
+            [
+              3,
+              175.9454
+            ],
+            [
+              103,
+              175.9454
+            ],
+            [
+              103,
+              127.9454
+            ],
+            [
+              3,
+              99.9454
+            ],
+            [
+              89,
+              99.9454
+            ],
+            [
+              136,
+              99.9454
+            ],
+            [
+              3,
+              63.9454
+            ],
+            [
+              99,
+              62.9454
             ]
           ],
           "exclude_text_prefixes": [
@@ -425,7 +587,7 @@
           ]
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig1f",
@@ -503,6 +665,38 @@
             [
               104,
               63.2022
+            ],
+            [
+              3,
+              175.9454
+            ],
+            [
+              103,
+              175.9454
+            ],
+            [
+              103,
+              127.9454
+            ],
+            [
+              3,
+              99.9454
+            ],
+            [
+              89,
+              99.9454
+            ],
+            [
+              136,
+              99.9454
+            ],
+            [
+              3,
+              63.9454
+            ],
+            [
+              99,
+              62.9454
             ]
           ],
           "exclude_text_prefixes": [
@@ -510,7 +704,7 @@
           ]
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig1g",
@@ -588,6 +782,38 @@
             [
               104,
               63.2022
+            ],
+            [
+              3,
+              175.9454
+            ],
+            [
+              103,
+              175.9454
+            ],
+            [
+              103,
+              127.9454
+            ],
+            [
+              3,
+              99.9454
+            ],
+            [
+              89,
+              99.9454
+            ],
+            [
+              136,
+              99.9454
+            ],
+            [
+              3,
+              63.9454
+            ],
+            [
+              99,
+              62.9454
             ]
           ],
           "exclude_text_prefixes": [
@@ -595,7 +821,7 @@
           ]
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig1h",
@@ -673,12 +899,44 @@
             [
               8,
               64.2022
+            ],
+            [
+              3,
+              175.9454
+            ],
+            [
+              103,
+              175.9454
+            ],
+            [
+              103,
+              127.9454
+            ],
+            [
+              3,
+              99.9454
+            ],
+            [
+              89,
+              99.9454
+            ],
+            [
+              136,
+              99.9454
+            ],
+            [
+              3,
+              63.9454
+            ],
+            [
+              99,
+              62.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig1a_inset",
@@ -764,12 +1022,44 @@
             [
               104,
               63.2022
+            ],
+            [
+              3,
+              175.9454
+            ],
+            [
+              103,
+              175.9454
+            ],
+            [
+              103,
+              127.9454
+            ],
+            [
+              3,
+              99.9454
+            ],
+            [
+              89,
+              99.9454
+            ],
+            [
+              136,
+              99.9454
+            ],
+            [
+              3,
+              63.9454
+            ],
+            [
+              99,
+              62.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig2a",
@@ -847,6 +1137,38 @@
             [
               102,
               120.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              47,
+              165.9454
+            ],
+            [
+              91,
+              165.9454
+            ],
+            [
+              135,
+              165.9454
+            ],
+            [
+              3,
+              119.9454
+            ],
+            [
+              61,
+              119.9454
+            ],
+            [
+              78,
+              119.9454
+            ],
+            [
+              97,
+              119.9454
             ]
           ],
           "exclude_text_prefixes": []
@@ -861,10 +1183,44 @@
           "at_mm": [
             0.25,
             0.8
+          ],
+          "exclude_text_positions_mm": [
+            [
+              3,
+              165.9454
+            ],
+            [
+              47,
+              165.9454
+            ],
+            [
+              91,
+              165.9454
+            ],
+            [
+              135,
+              165.9454
+            ],
+            [
+              3,
+              119.9454
+            ],
+            [
+              61,
+              119.9454
+            ],
+            [
+              78,
+              119.9454
+            ],
+            [
+              97,
+              119.9454
+            ]
           ]
         }
       ],
-      "notes": "Shared SD/CI key copied at original size; page width may exceed the plot width."
+      "notes": "Shared SD/CI key copied at original size; page width may exceed the plot width. No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig2b",
@@ -942,6 +1298,38 @@
             [
               102,
               120.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              47,
+              165.9454
+            ],
+            [
+              91,
+              165.9454
+            ],
+            [
+              135,
+              165.9454
+            ],
+            [
+              3,
+              119.9454
+            ],
+            [
+              61,
+              119.9454
+            ],
+            [
+              78,
+              119.9454
+            ],
+            [
+              97,
+              119.9454
             ]
           ],
           "exclude_text_prefixes": []
@@ -956,6 +1344,40 @@
           "at_mm": [
             0.25,
             0.8
+          ],
+          "exclude_text_positions_mm": [
+            [
+              3,
+              165.9454
+            ],
+            [
+              47,
+              165.9454
+            ],
+            [
+              91,
+              165.9454
+            ],
+            [
+              135,
+              165.9454
+            ],
+            [
+              3,
+              119.9454
+            ],
+            [
+              61,
+              119.9454
+            ],
+            [
+              78,
+              119.9454
+            ],
+            [
+              97,
+              119.9454
+            ]
           ]
         },
         {
@@ -968,10 +1390,44 @@
           "at_mm": [
             0.4,
             19.3
+          ],
+          "exclude_text_positions_mm": [
+            [
+              3,
+              165.9454
+            ],
+            [
+              47,
+              165.9454
+            ],
+            [
+              91,
+              165.9454
+            ],
+            [
+              135,
+              165.9454
+            ],
+            [
+              3,
+              119.9454
+            ],
+            [
+              61,
+              119.9454
+            ],
+            [
+              78,
+              119.9454
+            ],
+            [
+              97,
+              119.9454
+            ]
           ]
         }
       ],
-      "notes": "Shared SD/CI key copied at original size; page width may exceed the plot width. Original shared y-axis label copied at 1:1 scale for standalone interpretation."
+      "notes": "Shared SD/CI key copied at original size; page width may exceed the plot width. Original shared y-axis label copied at 1:1 scale for standalone interpretation. No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig2c",
@@ -1049,6 +1505,38 @@
             [
               102,
               120.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              47,
+              165.9454
+            ],
+            [
+              91,
+              165.9454
+            ],
+            [
+              135,
+              165.9454
+            ],
+            [
+              3,
+              119.9454
+            ],
+            [
+              61,
+              119.9454
+            ],
+            [
+              78,
+              119.9454
+            ],
+            [
+              97,
+              119.9454
             ]
           ],
           "exclude_text_prefixes": []
@@ -1063,6 +1551,40 @@
           "at_mm": [
             0.25,
             0.8
+          ],
+          "exclude_text_positions_mm": [
+            [
+              3,
+              165.9454
+            ],
+            [
+              47,
+              165.9454
+            ],
+            [
+              91,
+              165.9454
+            ],
+            [
+              135,
+              165.9454
+            ],
+            [
+              3,
+              119.9454
+            ],
+            [
+              61,
+              119.9454
+            ],
+            [
+              78,
+              119.9454
+            ],
+            [
+              97,
+              119.9454
+            ]
           ]
         },
         {
@@ -1075,10 +1597,44 @@
           "at_mm": [
             0.4,
             19.3
+          ],
+          "exclude_text_positions_mm": [
+            [
+              3,
+              165.9454
+            ],
+            [
+              47,
+              165.9454
+            ],
+            [
+              91,
+              165.9454
+            ],
+            [
+              135,
+              165.9454
+            ],
+            [
+              3,
+              119.9454
+            ],
+            [
+              61,
+              119.9454
+            ],
+            [
+              78,
+              119.9454
+            ],
+            [
+              97,
+              119.9454
+            ]
           ]
         }
       ],
-      "notes": "Shared SD/CI key copied at original size; page width may exceed the plot width. Original shared y-axis label copied at 1:1 scale for standalone interpretation."
+      "notes": "Shared SD/CI key copied at original size; page width may exceed the plot width. Original shared y-axis label copied at 1:1 scale for standalone interpretation. No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig2d",
@@ -1156,6 +1712,38 @@
             [
               102,
               120.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              47,
+              165.9454
+            ],
+            [
+              91,
+              165.9454
+            ],
+            [
+              135,
+              165.9454
+            ],
+            [
+              3,
+              119.9454
+            ],
+            [
+              61,
+              119.9454
+            ],
+            [
+              78,
+              119.9454
+            ],
+            [
+              97,
+              119.9454
             ]
           ],
           "exclude_text_prefixes": []
@@ -1170,6 +1758,40 @@
           "at_mm": [
             0.25,
             0.8
+          ],
+          "exclude_text_positions_mm": [
+            [
+              3,
+              165.9454
+            ],
+            [
+              47,
+              165.9454
+            ],
+            [
+              91,
+              165.9454
+            ],
+            [
+              135,
+              165.9454
+            ],
+            [
+              3,
+              119.9454
+            ],
+            [
+              61,
+              119.9454
+            ],
+            [
+              78,
+              119.9454
+            ],
+            [
+              97,
+              119.9454
+            ]
           ]
         },
         {
@@ -1182,10 +1804,44 @@
           "at_mm": [
             0.4,
             19.3
+          ],
+          "exclude_text_positions_mm": [
+            [
+              3,
+              165.9454
+            ],
+            [
+              47,
+              165.9454
+            ],
+            [
+              91,
+              165.9454
+            ],
+            [
+              135,
+              165.9454
+            ],
+            [
+              3,
+              119.9454
+            ],
+            [
+              61,
+              119.9454
+            ],
+            [
+              78,
+              119.9454
+            ],
+            [
+              97,
+              119.9454
+            ]
           ]
         }
       ],
-      "notes": "Shared SD/CI key copied at original size; page width may exceed the plot width. Original shared y-axis label copied at 1:1 scale for standalone interpretation."
+      "notes": "Shared SD/CI key copied at original size; page width may exceed the plot width. Original shared y-axis label copied at 1:1 scale for standalone interpretation. No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig2e",
@@ -1263,12 +1919,44 @@
             [
               102,
               120.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              47,
+              165.9454
+            ],
+            [
+              91,
+              165.9454
+            ],
+            [
+              135,
+              165.9454
+            ],
+            [
+              3,
+              119.9454
+            ],
+            [
+              61,
+              119.9454
+            ],
+            [
+              78,
+              119.9454
+            ],
+            [
+              97,
+              119.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig2f",
@@ -1346,6 +2034,38 @@
             [
               102,
               120.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              47,
+              165.9454
+            ],
+            [
+              91,
+              165.9454
+            ],
+            [
+              135,
+              165.9454
+            ],
+            [
+              3,
+              119.9454
+            ],
+            [
+              61,
+              119.9454
+            ],
+            [
+              78,
+              119.9454
+            ],
+            [
+              97,
+              119.9454
             ]
           ],
           "exclude_text_prefixes": []
@@ -1360,10 +2080,44 @@
           "at_mm": [
             0.5,
             9.100000000000001
+          ],
+          "exclude_text_positions_mm": [
+            [
+              3,
+              165.9454
+            ],
+            [
+              47,
+              165.9454
+            ],
+            [
+              91,
+              165.9454
+            ],
+            [
+              135,
+              165.9454
+            ],
+            [
+              3,
+              119.9454
+            ],
+            [
+              61,
+              119.9454
+            ],
+            [
+              78,
+              119.9454
+            ],
+            [
+              97,
+              119.9454
+            ]
           ]
         }
       ],
-      "notes": "Country names and n copied from the original shared panel-e row labels, at 1:1 scale."
+      "notes": "Country names and n copied from the original shared panel-e row labels, at 1:1 scale. No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig2g",
@@ -1441,6 +2195,38 @@
             [
               102,
               120.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              47,
+              165.9454
+            ],
+            [
+              91,
+              165.9454
+            ],
+            [
+              135,
+              165.9454
+            ],
+            [
+              3,
+              119.9454
+            ],
+            [
+              61,
+              119.9454
+            ],
+            [
+              78,
+              119.9454
+            ],
+            [
+              97,
+              119.9454
             ]
           ],
           "exclude_text_prefixes": []
@@ -1455,10 +2241,44 @@
           "at_mm": [
             0.5,
             9.100000000000001
+          ],
+          "exclude_text_positions_mm": [
+            [
+              3,
+              165.9454
+            ],
+            [
+              47,
+              165.9454
+            ],
+            [
+              91,
+              165.9454
+            ],
+            [
+              135,
+              165.9454
+            ],
+            [
+              3,
+              119.9454
+            ],
+            [
+              61,
+              119.9454
+            ],
+            [
+              78,
+              119.9454
+            ],
+            [
+              97,
+              119.9454
+            ]
           ]
         }
       ],
-      "notes": "Country names and n copied from the original shared panel-e row labels, at 1:1 scale."
+      "notes": "Country names and n copied from the original shared panel-e row labels, at 1:1 scale. No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig2h",
@@ -1536,12 +2356,44 @@
             [
               83,
               120.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              47,
+              165.9454
+            ],
+            [
+              91,
+              165.9454
+            ],
+            [
+              135,
+              165.9454
+            ],
+            [
+              3,
+              119.9454
+            ],
+            [
+              61,
+              119.9454
+            ],
+            [
+              78,
+              119.9454
+            ],
+            [
+              97,
+              119.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig3a",
@@ -1619,12 +2471,44 @@
             [
               108,
               53.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              98,
+              165.9454
+            ],
+            [
+              3,
+              104.9454
+            ],
+            [
+              47,
+              104.9454
+            ],
+            [
+              91,
+              104.9454
+            ],
+            [
+              135,
+              104.9454
+            ],
+            [
+              3,
+              52.9454
+            ],
+            [
+              103,
+              52.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig3b",
@@ -1702,12 +2586,44 @@
             [
               108,
               53.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              98,
+              165.9454
+            ],
+            [
+              3,
+              104.9454
+            ],
+            [
+              47,
+              104.9454
+            ],
+            [
+              91,
+              104.9454
+            ],
+            [
+              135,
+              104.9454
+            ],
+            [
+              3,
+              52.9454
+            ],
+            [
+              103,
+              52.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig3c",
@@ -1785,12 +2701,44 @@
             [
               108,
               53.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              98,
+              165.9454
+            ],
+            [
+              3,
+              104.9454
+            ],
+            [
+              47,
+              104.9454
+            ],
+            [
+              91,
+              104.9454
+            ],
+            [
+              135,
+              104.9454
+            ],
+            [
+              3,
+              52.9454
+            ],
+            [
+              103,
+              52.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig3d",
@@ -1868,6 +2816,38 @@
             [
               108,
               53.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              98,
+              165.9454
+            ],
+            [
+              3,
+              104.9454
+            ],
+            [
+              47,
+              104.9454
+            ],
+            [
+              91,
+              104.9454
+            ],
+            [
+              135,
+              104.9454
+            ],
+            [
+              3,
+              52.9454
+            ],
+            [
+              103,
+              52.9454
             ]
           ],
           "exclude_text_prefixes": []
@@ -1882,10 +2862,44 @@
           "at_mm": [
             0.4,
             19.099999999999998
+          ],
+          "exclude_text_positions_mm": [
+            [
+              3,
+              165.9454
+            ],
+            [
+              98,
+              165.9454
+            ],
+            [
+              3,
+              104.9454
+            ],
+            [
+              47,
+              104.9454
+            ],
+            [
+              91,
+              104.9454
+            ],
+            [
+              135,
+              104.9454
+            ],
+            [
+              3,
+              52.9454
+            ],
+            [
+              103,
+              52.9454
+            ]
           ]
         }
       ],
-      "notes": "Original shared y-axis label copied at 1:1 scale for standalone interpretation."
+      "notes": "Original shared y-axis label copied at 1:1 scale for standalone interpretation. No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig3e",
@@ -1963,6 +2977,38 @@
             [
               108,
               53.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              98,
+              165.9454
+            ],
+            [
+              3,
+              104.9454
+            ],
+            [
+              47,
+              104.9454
+            ],
+            [
+              91,
+              104.9454
+            ],
+            [
+              135,
+              104.9454
+            ],
+            [
+              3,
+              52.9454
+            ],
+            [
+              103,
+              52.9454
             ]
           ],
           "exclude_text_prefixes": []
@@ -1977,10 +3023,44 @@
           "at_mm": [
             0.4,
             19.099999999999998
+          ],
+          "exclude_text_positions_mm": [
+            [
+              3,
+              165.9454
+            ],
+            [
+              98,
+              165.9454
+            ],
+            [
+              3,
+              104.9454
+            ],
+            [
+              47,
+              104.9454
+            ],
+            [
+              91,
+              104.9454
+            ],
+            [
+              135,
+              104.9454
+            ],
+            [
+              3,
+              52.9454
+            ],
+            [
+              103,
+              52.9454
+            ]
           ]
         }
       ],
-      "notes": "Original shared y-axis label copied at 1:1 scale for standalone interpretation."
+      "notes": "Original shared y-axis label copied at 1:1 scale for standalone interpretation. No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig3f",
@@ -2058,6 +3138,38 @@
             [
               108,
               53.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              98,
+              165.9454
+            ],
+            [
+              3,
+              104.9454
+            ],
+            [
+              47,
+              104.9454
+            ],
+            [
+              91,
+              104.9454
+            ],
+            [
+              135,
+              104.9454
+            ],
+            [
+              3,
+              52.9454
+            ],
+            [
+              103,
+              52.9454
             ]
           ],
           "exclude_text_prefixes": []
@@ -2072,10 +3184,44 @@
           "at_mm": [
             0.4,
             19.099999999999998
+          ],
+          "exclude_text_positions_mm": [
+            [
+              3,
+              165.9454
+            ],
+            [
+              98,
+              165.9454
+            ],
+            [
+              3,
+              104.9454
+            ],
+            [
+              47,
+              104.9454
+            ],
+            [
+              91,
+              104.9454
+            ],
+            [
+              135,
+              104.9454
+            ],
+            [
+              3,
+              52.9454
+            ],
+            [
+              103,
+              52.9454
+            ]
           ]
         }
       ],
-      "notes": "Original shared y-axis label copied at 1:1 scale for standalone interpretation."
+      "notes": "Original shared y-axis label copied at 1:1 scale for standalone interpretation. No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig3g",
@@ -2153,12 +3299,44 @@
             [
               108,
               53.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              98,
+              165.9454
+            ],
+            [
+              3,
+              104.9454
+            ],
+            [
+              47,
+              104.9454
+            ],
+            [
+              91,
+              104.9454
+            ],
+            [
+              135,
+              104.9454
+            ],
+            [
+              3,
+              52.9454
+            ],
+            [
+              103,
+              52.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig3h",
@@ -2236,12 +3414,44 @@
             [
               8,
               53.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              98,
+              165.9454
+            ],
+            [
+              3,
+              104.9454
+            ],
+            [
+              47,
+              104.9454
+            ],
+            [
+              91,
+              104.9454
+            ],
+            [
+              135,
+              104.9454
+            ],
+            [
+              3,
+              52.9454
+            ],
+            [
+              103,
+              52.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig4a",
@@ -2303,12 +3513,36 @@
             [
               113,
               85.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              98,
+              165.9454
+            ],
+            [
+              3,
+              112.9454
+            ],
+            [
+              98,
+              112.9454
+            ],
+            [
+              3,
+              84.9454
+            ],
+            [
+              108,
+              84.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig4b",
@@ -2370,12 +3604,36 @@
             [
               113,
               85.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              98,
+              165.9454
+            ],
+            [
+              3,
+              112.9454
+            ],
+            [
+              98,
+              112.9454
+            ],
+            [
+              3,
+              84.9454
+            ],
+            [
+              108,
+              84.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig4c",
@@ -2437,12 +3695,36 @@
             [
               113,
               85.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              98,
+              165.9454
+            ],
+            [
+              3,
+              112.9454
+            ],
+            [
+              98,
+              112.9454
+            ],
+            [
+              3,
+              84.9454
+            ],
+            [
+              108,
+              84.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig4d",
@@ -2504,12 +3786,36 @@
             [
               113,
               85.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              98,
+              165.9454
+            ],
+            [
+              3,
+              112.9454
+            ],
+            [
+              98,
+              112.9454
+            ],
+            [
+              3,
+              84.9454
+            ],
+            [
+              108,
+              84.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig4e",
@@ -2571,12 +3877,36 @@
             [
               113,
               85.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              98,
+              165.9454
+            ],
+            [
+              3,
+              112.9454
+            ],
+            [
+              98,
+              112.9454
+            ],
+            [
+              3,
+              84.9454
+            ],
+            [
+              108,
+              84.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig4f",
@@ -2638,12 +3968,36 @@
             [
               8,
               85.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              98,
+              165.9454
+            ],
+            [
+              3,
+              112.9454
+            ],
+            [
+              98,
+              112.9454
+            ],
+            [
+              3,
+              84.9454
+            ],
+            [
+              108,
+              84.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig5a",
@@ -2713,12 +4067,40 @@
             [
               135,
               62.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              96,
+              165.9454
+            ],
+            [
+              3,
+              111.9454
+            ],
+            [
+              97,
+              111.9454
+            ],
+            [
+              3,
+              61.9454
+            ],
+            [
+              74,
+              61.9454
+            ],
+            [
+              130,
+              61.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig5b",
@@ -2788,12 +4170,40 @@
             [
               135,
               62.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              96,
+              165.9454
+            ],
+            [
+              3,
+              111.9454
+            ],
+            [
+              97,
+              111.9454
+            ],
+            [
+              3,
+              61.9454
+            ],
+            [
+              74,
+              61.9454
+            ],
+            [
+              130,
+              61.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig5c",
@@ -2863,12 +4273,40 @@
             [
               135,
               62.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              96,
+              165.9454
+            ],
+            [
+              3,
+              111.9454
+            ],
+            [
+              97,
+              111.9454
+            ],
+            [
+              3,
+              61.9454
+            ],
+            [
+              74,
+              61.9454
+            ],
+            [
+              130,
+              61.9454
             ]
           ],
           "exclude_text_prefixes": []
         }
       ],
-      "notes": ""
+      "notes": " No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig5d",
@@ -2938,6 +4376,34 @@
             [
               135,
               62.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              96,
+              165.9454
+            ],
+            [
+              3,
+              111.9454
+            ],
+            [
+              97,
+              111.9454
+            ],
+            [
+              3,
+              61.9454
+            ],
+            [
+              74,
+              61.9454
+            ],
+            [
+              130,
+              61.9454
             ]
           ],
           "exclude_text_prefixes": []
@@ -2952,10 +4418,40 @@
           "at_mm": [
             0.8,
             0.8
+          ],
+          "exclude_text_positions_mm": [
+            [
+              3,
+              165.9454
+            ],
+            [
+              96,
+              165.9454
+            ],
+            [
+              3,
+              111.9454
+            ],
+            [
+              97,
+              111.9454
+            ],
+            [
+              3,
+              61.9454
+            ],
+            [
+              74,
+              61.9454
+            ],
+            [
+              130,
+              61.9454
+            ]
           ]
         }
       ],
-      "notes": "Shared protocol-colour key duplicated at original size."
+      "notes": "Shared protocol-colour key duplicated at original size. No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig5e",
@@ -3025,6 +4521,34 @@
             [
               135,
               62.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              96,
+              165.9454
+            ],
+            [
+              3,
+              111.9454
+            ],
+            [
+              97,
+              111.9454
+            ],
+            [
+              3,
+              61.9454
+            ],
+            [
+              74,
+              61.9454
+            ],
+            [
+              130,
+              61.9454
             ]
           ],
           "exclude_text_prefixes": []
@@ -3039,10 +4563,40 @@
           "at_mm": [
             0.8,
             0.8
+          ],
+          "exclude_text_positions_mm": [
+            [
+              3,
+              165.9454
+            ],
+            [
+              96,
+              165.9454
+            ],
+            [
+              3,
+              111.9454
+            ],
+            [
+              97,
+              111.9454
+            ],
+            [
+              3,
+              61.9454
+            ],
+            [
+              74,
+              61.9454
+            ],
+            [
+              130,
+              61.9454
+            ]
           ]
         }
       ],
-      "notes": "Shared protocol-colour key duplicated at original size."
+      "notes": "Shared protocol-colour key duplicated at original size. No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig5f",
@@ -3112,6 +4666,34 @@
             [
               135,
               62.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              96,
+              165.9454
+            ],
+            [
+              3,
+              111.9454
+            ],
+            [
+              97,
+              111.9454
+            ],
+            [
+              3,
+              61.9454
+            ],
+            [
+              74,
+              61.9454
+            ],
+            [
+              130,
+              61.9454
             ]
           ],
           "exclude_text_prefixes": []
@@ -3126,10 +4708,40 @@
           "at_mm": [
             0.8,
             0.8
+          ],
+          "exclude_text_positions_mm": [
+            [
+              3,
+              165.9454
+            ],
+            [
+              96,
+              165.9454
+            ],
+            [
+              3,
+              111.9454
+            ],
+            [
+              97,
+              111.9454
+            ],
+            [
+              3,
+              61.9454
+            ],
+            [
+              74,
+              61.9454
+            ],
+            [
+              130,
+              61.9454
+            ]
           ]
         }
       ],
-      "notes": "Relevant model-colour key copied at original size; panel g retains Ridge and LightGBM only."
+      "notes": "Relevant model-colour key copied at original size; panel g retains Ridge and LightGBM only. No panel letter or subplot title is included; coordinates and shared keys are retained."
     },
     {
       "id": "Fig5g",
@@ -3199,6 +4811,34 @@
             [
               79,
               62.2022
+            ],
+            [
+              3,
+              165.9454
+            ],
+            [
+              96,
+              165.9454
+            ],
+            [
+              3,
+              111.9454
+            ],
+            [
+              97,
+              111.9454
+            ],
+            [
+              3,
+              61.9454
+            ],
+            [
+              74,
+              61.9454
+            ],
+            [
+              130,
+              61.9454
             ]
           ],
           "exclude_text_prefixes": []
@@ -3213,10 +4853,42 @@
           "at_mm": [
             0.8,
             0.8
+          ],
+          "exclude_text_positions_mm": [
+            [
+              3,
+              165.9454
+            ],
+            [
+              96,
+              165.9454
+            ],
+            [
+              3,
+              111.9454
+            ],
+            [
+              97,
+              111.9454
+            ],
+            [
+              3,
+              61.9454
+            ],
+            [
+              74,
+              61.9454
+            ],
+            [
+              130,
+              61.9454
+            ]
           ]
         }
       ],
-      "notes": "Relevant model-colour key copied at original size; panel g retains Ridge and LightGBM only."
+      "notes": "Relevant model-colour key copied at original size; panel g retains Ridge and LightGBM only. No panel letter or subplot title is included; coordinates and shared keys are retained."
     }
-  ]
+  ],
+  "trim_whitespace": true,
+  "titles_and_panel_letters_visible": false
 }

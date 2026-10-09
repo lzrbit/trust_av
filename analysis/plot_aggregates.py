@@ -14,15 +14,15 @@ from settings import WORKSPACE,REPO
 def main():
  out=WORKSPACE/'outputs/public_aggregate_figures';out.mkdir(parents=True,exist_ok=True)
  source=REPO/'data/aggregate'
- boxes=pd.read_csv(source/'hb_boxstats.csv')
+ boxes=pd.read_csv(source/'parameter_boxstats.csv');boxes=boxes[boxes.display_scenario.eq('HB') & boxes.factor.eq('design_distance')]
  fig,ax=plt.subplots(figsize=(8,3.5));colours=['#3b78a4','#e59846','#ac4655']
- for j,level in enumerate([-2,-5,-8]):
-  group=boxes[boxes.design_braking_m_s2.eq(level)].sort_values('clip')
+ for j,level in enumerate([5,15,25]):
+  group=boxes[boxes.level.eq(str(level)) if boxes.level.dtype==object else boxes.level.eq(level)].sort_values('clip')
   stats=[dict(q1=r.q1,med=r.median,q3=r.q3,whislo=r.whisker_low,whishi=r.whisker_high,fliers=[]) for r in group.itertuples()]
   plotted=ax.bxp(stats,positions=group['clip'].to_numpy()+(j-1)*.24,widths=.2,showfliers=False,patch_artist=True,manage_ticks=False)
   for patch in plotted['boxes']:patch.set_facecolor(colours[j]);patch.set_alpha(.55)
-  ax.plot([],[],color=colours[j],label=f'{level} m/s²')
- ax.set(xticks=range(1,6),xlabel='Clip index',ylabel='Participant mean risk',ylim=(.5,10.5),title='HB design braking: participant-first boxes\nIndividual outlier points omitted from public preview')
+  ax.plot([],[],color=colours[j],label=f'{level} m')
+ ax.set(xticks=range(1,6),xlabel='Clip index',ylabel='Participant mean risk',ylim=(.5,10.5),title='HB initial braking distance: participant-first boxes\nIndividual outlier points omitted from public preview')
  ax.legend(frameon=False,ncols=3);fig.tight_layout();fig.savefig(out/'hb_boxes.png',dpi=160);plt.close(fig)
  performance=pd.read_csv(source/'risk_prediction.csv');selected=performance[performance.model.eq('LightGBM')]
  fig,ax=plt.subplots(figsize=(8,3.5));x=np.arange(len(selected));y=selected.r2.to_numpy()

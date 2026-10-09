@@ -1,0 +1,8 @@
+# Numeric-results to manuscript figures/tables; no fitting stack required.
+numpy==2.3.5
+pandas==2.2.3
+scipy==1.18.1
+pyarrow==25.0.1
+matplotlib==3.11.2
+pypdf==6.13.3
+Pillow==12.3.0

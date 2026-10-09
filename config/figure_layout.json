@@ -1,0 +1,1076 @@
+{
+  "figure_s_parameter_boxes_svm": {
+    "width_mm": 180.0,
+    "height_mm": 102.0,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "",
+        "x_mm": 34.0,
+        "y_mm": 3.5
+      },
+      {
+        "letter": "b",
+        "title": "",
+        "x_mm": 94.0,
+        "y_mm": 3.5
+      },
+      {
+        "letter": "c",
+        "title": "",
+        "x_mm": 154.0,
+        "y_mm": 3.5
+      }
+    ]
+  },
+  "figure_4_profiles": {
+    "width_mm": 180,
+    "height_mm": 170,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "Profiles by predicted risk",
+        "x_mm": 3,
+        "y_mm": 168,
+        "title_visible": false
+      },
+      {
+        "letter": "b",
+        "title": "Signed contributions",
+        "x_mm": 98,
+        "y_mm": 168,
+        "title_visible": false
+      },
+      {
+        "letter": "c",
+        "title": "Conditions and participant counts",
+        "x_mm": 3,
+        "y_mm": 115,
+        "title_visible": false
+      },
+      {
+        "letter": "d",
+        "title": "Mean |family SHAP|",
+        "x_mm": 98,
+        "y_mm": 115,
+        "title_visible": false
+      },
+      {
+        "letter": "e",
+        "title": "One-point input changes",
+        "x_mm": 3,
+        "y_mm": 87,
+        "title_visible": false
+      },
+      {
+        "letter": "f",
+        "title": "Matched what-if contrast",
+        "x_mm": 108,
+        "y_mm": 87,
+        "title_visible": false
+      }
+    ]
+  },
+  "figure_s_workflow": {
+    "width_mm": 180,
+    "height_mm": 124,
+    "headings": []
+  },
+  "figure_s_parameters_adjusted_hb": {
+    "width_mm": 180,
+    "height_mm": 72,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "HB · Initial braking distance (m)",
+        "x_mm": 3,
+        "y_mm": 70,
+        "letter_position_mm": [
+          35.25,
+          4.090346706814239
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "b",
+        "title": "HB · Cruising speed (km/h)",
+        "x_mm": 63,
+        "y_mm": 70,
+        "letter_position_mm": [
+          95.25,
+          4.090346706814239
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "c",
+        "title": "HB · Braking (m/s²)",
+        "x_mm": 123,
+        "y_mm": 70,
+        "letter_position_mm": [
+          155.25,
+          4.090346706814239
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      }
+    ],
+    "bottom_padding_mm": 0
+  },
+  "figure_s_parameters_adjusted_lc": {
+    "width_mm": 180,
+    "height_mm": 72,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "LC · Neighbour merging distance (m)",
+        "x_mm": 3,
+        "y_mm": 70,
+        "letter_position_mm": [
+          35.25,
+          4.090346706814239
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "b",
+        "title": "LC · Lateral behaviour",
+        "x_mm": 63,
+        "y_mm": 70,
+        "letter_position_mm": [
+          95.25,
+          4.090346706814239
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "c",
+        "title": "LC · ACC style",
+        "x_mm": 123,
+        "y_mm": 70,
+        "letter_position_mm": [
+          155.25,
+          4.090346706814239
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      }
+    ],
+    "bottom_padding_mm": 0
+  },
+  "figure_s_lc_distance_sensitivity": {
+    "width_mm": 180,
+    "height_mm": 76,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "LC · Assigned design",
+        "x_mm": 4,
+        "y_mm": 69,
+        "letter_position_mm": [
+          49.75000000000001,
+          3.090346706814237
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "b",
+        "title": "LC · Exclude conflict events",
+        "x_mm": 93,
+        "y_mm": 69,
+        "letter_position_mm": [
+          138.75,
+          3.090346706814237
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      }
+    ],
+    "bottom_padding_mm": 4
+  },
+  "figure_s_country_attributions": {
+    "width_mm": 180,
+    "height_mm": 135,
+    "headings": []
+  },
+  "figure_s_shap_delegation": {
+    "width_mm": 86,
+    "height_mm": 80,
+    "headings": []
+  },
+  "figure_s_age_acc": {
+    "width_mm": 86,
+    "height_mm": 80,
+    "headings": []
+  },
+  "figure_s_parameters_adjusted_mb": {
+    "width_mm": 180,
+    "height_mm": 72,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "MB · Merging distance (m)",
+        "x_mm": 3,
+        "y_mm": 70,
+        "letter_position_mm": [
+          35.25,
+          4.090346706814239
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "b",
+        "title": "MB · Cruising speed (km/h)",
+        "x_mm": 63,
+        "y_mm": 70,
+        "letter_position_mm": [
+          95.25,
+          4.090346706814239
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "c",
+        "title": "MB · Braking (m/s²)",
+        "x_mm": 123,
+        "y_mm": 70,
+        "letter_position_mm": [
+          155.25,
+          4.090346706814239
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      }
+    ],
+    "bottom_padding_mm": 0
+  },
+  "figure_3_shap": {
+    "width_mm": 180,
+    "height_mm": 170,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "Personal-attribute attribution",
+        "x_mm": 3,
+        "y_mm": 168,
+        "title_visible": false
+      },
+      {
+        "letter": "b",
+        "title": "Held-out SHAP distribution",
+        "x_mm": 98,
+        "y_mm": 168,
+        "title_visible": false
+      },
+      {
+        "letter": "c",
+        "title": "Age",
+        "x_mm": 3,
+        "y_mm": 107,
+        "title_visible": false
+      },
+      {
+        "letter": "d",
+        "title": "Experience",
+        "x_mm": 47,
+        "y_mm": 107,
+        "title_visible": false
+      },
+      {
+        "letter": "e",
+        "title": "ACC trust",
+        "x_mm": 91,
+        "y_mm": 107,
+        "title_visible": false
+      },
+      {
+        "letter": "f",
+        "title": "LKS trust",
+        "x_mm": 135,
+        "y_mm": 107,
+        "title_visible": false
+      },
+      {
+        "letter": "g",
+        "title": "True pair contributions",
+        "x_mm": 3,
+        "y_mm": 55,
+        "title_visible": false
+      },
+      {
+        "letter": "h",
+        "title": "Age × experience",
+        "x_mm": 103,
+        "y_mm": 55,
+        "title_visible": false
+      }
+    ]
+  },
+  "figure_s_shap_overall_trust": {
+    "width_mm": 86,
+    "height_mm": 80,
+    "headings": []
+  },
+  "figure_s_whatif_sensitivity": {
+    "width_mm": 180,
+    "height_mm": 145,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "Overall trust",
+        "x_mm": 3,
+        "y_mm": 141,
+        "letter_position_mm": [
+          34.25,
+          77.35409684244792
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "b",
+        "title": "ACC trust",
+        "x_mm": 62,
+        "y_mm": 141,
+        "letter_position_mm": [
+          93.25,
+          77.35409684244792
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "c",
+        "title": "LKS trust",
+        "x_mm": 121,
+        "y_mm": 141,
+        "letter_position_mm": [
+          152.25,
+          77.35409684244792
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "d",
+        "title": "Delegation",
+        "x_mm": 3,
+        "y_mm": 80,
+        "letter_position_mm": [
+          34.25,
+          16.354096842447916
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_translation_mm": [
+          0,
+          -4
+        ],
+        "title_visible": false
+      },
+      {
+        "letter": "e",
+        "title": "Supervision need",
+        "x_mm": 62,
+        "y_mm": 80,
+        "letter_position_mm": [
+          93.25,
+          16.354096842447916
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_translation_mm": [
+          0,
+          -4
+        ],
+        "title_visible": false
+      },
+      {
+        "letter": "f",
+        "title": "Non-driving activities",
+        "x_mm": 121,
+        "y_mm": 80,
+        "letter_position_mm": [
+          152.25,
+          16.354096842447916
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_translation_mm": [
+          0,
+          -4
+        ],
+        "title_visible": false
+      }
+    ],
+    "bottom_padding_mm": 0
+  },
+  "figure_1_dataset": {
+    "width_mm": 180,
+    "height_mm": 180,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "Reported countries (n) and risk scores",
+        "x_mm": 3,
+        "y_mm": 178
+      },
+      {
+        "letter": "b",
+        "title": "Age and driving experience",
+        "x_mm": 103,
+        "y_mm": 178
+      },
+      {
+        "letter": "c",
+        "title": "Risk by reported gender",
+        "x_mm": 103,
+        "y_mm": 130
+      },
+      {
+        "letter": "d",
+        "title": "Trust and acceptance",
+        "x_mm": 3,
+        "y_mm": 102
+      },
+      {
+        "letter": "e",
+        "title": "ACC transitions",
+        "x_mm": 89,
+        "y_mm": 102
+      },
+      {
+        "letter": "f",
+        "title": "LKS transitions",
+        "x_mm": 136,
+        "y_mm": 102
+      },
+      {
+        "letter": "g",
+        "title": "Participant-level associations",
+        "x_mm": 3,
+        "y_mm": 66
+      },
+      {
+        "letter": "h",
+        "title": "HB initial braking distance",
+        "x_mm": 99,
+        "y_mm": 65
+      }
+    ]
+  },
+  "figure_s_parameters_adjusted_svm": {
+    "width_mm": 180,
+    "height_mm": 72,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "SVM · Ego merging distance (m)",
+        "x_mm": 3,
+        "y_mm": 70,
+        "letter_position_mm": [
+          35.25,
+          4.090346706814239
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "b",
+        "title": "SVM · Cruising speed (km/h)",
+        "x_mm": 63,
+        "y_mm": 70,
+        "letter_position_mm": [
+          95.25,
+          4.090346706814239
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "c",
+        "title": "SVM · Braking (m/s²)",
+        "x_mm": 123,
+        "y_mm": 70,
+        "letter_position_mm": [
+          155.25,
+          4.090346706814239
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      }
+    ],
+    "bottom_padding_mm": 0
+  },
+  "figure_s_shap_supervision": {
+    "width_mm": 86,
+    "height_mm": 80,
+    "headings": []
+  },
+  "figure_s_nonoperation": {
+    "width_mm": 180,
+    "height_mm": 120,
+    "headings": []
+  },
+  "figure_s_event_completeness": {
+    "width_mm": 180,
+    "height_mm": 125,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "LC",
+        "x_mm": 3,
+        "y_mm": 120,
+        "letter_position_mm": [
+          48.75,
+          62.090346706814245
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "b",
+        "title": "SVM",
+        "x_mm": 92,
+        "y_mm": 120,
+        "letter_position_mm": [
+          137.75,
+          62.090346706814245
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "c",
+        "title": "HB",
+        "x_mm": 3,
+        "y_mm": 65,
+        "letter_position_mm": [
+          48.75,
+          7.090346706814236
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "d",
+        "title": "MB",
+        "x_mm": 92,
+        "y_mm": 65,
+        "letter_position_mm": [
+          137.75,
+          7.090346706814236
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      }
+    ],
+    "bottom_padding_mm": 0
+  },
+  "figure_s_coverage": {
+    "width_mm": 180,
+    "height_mm": 85,
+    "headings": []
+  },
+  "figure_s_parameter_boxes_mb": {
+    "width_mm": 180.0,
+    "height_mm": 102.0,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "",
+        "x_mm": 34.0,
+        "y_mm": 3.5
+      },
+      {
+        "letter": "b",
+        "title": "",
+        "x_mm": 94.0,
+        "y_mm": 3.5
+      },
+      {
+        "letter": "c",
+        "title": "",
+        "x_mm": 154.0,
+        "y_mm": 3.5
+      }
+    ]
+  },
+  "figure_s_shap_other_activities": {
+    "width_mm": 86,
+    "height_mm": 80,
+    "headings": []
+  },
+  "figure_s_age": {
+    "width_mm": 86,
+    "height_mm": 80,
+    "headings": []
+  },
+  "figure_s_age_lks": {
+    "width_mm": 86,
+    "height_mm": 80,
+    "headings": []
+  },
+  "figure_s_whatif_dose": {
+    "width_mm": 180,
+    "height_mm": 90,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "ACC: common support n = 72",
+        "x_mm": 4,
+        "y_mm": 87,
+        "letter_position_mm": [
+          49.25000000000001,
+          9.090346706814234
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "b",
+        "title": "LKS: common support n = 92",
+        "x_mm": 93,
+        "y_mm": 87,
+        "letter_position_mm": [
+          138.25,
+          9.090346706814234
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      }
+    ],
+    "bottom_padding_mm": 0
+  },
+  "figure_s_parameter_profiles": {
+    "width_mm": 180,
+    "height_mm": 175,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "LC · Neighbour merging distance (m)",
+        "x_mm": 3,
+        "y_mm": 173,
+        "letter_position_mm": [
+          34.25,
+          132.8838171386719
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "b",
+        "title": "LC · Lateral behaviour",
+        "x_mm": 63,
+        "y_mm": 173,
+        "letter_position_mm": [
+          94.25,
+          132.8838171386719
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "c",
+        "title": "LC · ACC style",
+        "x_mm": 123,
+        "y_mm": 173,
+        "letter_position_mm": [
+          154.25,
+          132.8838171386719
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "d",
+        "title": "SVM · Ego merging distance (m)",
+        "x_mm": 3,
+        "y_mm": 132,
+        "letter_position_mm": [
+          34.25,
+          91.88381713867189
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "e",
+        "title": "SVM · Cruising speed (km/h)",
+        "x_mm": 63,
+        "y_mm": 132,
+        "letter_position_mm": [
+          94.25,
+          91.88381713867189
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "f",
+        "title": "SVM · Braking (m/s²)",
+        "x_mm": 123,
+        "y_mm": 132,
+        "letter_position_mm": [
+          154.25,
+          91.88381713867189
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "g",
+        "title": "HB · Initial braking distance (m)",
+        "x_mm": 3,
+        "y_mm": 91,
+        "letter_position_mm": [
+          34.25,
+          50.883817138671866
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "h",
+        "title": "HB · Cruising speed (km/h)",
+        "x_mm": 63,
+        "y_mm": 91,
+        "letter_position_mm": [
+          94.25,
+          50.883817138671866
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "i",
+        "title": "HB · Braking (m/s²)",
+        "x_mm": 123,
+        "y_mm": 91,
+        "letter_position_mm": [
+          154.25,
+          50.883817138671866
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "j",
+        "title": "MB · Merging distance (m)",
+        "x_mm": 3,
+        "y_mm": 50,
+        "letter_position_mm": [
+          34.25,
+          6.090346706814238
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "k",
+        "title": "MB · Cruising speed (km/h)",
+        "x_mm": 63,
+        "y_mm": 50,
+        "letter_position_mm": [
+          94.25,
+          6.090346706814238
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "l",
+        "title": "MB · Braking (m/s²)",
+        "x_mm": 123,
+        "y_mm": 50,
+        "letter_position_mm": [
+          154.25,
+          6.090346706814238
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      }
+    ],
+    "bottom_padding_mm": 0
+  },
+  "figure_s_robustness": {
+    "width_mm": 180,
+    "height_mm": 125,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "LC",
+        "x_mm": 3,
+        "y_mm": 121,
+        "letter_position_mm": [
+          48.75,
+          67.09034670681424
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "b",
+        "title": "SVM",
+        "x_mm": 92,
+        "y_mm": 121,
+        "letter_position_mm": [
+          137.75,
+          67.09034670681424
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "c",
+        "title": "HB",
+        "x_mm": 3,
+        "y_mm": 74,
+        "letter_position_mm": [
+          48.75,
+          20.090346706814234
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "d",
+        "title": "MB",
+        "x_mm": 92,
+        "y_mm": 74,
+        "letter_position_mm": [
+          137.75,
+          20.090346706814234
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      }
+    ],
+    "bottom_padding_mm": 0
+  },
+  "figure_5_trust": {
+    "width_mm": 180,
+    "height_mm": 170,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "Trust-rating changes",
+        "x_mm": 3,
+        "y_mm": 168,
+        "title_visible": false
+      },
+      {
+        "letter": "b",
+        "title": "Adjusted associations",
+        "x_mm": 96,
+        "y_mm": 168,
+        "title_visible": false
+      },
+      {
+        "letter": "c",
+        "title": "Within-person trust contrast",
+        "x_mm": 3,
+        "y_mm": 114,
+        "title_visible": false
+      },
+      {
+        "letter": "d",
+        "title": "Added risk summaries",
+        "x_mm": 97,
+        "y_mm": 114,
+        "title_visible": false
+      },
+      {
+        "letter": "e",
+        "title": "Shape above mean",
+        "x_mm": 3,
+        "y_mm": 64,
+        "title_visible": false
+      },
+      {
+        "letter": "f",
+        "title": "Generalisation",
+        "x_mm": 74,
+        "y_mm": 64,
+        "title_visible": false
+      },
+      {
+        "letter": "g",
+        "title": "Attribute increments",
+        "x_mm": 130,
+        "y_mm": 64,
+        "title_visible": false
+      }
+    ]
+  },
+  "figure_s_parameter_boxes_hb": {
+    "width_mm": 180.0,
+    "height_mm": 102.0,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "",
+        "x_mm": 34.0,
+        "y_mm": 3.5
+      },
+      {
+        "letter": "b",
+        "title": "",
+        "x_mm": 94.0,
+        "y_mm": 3.5
+      },
+      {
+        "letter": "c",
+        "title": "",
+        "x_mm": 154.0,
+        "y_mm": 3.5
+      }
+    ]
+  },
+  "figure_s_whatif_support": {
+    "width_mm": 180,
+    "height_mm": 95,
+    "headings": []
+  },
+  "figure_s_parameter_boxes_lc": {
+    "width_mm": 180.0,
+    "height_mm": 102.0,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "",
+        "x_mm": 34.0,
+        "y_mm": 3.5
+      },
+      {
+        "letter": "b",
+        "title": "",
+        "x_mm": 94.0,
+        "y_mm": 3.5
+      },
+      {
+        "letter": "c",
+        "title": "",
+        "x_mm": 154.0,
+        "y_mm": 3.5
+      }
+    ]
+  },
+  "figure_s_attribute_substitution": {
+    "width_mm": 180,
+    "height_mm": 90,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "Attribution substitution",
+        "x_mm": 3,
+        "y_mm": 87,
+        "letter_position_mm": [
+          55.75000000000001,
+          4.996527777777781
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      },
+      {
+        "letter": "b",
+        "title": "Held-out performance",
+        "x_mm": 96,
+        "y_mm": 87,
+        "letter_position_mm": [
+          149.24999999999997,
+          17.090346706814234
+        ],
+        "letter_placement": "below its own axes labels at original 8 pt",
+        "title_visible": false
+      }
+    ],
+    "bottom_padding_mm": 0
+  },
+  "figure_s_full_pair_matrix": {
+    "width_mm": 180,
+    "height_mm": 170,
+    "headings": []
+  },
+  "figure_s_country_holdout_rmse": {
+    "width_mm": 180,
+    "height_mm": 155,
+    "headings": []
+  },
+  "figure_s_full_importance": {
+    "width_mm": 180,
+    "height_mm": 140,
+    "headings": []
+  },
+  "figure_s_experience": {
+    "width_mm": 86,
+    "height_mm": 80,
+    "headings": []
+  },
+  "figure_2_dynamics": {
+    "width_mm": 180,
+    "height_mm": 170,
+    "headings": [
+      {
+        "letter": "a",
+        "title": "LC",
+        "x_mm": 3,
+        "y_mm": 168,
+        "title_visible": false
+      },
+      {
+        "letter": "b",
+        "title": "SVM",
+        "x_mm": 47,
+        "y_mm": 168,
+        "title_visible": false
+      },
+      {
+        "letter": "c",
+        "title": "HB",
+        "x_mm": 91,
+        "y_mm": 168,
+        "title_visible": false
+      },
+      {
+        "letter": "d",
+        "title": "MB",
+        "x_mm": 135,
+        "y_mm": 168,
+        "title_visible": false
+      },
+      {
+        "letter": "e",
+        "title": "Centred profiles",
+        "x_mm": 3,
+        "y_mm": 122,
+        "title_visible": false
+      },
+      {
+        "letter": "f",
+        "title": "Level",
+        "x_mm": 61,
+        "y_mm": 122,
+        "title_visible": false
+      },
+      {
+        "letter": "g",
+        "title": "Shape",
+        "x_mm": 78,
+        "y_mm": 122,
+        "title_visible": false
+      },
+      {
+        "letter": "h",
+        "title": "Exploratory Ward tree",
+        "x_mm": 97,
+        "y_mm": 122,
+        "title_visible": false
+      }
+    ]
+  }
+}

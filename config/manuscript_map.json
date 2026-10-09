@@ -1,0 +1,3333 @@
+{
+  "schema_version": 1,
+  "revision": "20261009_v8",
+  "description": "Each command renders from numeric inputs. Full participant and model-attribution records require authorization and are not included. No pre-rendered PDF is required by figure commands.",
+  "figures_and_tables": [
+    {
+      "id": "Fig1",
+      "kind": "main_figure",
+      "output": "outputs/presentation/figures/figure_1_dataset.pdf",
+      "producer": "presentation.figures.FigureBuilder.dataset",
+      "method": "dataset",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "Fig1"
+      ],
+      "panels": [
+        {
+          "id": "Fig1a",
+          "letter": "a",
+          "description": "Reported countries",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_country_coverage.csv",
+              "access": "derived_summary",
+              "producer": "metadata"
+            }
+          ],
+          "estimator": "All 29 countries retained; Grey marks flag n < 30 only; lines connect zero to the exact participant count.",
+          "uncertainty": "None",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig1/Fig1a.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig1a-inset",
+          "letter": "a-inset",
+          "description": "Risk-score distribution",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_risk_score_distribution.csv",
+              "access": "derived_summary",
+              "producer": "risk-distribution"
+            }
+          ],
+          "estimator": "Inset in panel a: 179966 repeated valid scores 1-10; 1810 recorded zeros denote no operation and are omitted. Integer-score stems have no smoothing; scores 1–3 are highlighted descriptively.",
+          "uncertainty": "None",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig1/Fig1a_inset.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig1b",
+          "letter": "b",
+          "description": "Age and driving experience",
+          "inputs": [
+            {
+              "base": "data",
+              "path": "participants.parquet",
+              "access": "authorized_individual_data",
+              "producer": "build"
+            }
+          ],
+          "estimator": "Original age and driving-experience values, one row per participant.",
+          "uncertainty": "None",
+          "display_transform": "Hexbin gridsize 24, unchanged from previous display.",
+          "standalone_output": "outputs/presentation/panels/Fig1/Fig1b.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig1c",
+          "letter": "c",
+          "description": "Risk by reported gender",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_gender_risk_descriptive.csv",
+              "access": "derived_summary",
+              "producer": "describe"
+            }
+          ],
+          "estimator": "Participant scenario-balanced risk; unadjusted; not-reported group retained.",
+          "uncertainty": "Pointwise 95% participant bootstrap, 1000 draws.",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig1/Fig1c.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig1d",
+          "letter": "d",
+          "description": "Trust and acceptance",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/presentation/tables/prepost_dispersion.csv",
+              "access": "derived_summary",
+              "producer": "presentation-prepare"
+            }
+          ],
+          "estimator": "Six separate original items; zero valid; supervision retained in raw direction. Harmonized saved analysis SEED=20261012; no re-estimation by figure builder.",
+          "uncertainty": "Thin pale horizontal bars = mean ± sample SD (ddof=1); thicker pointwise 95% participant-bootstrap mean intervals reuse 2000 draws. SD intervals can exceed the 0–10 item range and are not quantiles.",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig1/Fig1d.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig1e",
+          "letter": "e",
+          "description": "ACC score transitions",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_item_transitions_fixed_bands.csv",
+              "access": "derived_summary",
+              "producer": "describe"
+            }
+          ],
+          "estimator": "2164 paired participants; display bands 0-3, 4-6, 7-10 are arbitrary descriptive bins, not validated categories.",
+          "uncertainty": "None",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig1/Fig1e.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig1f",
+          "letter": "f",
+          "description": "LKS score transitions",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_item_transitions_fixed_bands.csv",
+              "access": "derived_summary",
+              "producer": "describe"
+            }
+          ],
+          "estimator": "2164 paired participants; display bands 0-3, 4-6, 7-10 are arbitrary descriptive bins, not validated categories.",
+          "uncertainty": "None",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig1/Fig1f.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig1g",
+          "letter": "g",
+          "description": "Participant-level associations",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_spearman_associations.csv",
+              "access": "derived_summary",
+              "producer": "describe"
+            }
+          ],
+          "estimator": "Saved Spearman correlations for 36 unique off-diagonal pairs; self-correlations omitted. Risk is participant scenario-balanced mean. Exact n/p/BH q remain in source.",
+          "uncertainty": "None",
+          "display_transform": "Strict off-diagonal triangle compacted to eight rows by eight columns; all 36 original saved pairwise rho values retained. No significance marks. Rounded negative-zero labels are displayed as 0.00; saved rho and colour values are unchanged.",
+          "standalone_output": "outputs/presentation/panels/Fig1/Fig1g.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig1h",
+          "letter": "h",
+          "description": "HB initial braking distance: participant distributions",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/figure_1h_hb_distance_boxstats.csv",
+              "access": "authorized_individual_output",
+              "producer": "parameter-inference"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/figure_1h_hb_distance_paired_tests.csv",
+              "access": "derived_summary",
+              "producer": "parameter-inference"
+            }
+          ],
+          "estimator": "15 boxes: participant mean over available events within distance/clip, 5/15/25 m. Paired mean t tests, Holm across all 195 factor-level/clip comparisons; main panel has 15 tests.",
+          "uncertainty": "Quartiles/median/observed 1.5-IQR whiskers/all fliers describe spread, not confidence intervals.",
+          "display_transform": "Saved statistics; no fitting or resampling by renderer.",
+          "standalone_output": "outputs/presentation/panels/Fig1/Fig1h.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "Fig2",
+      "kind": "main_figure",
+      "output": "outputs/presentation/figures/figure_2_dynamics.pdf",
+      "producer": "presentation.figures.FigureBuilder.dynamics",
+      "method": "dynamics",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "Fig2"
+      ],
+      "panels": [
+        {
+          "id": "Fig2a",
+          "letter": "a",
+          "description": "LC: risk by clip position",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/a2_position_means.csv",
+              "access": "derived_summary",
+              "producer": "dynamics"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/presentation/tables/participant_position_dispersion.csv",
+              "access": "derived_summary",
+              "producer": "presentation-prepare"
+            }
+          ],
+          "estimator": "Participant means across assigned valid event ratings at each clip position, then participant average. Pale band = mean ± one sample SD of participant x_ibk values (ddof=1), not SE.",
+          "uncertainty": "Deep-colour error bars reuse pointwise 95% participant bootstrap CIs for the mean, 2000 draws. SD band represents between-person dispersion, not uncertainty of the mean.",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig2/Fig2a.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig2b",
+          "letter": "b",
+          "description": "SVM: risk by clip position",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/a2_position_means.csv",
+              "access": "derived_summary",
+              "producer": "dynamics"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/presentation/tables/participant_position_dispersion.csv",
+              "access": "derived_summary",
+              "producer": "presentation-prepare"
+            }
+          ],
+          "estimator": "Participant means across assigned valid event ratings at each clip position, then participant average. Pale band = mean ± one sample SD of participant x_ibk values (ddof=1), not SE.",
+          "uncertainty": "Deep-colour error bars reuse pointwise 95% participant bootstrap CIs for the mean, 2000 draws. SD band represents between-person dispersion, not uncertainty of the mean.",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig2/Fig2b.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig2c",
+          "letter": "c",
+          "description": "HB: risk by clip position",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/a2_position_means.csv",
+              "access": "derived_summary",
+              "producer": "dynamics"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/presentation/tables/participant_position_dispersion.csv",
+              "access": "derived_summary",
+              "producer": "presentation-prepare"
+            }
+          ],
+          "estimator": "Participant means across assigned valid event ratings at each clip position, then participant average. Pale band = mean ± one sample SD of participant x_ibk values (ddof=1), not SE.",
+          "uncertainty": "Deep-colour error bars reuse pointwise 95% participant bootstrap CIs for the mean, 2000 draws. SD band represents between-person dispersion, not uncertainty of the mean.",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig2/Fig2c.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig2d",
+          "letter": "d",
+          "description": "MB: risk by clip position",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/a2_position_means.csv",
+              "access": "derived_summary",
+              "producer": "dynamics"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/presentation/tables/participant_position_dispersion.csv",
+              "access": "derived_summary",
+              "producer": "presentation-prepare"
+            }
+          ],
+          "estimator": "Participant means across assigned valid event ratings at each clip position, then participant average. Pale band = mean ± one sample SD of participant x_ibk values (ddof=1), not SE.",
+          "uncertainty": "Deep-colour error bars reuse pointwise 95% participant bootstrap CIs for the mean, 2000 draws. SD band represents between-person dispersion, not uncertainty of the mean.",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig2/Fig2d.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig2e",
+          "letter": "e",
+          "description": "Country-scenario-centred profiles",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/a2_country_profiles.csv",
+              "access": "derived_summary",
+              "producer": "dynamics"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_country_coverage.csv",
+              "access": "derived_summary",
+              "producer": "metadata"
+            }
+          ],
+          "estimator": "29 countries; identical country order in panels e-g. Each scenario mean removed, without scaling.",
+          "uncertainty": "None",
+          "display_transform": "Saved country-position means centred separately within each questionnaire scenario.",
+          "standalone_output": "outputs/presentation/panels/Fig2/Fig2e.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig2f",
+          "letter": "f",
+          "description": "Level",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/a2_country_stimulus_standardized.csv",
+              "access": "derived_summary",
+              "producer": "country"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_country_coverage.csv",
+              "access": "derived_summary",
+              "producer": "metadata"
+            }
+          ],
+          "estimator": "All 29 countries; identical order to panel e. Singleton points retained without inferential intervals.",
+          "uncertainty": "2000 participant bootstrap draws; matched-stimulus external reference fixed; singleton intervals not estimable.",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig2/Fig2f.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig2g",
+          "letter": "g",
+          "description": "Shape",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/a2_country_shape_similarity.csv",
+              "access": "derived_summary",
+              "producer": "dynamics"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_country_coverage.csv",
+              "access": "derived_summary",
+              "producer": "metadata"
+            }
+          ],
+          "estimator": "All 29 countries; identical order to panel e. Singleton points retained without inferential intervals.",
+          "uncertainty": "1000 within-country participant draws; external template fixed; undefined draws omitted (Denmark 994/1000 valid).",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig2/Fig2g.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig2h",
+          "letter": "h",
+          "description": "Country-centred profile tree",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_country_position_profiles.csv",
+              "access": "derived_summary",
+              "producer": "describe"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_country_tree_stability.csv",
+              "access": "derived_summary",
+              "producer": "describe"
+            }
+          ],
+          "estimator": "All 21 clip positions centred together per country; 29 countries retained. Saved bootstrap clade recovery labels shown only where every leaf has n > 1 and recovery >= 50%. Rust singleton labels.",
+          "uncertainty": "Saved 500 accepted within-country participant bootstrap draws; 3 incomplete-profile draws rejected.",
+          "display_transform": "Deterministic Ward linkage of saved centred profiles; every reconstructed clade verified equal to saved clade table; circumferential leaf labels are a display layout only.",
+          "standalone_output": "outputs/presentation/panels/Fig2/Fig2h.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "Fig3",
+      "kind": "main_figure",
+      "output": "outputs/presentation/figures/figure_3_shap.pdf",
+      "producer": "presentation.figures.FigureBuilder.shap",
+      "method": "shap",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "Fig3"
+      ],
+      "panels": [
+        {
+          "id": "Fig3a",
+          "letter": "a",
+          "description": "Personal-attribute attribution",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/m2_shap_global_importance.csv",
+              "access": "derived_summary",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "Top 14 saved personal-feature mean absolute SHAP values; stimulus and country excluded from panel. 34566 OOF events.",
+          "uncertainty": "None",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig3/Fig3a.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig3b",
+          "letter": "b",
+          "description": "Held-out SHAP distribution",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/prediction/m2_oof_shap.parquet",
+              "access": "authorized_individual_output",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "Fixed original 6000-row OOF display sample; eight numeric attributes.",
+          "uncertainty": "None",
+          "display_transform": "Deterministic vertical collision spacing only; feature colours clipped to display 5th/95th percentiles.",
+          "standalone_output": "outputs/presentation/panels/Fig3/Fig3b.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig3c",
+          "letter": "c",
+          "description": "Age dependence",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/prediction/m2_oof_shap.parquet",
+              "access": "authorized_individual_output",
+              "producer": "risk-models"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/presentation/tables/shap_age_hexbin_counts.csv",
+              "access": "derived_summary",
+              "producer": "generated_during_render"
+            }
+          ],
+          "estimator": "Same original fixed 6000-event OOF display sample, 2057 people; saved feature values and SHAP contributions; not intervention effects.",
+          "uncertainty": "None",
+          "display_transform": "Age/experience: two-dimensional hexbin count, gridsize 22, no smoothing; count total 6000; colour is event rows per hexagon on a logarithmic colour scale. Original scatter data extent plus 5% margins retained.",
+          "standalone_output": "outputs/presentation/panels/Fig3/Fig3c.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig3d",
+          "letter": "d",
+          "description": "Driving experience dependence",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/prediction/m2_oof_shap.parquet",
+              "access": "authorized_individual_output",
+              "producer": "risk-models"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/presentation/tables/shap_experience_hexbin_counts.csv",
+              "access": "derived_summary",
+              "producer": "generated_during_render"
+            }
+          ],
+          "estimator": "Same original fixed 6000-event OOF display sample, 2057 people; saved feature values and SHAP contributions; not intervention effects.",
+          "uncertainty": "None",
+          "display_transform": "Age/experience: two-dimensional hexbin count, gridsize 22, no smoothing; count total 6000; colour is event rows per hexagon on a logarithmic colour scale. Original scatter data extent plus 5% margins retained.",
+          "standalone_output": "outputs/presentation/panels/Fig3/Fig3d.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig3e",
+          "letter": "e",
+          "description": "ACC trust dependence",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/prediction/m2_oof_shap.parquet",
+              "access": "authorized_individual_output",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "Same original fixed 6000-event OOF display sample, 2057 people; saved feature values and SHAP contributions; not intervention effects.",
+          "uncertainty": "None",
+          "display_transform": "Original individual event rows.",
+          "standalone_output": "outputs/presentation/panels/Fig3/Fig3e.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig3f",
+          "letter": "f",
+          "description": "LKS trust dependence",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/prediction/m2_oof_shap.parquet",
+              "access": "authorized_individual_output",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "Same original fixed 6000-event OOF display sample, 2057 people; saved feature values and SHAP contributions; not intervention effects.",
+          "uncertainty": "None",
+          "display_transform": "Original individual event rows.",
+          "standalone_output": "outputs/presentation/panels/Fig3/Fig3f.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig3g",
+          "letter": "g",
+          "description": "True pair contributions",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/m2_global_pair_interactions.csv",
+              "access": "derived_summary",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "400 held-out events from 100 participants; pair = twice off-diagonal TreeSHAP interaction; diagonal zero is display only.",
+          "uncertainty": "None",
+          "display_transform": "Saved numeric-pair magnitudes in vector cells.",
+          "standalone_output": "outputs/presentation/panels/Fig3/Fig3g.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig3h",
+          "letter": "h",
+          "description": "Age by experience pair contribution",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/prediction/m2_sampled_true_interactions.parquet",
+              "access": "authorized_individual_output",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "100 held-out participants; saved true pair contributions averaged over sampled events per person.",
+          "uncertainty": "None",
+          "display_transform": "Original per-participant mean of saved pair SHAP; colour limits at original 99th absolute percentile.",
+          "standalone_output": "outputs/presentation/panels/Fig3/Fig3h.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "Fig4",
+      "kind": "main_figure",
+      "output": "outputs/presentation/figures/figure_4_profiles.pdf",
+      "producer": "presentation.figures.FigureBuilder.profiles",
+      "method": "profiles",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "Fig4"
+      ],
+      "panels": [
+        {
+          "id": "Fig4a",
+          "letter": "a",
+          "description": "Profile means",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/m2_profile_attributions.csv",
+              "access": "derived_summary",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "Eight saved condition combinations; sorted by saved prediction mean.",
+          "uncertainty": "1000 participant-cluster draws of fixed OOF predictions/observations.",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig4/Fig4a.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig4b",
+          "letter": "b",
+          "description": "Signed family contributions",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/m2_profile_attributions.csv",
+              "access": "derived_summary",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "Saved mean signed family SHAP sums; direction preserved.",
+          "uncertainty": "None",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig4/Fig4b.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig4c",
+          "letter": "c",
+          "description": "Conditions and counts",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/m2_profile_attributions.csv",
+              "access": "derived_summary",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "Black = stated condition; grey = complement. ACC and LKS trust <=5; experience <=10 years; descriptive thresholds.",
+          "uncertainty": "None",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig4/Fig4c.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig4d",
+          "letter": "d",
+          "description": "Global family magnitude",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/m2_shap_family_importance.csv",
+              "access": "derived_summary",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "Mean absolute signed family sum across all held-out event rows.",
+          "uncertainty": "None",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig4/Fig4d.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig4e",
+          "letter": "e",
+          "description": "One-point what-if input changes",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/whatif/tables/whatif_primary.csv",
+              "access": "derived_summary",
+              "producer": "whatif"
+            }
+          ],
+          "estimator": "Six original pre-task items; fixed held-out models evaluated after a one-point input decrement or increment within each item's common eligible support set. Labels give eligible participant n. Model responses, not causal effects.",
+          "uncertainty": "Thick: saved pointwise 95% participant-bootstrap intervals. Thin: saved simultaneous intervals for the complete 12-comparison primary family. Models are fixed.",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig4/Fig4e.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig4f",
+          "letter": "f",
+          "description": "Matched one-point what-if contrast",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/whatif/tables/whatif_paired_feature.csv",
+              "access": "derived_summary",
+              "producer": "whatif"
+            }
+          ],
+          "estimator": "Post-primary exploratory paired difference between LKS +1 and ACC +1 fixed-model risk responses in the same 571 eligible people, pooled and by scenario; diamond denotes pooled estimate. Both changes refer to the same participant and fixed model.",
+          "uncertainty": "Saved pointwise 95% paired participant-bootstrap intervals; no simultaneous claim.",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig4/Fig4f.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "Fig5",
+      "kind": "main_figure",
+      "output": "outputs/presentation/figures/figure_5_trust.pdf",
+      "producer": "presentation.figures.FigureBuilder.trust",
+      "method": "trust",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "Fig5"
+      ],
+      "panels": [
+        {
+          "id": "Fig5a",
+          "letter": "a",
+          "description": "Trust-rating changes",
+          "inputs": [
+            {
+              "base": "data",
+              "path": "participants.parquet",
+              "access": "authorized_individual_data",
+              "producer": "build"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/a2_trust_changes.csv",
+              "access": "derived_summary",
+              "producer": "dynamics"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/presentation/tables/trust_delta_frequencies.csv",
+              "access": "derived_summary",
+              "producer": "generated_during_render"
+            }
+          ],
+          "estimator": "Three integer post-minus-pre distributions, each n=2164. Original 0-10 item zeros remain valid. Separate aligned mean-change interval inset.",
+          "uncertainty": "Inset reuses saved pointwise 95% participant bootstrap intervals, 2000 draws. No new uncertainty estimates.",
+          "display_transform": "Exact integer frequency counts; step ridgelines use a shared frequency-height factor of 1.8, with a 20% scale bar; no KDE or other smoothing.",
+          "standalone_output": "outputs/presentation/panels/Fig5/Fig5a.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig5b",
+          "letter": "b",
+          "description": "Adjusted post-trust associations",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/a2_trust_risk_associations.csv",
+              "access": "derived_summary",
+              "producer": "dynamics"
+            }
+          ],
+          "estimator": "Twelve saved point estimates per predictor SD, printed to three decimals. Outcome-specific pre-trust, age, experience, gender, country and four risk summaries adjusted. No significance stars.",
+          "uncertainty": "Pointwise HC1 robust 95% intervals are retained in the source and SI Table S6; heatmap encodes point estimates only.",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig5/Fig5b.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig5c",
+          "letter": "c",
+          "description": "Risk associations with within-person LKS-minus-ACC trust change",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/within_person_trust_contrast_risk3.csv",
+              "access": "derived_summary",
+              "producer": "differential-trust"
+            }
+          ],
+          "estimator": "Post-review exploratory single direct outcome D = (post LKS − pre LKS) − (post ACC − pre ACC). Three coefficients per predictor SD, jointly adjusted for risk summaries, response fraction, all six original pre-task attitudes, demographics and country. No outcome coefficient is inferred from separate significance tests.",
+          "uncertainty": "Saved HC1 robust pointwise 95% intervals; BH q across the fixed three-risk-coefficient family of this post-review exploratory model retained in the source table.",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig5/Fig5c.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig5d",
+          "letter": "d",
+          "description": "Added risk summaries",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/a2_trust_cv_increment.csv",
+              "access": "derived_summary",
+              "producer": "trust-models"
+            }
+          ],
+          "estimator": "Six paired R² comparisons: pre-task attributes plus response fraction versus the same baseline plus all risk summaries. Open circle = reference; filled = expanded. Connecting lines link fixed estimates and are not confidence intervals. Paired differences printed to three decimals.",
+          "uncertainty": "Paired-participant pointwise 95% ΔR² intervals, 2000 fixed-OOF draws, remain in source and SI Table S5; no interval is assigned to the connecting line.",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig5/Fig5d.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig5e",
+          "letter": "e",
+          "description": "Shape above mean",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/a2_trust_cv_increment.csv",
+              "access": "derived_summary",
+              "producer": "trust-models"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/a2_shape_increment_multiplicity_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "multiplicity"
+            }
+          ],
+          "estimator": "All six outcome/protocol contrasts shown; pre-task-plus-mean-risk-and-response baseline versus plus both dynamics. Training-only peak selection.",
+          "uncertainty": "Thick: pointwise 95% paired participant intervals, 2000 fixed-OOF draws. Thin: saved exploratory Bonferroni-six percentile sensitivity, 6000 draws. LOCO LKS sensitivity interval [-0.0001480743,0.0127383183] includes zero.",
+          "display_transform": "Nested intervals are two saved uncertainty summaries; no resampling or interval reconstruction.",
+          "standalone_output": "outputs/presentation/panels/Fig5/Fig5e.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig5f",
+          "letter": "f",
+          "description": "Generalisation targets",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/m2_performance.csv",
+              "access": "derived_summary",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "Three saved full-model/reference R² results in four protocols; 34566 valid event means per model and protocol. Bars encode fixed R², not participant counts.",
+          "uncertainty": "Pointwise 95% participant-cluster bootstrap, 1000 fixed-OOF draws.",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig5/Fig5f.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        },
+        {
+          "id": "Fig5g",
+          "letter": "g",
+          "description": "Matched personal-attribute increments",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/m2_person_increment.csv",
+              "access": "derived_summary",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "Full-attribute versus identity-only, same algorithm and splits; eight saved comparisons. Diverging bars originate at zero.",
+          "uncertainty": "Pointwise 95% paired participant-cluster bootstrap, 1000 fixed-OOF draws.",
+          "display_transform": "None",
+          "standalone_output": "outputs/presentation/panels/Fig5/Fig5g.pdf",
+          "standalone_command": [
+            "python",
+            "manuscript.py",
+            "panels"
+          ]
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS1",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_workflow.pdf",
+      "producer": "presentation.figures.FigureBuilder.workflow",
+      "method": "workflow",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS1"
+      ],
+      "panels": [
+        {
+          "id": "FigS1a",
+          "letter": "a",
+          "description": "Procedure",
+          "inputs": [
+            {
+              "base": "repository",
+              "path": "docs/study_protocol.json",
+              "access": "included_protocol_metadata",
+              "producer": "included"
+            }
+          ],
+          "estimator": "Source protocol procedure",
+          "uncertainty": "None",
+          "display_transform": "Vector text and rules"
+        },
+        {
+          "id": "FigS1b",
+          "letter": "b",
+          "description": "Response accounting",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_sample_flow.csv",
+              "access": "derived_summary",
+              "producer": "metadata"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_risk_missingness.csv",
+              "access": "derived_summary",
+              "producer": "metadata"
+            }
+          ],
+          "estimator": "Participant and observation counts kept distinct",
+          "uncertainty": "None",
+          "display_transform": "Vector text and rules"
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS2",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_age.pdf",
+      "producer": "presentation.figures.FigureBuilder.demographic_single",
+      "method": "demographic_single",
+      "args": [
+        "age"
+      ],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS2"
+      ],
+      "panels": [
+        {
+          "id": "FigS2",
+          "letter": "",
+          "description": "Age (years) distribution",
+          "inputs": [
+            {
+              "base": "data",
+              "path": "participants.parquet",
+              "access": "authorized_individual_data",
+              "producer": "build"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_demographics.csv",
+              "access": "derived_summary",
+              "producer": "describe"
+            }
+          ],
+          "estimator": "Original completed/licensed participant sample; no age/experience exclusions. Saved median shown.",
+          "uncertainty": "None",
+          "display_transform": "Original histogram edges reused; one participant per observation. Standalone chart has no panel letter."
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS3",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_experience.pdf",
+      "producer": "presentation.figures.FigureBuilder.demographic_single",
+      "method": "demographic_single",
+      "args": [
+        "driving_exp_years"
+      ],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS3"
+      ],
+      "panels": [
+        {
+          "id": "FigS3",
+          "letter": "",
+          "description": "Driving experience (years) distribution",
+          "inputs": [
+            {
+              "base": "data",
+              "path": "participants.parquet",
+              "access": "authorized_individual_data",
+              "producer": "build"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_demographics.csv",
+              "access": "derived_summary",
+              "producer": "describe"
+            }
+          ],
+          "estimator": "Original completed/licensed participant sample; no age/experience exclusions. Saved median shown.",
+          "uncertainty": "None",
+          "display_transform": "Original histogram edges reused; one participant per observation. Standalone chart has no panel letter."
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS4",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_coverage.pdf",
+      "producer": "presentation.figures.FigureBuilder.coverage_single",
+      "method": "coverage_single",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS4"
+      ],
+      "panels": [
+        {
+          "id": "FigS4",
+          "letter": "",
+          "description": "Valid participants by clip position",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/a2_position_means.csv",
+              "access": "derived_summary",
+              "producer": "dynamics"
+            }
+          ],
+          "estimator": "Twenty-one saved n counts: participants with at least one operated assigned-event rating at each scenario/clip position. Risk zero only is no operation; pre/post zero is valid.",
+          "uncertainty": "None",
+          "display_transform": "None"
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS5",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_nonoperation.pdf",
+      "producer": "presentation.figures.FigureBuilder.nonoperation_single",
+      "method": "nonoperation_single",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS5"
+      ],
+      "panels": [
+        {
+          "id": "FigS5",
+          "letter": "",
+          "description": "Video-risk no-operation fractions",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_country_coverage.csv",
+              "access": "derived_summary",
+              "producer": "metadata"
+            }
+          ],
+          "estimator": "Numerator: n_zero_no_operation; denominator: n_valid_risk_ratings + n_zero_no_operation, within each of all 29 countries. Labels include participant n. Repeated risk responses, not independent people; pre/post zeros excluded from this calculation.",
+          "uncertainty": "None",
+          "display_transform": "100 × saved zero count / saved (valid + zero) counts; equal-size dots, line from zero to each fraction."
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS6",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_event_completeness.pdf",
+      "producer": "presentation.figures.FigureBuilder.event_completeness",
+      "method": "event_completeness",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS6"
+      ],
+      "panels": [
+        {
+          "id": "FigS6a",
+          "letter": "a",
+          "description": "LC event completeness",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_event_window_completeness.csv",
+              "access": "derived_summary",
+              "producer": "metadata"
+            }
+          ],
+          "estimator": "Counts of assigned participant–event sequences by number of operated clips; each scenario has 8656 assigned sequences. LC has six administered clips; the other scenarios have five. Zero here means no operated clip in that assigned event.",
+          "uncertainty": "None",
+          "display_transform": "Logarithmic count axis is labelled; no zeros are plotted as risk scores."
+        },
+        {
+          "id": "FigS6b",
+          "letter": "b",
+          "description": "SVM event completeness",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_event_window_completeness.csv",
+              "access": "derived_summary",
+              "producer": "metadata"
+            }
+          ],
+          "estimator": "Counts of assigned participant–event sequences by number of operated clips; each scenario has 8656 assigned sequences. LC has six administered clips; the other scenarios have five. Zero here means no operated clip in that assigned event.",
+          "uncertainty": "None",
+          "display_transform": "Logarithmic count axis is labelled; no zeros are plotted as risk scores."
+        },
+        {
+          "id": "FigS6c",
+          "letter": "c",
+          "description": "HB event completeness",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_event_window_completeness.csv",
+              "access": "derived_summary",
+              "producer": "metadata"
+            }
+          ],
+          "estimator": "Counts of assigned participant–event sequences by number of operated clips; each scenario has 8656 assigned sequences. LC has six administered clips; the other scenarios have five. Zero here means no operated clip in that assigned event.",
+          "uncertainty": "None",
+          "display_transform": "Logarithmic count axis is labelled; no zeros are plotted as risk scores."
+        },
+        {
+          "id": "FigS6d",
+          "letter": "d",
+          "description": "MB event completeness",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_event_window_completeness.csv",
+              "access": "derived_summary",
+              "producer": "metadata"
+            }
+          ],
+          "estimator": "Counts of assigned participant–event sequences by number of operated clips; each scenario has 8656 assigned sequences. LC has six administered clips; the other scenarios have five. Zero here means no operated clip in that assigned event.",
+          "uncertainty": "None",
+          "display_transform": "Logarithmic count axis is labelled; no zeros are plotted as risk scores."
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS7",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_parameter_profiles.pdf",
+      "producer": "presentation.figures.FigureBuilder.parameters",
+      "method": "parameters",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS7"
+      ],
+      "panels": [
+        {
+          "id": "FigS7a",
+          "letter": "a",
+          "description": "LC: Neighbour merging distance (m)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_clip_profiles.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset only; display scenario LC; factor design_distance. Available event ratings are averaged within participant, factor level and clip before equal weighting of contributing people. Groups can share participants and other design factors are marginalised; all reviewed levels are displayed.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap mean intervals, 2000 draws. Shaded intervals are not sample SD and not simultaneous intervals.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS7b",
+          "letter": "b",
+          "description": "LC: Lateral behaviour",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_clip_profiles.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset only; display scenario LC; factor lateral_behaviour. Available event ratings are averaged within participant, factor level and clip before equal weighting of contributing people. Groups can share participants and other design factors are marginalised; all reviewed levels are displayed.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap mean intervals, 2000 draws. Shaded intervals are not sample SD and not simultaneous intervals.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS7c",
+          "letter": "c",
+          "description": "LC: ACC style",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_clip_profiles.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset only; display scenario LC; factor acc_style. Available event ratings are averaged within participant, factor level and clip before equal weighting of contributing people. Groups can share participants and other design factors are marginalised; all reviewed levels are displayed.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap mean intervals, 2000 draws. Shaded intervals are not sample SD and not simultaneous intervals.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS7d",
+          "letter": "d",
+          "description": "SVM: Ego merging distance (m)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_clip_profiles.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset only; display scenario SVM; factor design_distance. Available event ratings are averaged within participant, factor level and clip before equal weighting of contributing people. Groups can share participants and other design factors are marginalised; all reviewed levels are displayed.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap mean intervals, 2000 draws. Shaded intervals are not sample SD and not simultaneous intervals.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS7e",
+          "letter": "e",
+          "description": "SVM: Cruising speed (km/h)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_clip_profiles.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset only; display scenario SVM; factor design_speed. Available event ratings are averaged within participant, factor level and clip before equal weighting of contributing people. Groups can share participants and other design factors are marginalised; all reviewed levels are displayed.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap mean intervals, 2000 draws. Shaded intervals are not sample SD and not simultaneous intervals.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS7f",
+          "letter": "f",
+          "description": "SVM: Braking (m/s²)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_clip_profiles.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset only; display scenario SVM; factor design_braking. Available event ratings are averaged within participant, factor level and clip before equal weighting of contributing people. Groups can share participants and other design factors are marginalised; all reviewed levels are displayed.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap mean intervals, 2000 draws. Shaded intervals are not sample SD and not simultaneous intervals.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS7g",
+          "letter": "g",
+          "description": "HB: Initial braking distance (m)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_clip_profiles.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset only; display scenario HB; factor design_distance. Available event ratings are averaged within participant, factor level and clip before equal weighting of contributing people. Groups can share participants and other design factors are marginalised; all reviewed levels are displayed.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap mean intervals, 2000 draws. Shaded intervals are not sample SD and not simultaneous intervals.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS7h",
+          "letter": "h",
+          "description": "HB: Cruising speed (km/h)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_clip_profiles.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset only; display scenario HB; factor design_speed. Available event ratings are averaged within participant, factor level and clip before equal weighting of contributing people. Groups can share participants and other design factors are marginalised; all reviewed levels are displayed.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap mean intervals, 2000 draws. Shaded intervals are not sample SD and not simultaneous intervals.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS7i",
+          "letter": "i",
+          "description": "HB: Braking (m/s²)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_clip_profiles.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset only; display scenario HB; factor design_braking. Available event ratings are averaged within participant, factor level and clip before equal weighting of contributing people. Groups can share participants and other design factors are marginalised; all reviewed levels are displayed.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap mean intervals, 2000 draws. Shaded intervals are not sample SD and not simultaneous intervals.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS7j",
+          "letter": "j",
+          "description": "MB: Merging distance (m)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_clip_profiles.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset only; display scenario MB; factor design_distance. Available event ratings are averaged within participant, factor level and clip before equal weighting of contributing people. Groups can share participants and other design factors are marginalised; all reviewed levels are displayed.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap mean intervals, 2000 draws. Shaded intervals are not sample SD and not simultaneous intervals.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS7k",
+          "letter": "k",
+          "description": "MB: Cruising speed (km/h)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_clip_profiles.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset only; display scenario MB; factor design_speed. Available event ratings are averaged within participant, factor level and clip before equal weighting of contributing people. Groups can share participants and other design factors are marginalised; all reviewed levels are displayed.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap mean intervals, 2000 draws. Shaded intervals are not sample SD and not simultaneous intervals.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS7l",
+          "letter": "l",
+          "description": "MB: Braking (m/s²)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_clip_profiles.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset only; display scenario MB; factor design_braking. Available event ratings are averaged within participant, factor level and clip before equal weighting of contributing people. Groups can share participants and other design factors are marginalised; all reviewed levels are displayed.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap mean intervals, 2000 draws. Shaded intervals are not sample SD and not simultaneous intervals.",
+          "display_transform": "None"
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS8",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_parameters_adjusted_lc.pdf",
+      "producer": "presentation.figures.FigureBuilder.parameter_adjusted",
+      "method": "parameter_adjusted",
+      "args": [
+        "LC"
+      ],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS8"
+      ],
+      "panels": [
+        {
+          "id": "FigS8a",
+          "letter": "a",
+          "description": "LC adjusted Neighbour merging distance (m)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_adjusted_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset; all non-reference categorical factor coefficients from the saved additive weighted participant fixed-effects model at each clip. Curves are comparison minus reference; both levels are printed in the legend. Other included design factors are adjusted; this is a sensitivity analysis, not a causal estimate.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap coefficient intervals, 2000 valid draws; no new fitting or resampling.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS8b",
+          "letter": "b",
+          "description": "LC adjusted Lateral behaviour",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_adjusted_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset; all non-reference categorical factor coefficients from the saved additive weighted participant fixed-effects model at each clip. Curves are comparison minus reference; both levels are printed in the legend. Other included design factors are adjusted; this is a sensitivity analysis, not a causal estimate.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap coefficient intervals, 2000 valid draws; no new fitting or resampling.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS8c",
+          "letter": "c",
+          "description": "LC adjusted ACC style",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_adjusted_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset; all non-reference categorical factor coefficients from the saved additive weighted participant fixed-effects model at each clip. Curves are comparison minus reference; both levels are printed in the legend. Other included design factors are adjusted; this is a sensitivity analysis, not a causal estimate.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap coefficient intervals, 2000 valid draws; no new fitting or resampling.",
+          "display_transform": "None"
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS9",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_parameters_adjusted_svm.pdf",
+      "producer": "presentation.figures.FigureBuilder.parameter_adjusted",
+      "method": "parameter_adjusted",
+      "args": [
+        "SVM"
+      ],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS9"
+      ],
+      "panels": [
+        {
+          "id": "FigS9a",
+          "letter": "a",
+          "description": "SVM adjusted Ego merging distance (m)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_adjusted_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset; all non-reference categorical factor coefficients from the saved additive weighted participant fixed-effects model at each clip. Curves are comparison minus reference; both levels are printed in the legend. Other included design factors are adjusted; this is a sensitivity analysis, not a causal estimate.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap coefficient intervals, 2000 valid draws; no new fitting or resampling.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS9b",
+          "letter": "b",
+          "description": "SVM adjusted Cruising speed (km/h)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_adjusted_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset; all non-reference categorical factor coefficients from the saved additive weighted participant fixed-effects model at each clip. Curves are comparison minus reference; both levels are printed in the legend. Other included design factors are adjusted; this is a sensitivity analysis, not a causal estimate.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap coefficient intervals, 2000 valid draws; no new fitting or resampling.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS9c",
+          "letter": "c",
+          "description": "SVM adjusted Braking (m/s²)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_adjusted_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset; all non-reference categorical factor coefficients from the saved additive weighted participant fixed-effects model at each clip. Curves are comparison minus reference; both levels are printed in the legend. Other included design factors are adjusted; this is a sensitivity analysis, not a causal estimate.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap coefficient intervals, 2000 valid draws; no new fitting or resampling.",
+          "display_transform": "None"
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS10",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_parameters_adjusted_hb.pdf",
+      "producer": "presentation.figures.FigureBuilder.parameter_adjusted",
+      "method": "parameter_adjusted",
+      "args": [
+        "HB"
+      ],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS10"
+      ],
+      "panels": [
+        {
+          "id": "FigS10a",
+          "letter": "a",
+          "description": "HB adjusted Initial braking distance (m)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_adjusted_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset; all non-reference categorical factor coefficients from the saved additive weighted participant fixed-effects model at each clip. Curves are comparison minus reference; both levels are printed in the legend. Other included design factors are adjusted; this is a sensitivity analysis, not a causal estimate.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap coefficient intervals, 2000 valid draws; no new fitting or resampling.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS10b",
+          "letter": "b",
+          "description": "HB adjusted Cruising speed (km/h)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_adjusted_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset; all non-reference categorical factor coefficients from the saved additive weighted participant fixed-effects model at each clip. Curves are comparison minus reference; both levels are printed in the legend. Other included design factors are adjusted; this is a sensitivity analysis, not a causal estimate.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap coefficient intervals, 2000 valid draws; no new fitting or resampling.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS10c",
+          "letter": "c",
+          "description": "HB adjusted Braking (m/s²)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_adjusted_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset; all non-reference categorical factor coefficients from the saved additive weighted participant fixed-effects model at each clip. Curves are comparison minus reference; both levels are printed in the legend. Other included design factors are adjusted; this is a sensitivity analysis, not a causal estimate.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap coefficient intervals, 2000 valid draws; no new fitting or resampling.",
+          "display_transform": "None"
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS11",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_parameters_adjusted_mb.pdf",
+      "producer": "presentation.figures.FigureBuilder.parameter_adjusted",
+      "method": "parameter_adjusted",
+      "args": [
+        "MB"
+      ],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS11"
+      ],
+      "panels": [
+        {
+          "id": "FigS11a",
+          "letter": "a",
+          "description": "MB adjusted Merging distance (m)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_adjusted_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset; all non-reference categorical factor coefficients from the saved additive weighted participant fixed-effects model at each clip. Curves are comparison minus reference; both levels are printed in the legend. Other included design factors are adjusted; this is a sensitivity analysis, not a causal estimate.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap coefficient intervals, 2000 valid draws; no new fitting or resampling.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS11b",
+          "letter": "b",
+          "description": "MB adjusted Cruising speed (km/h)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_adjusted_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset; all non-reference categorical factor coefficients from the saved additive weighted participant fixed-effects model at each clip. Curves are comparison minus reference; both levels are printed in the legend. Other included design factors are adjusted; this is a sensitivity analysis, not a causal estimate.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap coefficient intervals, 2000 valid draws; no new fitting or resampling.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS11c",
+          "letter": "c",
+          "description": "MB adjusted Braking (m/s²)",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_adjusted_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Assigned-design primary subset; all non-reference categorical factor coefficients from the saved additive weighted participant fixed-effects model at each clip. Curves are comparison minus reference; both levels are printed in the legend. Other included design factors are adjusted; this is a sensitivity analysis, not a causal estimate.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap coefficient intervals, 2000 valid draws; no new fitting or resampling.",
+          "display_transform": "None"
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS12",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_lc_distance_sensitivity.pdf",
+      "producer": "presentation.figures.FigureBuilder.lc_distance_sensitivity",
+      "method": "lc_distance_sensitivity",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS12"
+      ],
+      "panels": [
+        {
+          "id": "FigS12a",
+          "letter": "a",
+          "description": "LC neighbour merging distance: Assigned design",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_clip_profiles.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Saved assigned_design_primary distance profiles; levels 5 m and 15 m. The diagnostic excludes physically inconsistent distance events and changes the observed event/support population. Neither relabels the excluded events nor reassigns their risk scores.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap mean intervals, 2000 draws.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS12b",
+          "letter": "b",
+          "description": "LC neighbour merging distance: Exclude conflict events",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameters/tables/controlled_parameter_clip_profiles.csv",
+              "access": "derived_summary",
+              "producer": "parameters"
+            }
+          ],
+          "estimator": "Saved lc_exclude_distance_conflicts distance profiles; levels 5 m and 15 m. The diagnostic excludes physically inconsistent distance events and changes the observed event/support population. Neither relabels the excluded events nor reassigns their risk scores.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap mean intervals, 2000 draws.",
+          "display_transform": "None"
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS13",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_country_holdout_rmse.pdf",
+      "producer": "presentation.figures.FigureBuilder.country_holdout_rmse",
+      "method": "country_holdout_rmse",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS13"
+      ],
+      "panels": [
+        {
+          "id": "FigS13",
+          "letter": "",
+          "description": "Country-held-out RMSE by model",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/m2_country_holdout_performance.csv",
+              "access": "derived_summary",
+              "producer": "risk-models"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_country_coverage.csv",
+              "access": "derived_summary",
+              "producer": "metadata"
+            }
+          ],
+          "estimator": "All six saved models and all 29 countries; numeric cells show RMSE in risk-score points rounded to two decimals. Country labels include participant n. No country-specific confidence intervals; small-country point estimates can be unstable.",
+          "uncertainty": "None",
+          "display_transform": "Fixed saved RMSE table; no weighting change, fitting or uncertainty calculation."
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS14",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_full_importance.pdf",
+      "producer": "presentation.figures.FigureBuilder.full_importance",
+      "method": "full_importance",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS14"
+      ],
+      "panels": [
+        {
+          "id": "FigS14",
+          "letter": "",
+          "description": "All model-feature attributions",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/m2_shap_global_importance.csv",
+              "access": "derived_summary",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "All 26 source variables, including stimulus identifiers and reported country; saved mean absolute TreeSHAP contributions across 34566 held-out event rows. No uncertainty interval.",
+          "uncertainty": "None",
+          "display_transform": "Full saved rank; same variable aggregation as main Fig. 4a."
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS15",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_shap_overall_trust.pdf",
+      "producer": "presentation.figures.FigureBuilder.remaining_dependence",
+      "method": "remaining_dependence",
+      "args": [
+        "trust_pre_overall"
+      ],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS15"
+      ],
+      "panels": [
+        {
+          "id": "FigS15",
+          "letter": "",
+          "description": "Overall trust SHAP dependence",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/prediction/m2_oof_shap.parquet",
+              "access": "authorized_individual_output",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "Same fixed 6000 held-out event-row sample from 2057 people as main Fig. 4b–f. Numeric pre-task score versus its saved TreeSHAP contribution, not an intervention effect. A person can contribute multiple rows.",
+          "uncertainty": "None",
+          "display_transform": "Original event rows without jitter, resampling or new exclusions."
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS16",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_shap_delegation.pdf",
+      "producer": "presentation.figures.FigureBuilder.remaining_dependence",
+      "method": "remaining_dependence",
+      "args": [
+        "accept_pre_delegate"
+      ],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS16"
+      ],
+      "panels": [
+        {
+          "id": "FigS16",
+          "letter": "",
+          "description": "Delegation SHAP dependence",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/prediction/m2_oof_shap.parquet",
+              "access": "authorized_individual_output",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "Same fixed 6000 held-out event-row sample from 2057 people as main Fig. 4b–f. Numeric pre-task score versus its saved TreeSHAP contribution, not an intervention effect. A person can contribute multiple rows.",
+          "uncertainty": "None",
+          "display_transform": "Original event rows without jitter, resampling or new exclusions."
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS17",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_shap_supervision.pdf",
+      "producer": "presentation.figures.FigureBuilder.remaining_dependence",
+      "method": "remaining_dependence",
+      "args": [
+        "accept_pre_monitor_raw"
+      ],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS17"
+      ],
+      "panels": [
+        {
+          "id": "FigS17",
+          "letter": "",
+          "description": "Supervision need SHAP dependence",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/prediction/m2_oof_shap.parquet",
+              "access": "authorized_individual_output",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "Same fixed 6000 held-out event-row sample from 2057 people as main Fig. 4b–f. Numeric pre-task score versus its saved TreeSHAP contribution, not an intervention effect. A person can contribute multiple rows.",
+          "uncertainty": "None",
+          "display_transform": "Original event rows without jitter, resampling or new exclusions."
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS18",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_shap_other_activities.pdf",
+      "producer": "presentation.figures.FigureBuilder.remaining_dependence",
+      "method": "remaining_dependence",
+      "args": [
+        "accept_pre_distract"
+      ],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS18"
+      ],
+      "panels": [
+        {
+          "id": "FigS18",
+          "letter": "",
+          "description": "Non-driving activities SHAP dependence",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/prediction/m2_oof_shap.parquet",
+              "access": "authorized_individual_output",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "Same fixed 6000 held-out event-row sample from 2057 people as main Fig. 4b–f. Numeric pre-task score versus its saved TreeSHAP contribution, not an intervention effect. A person can contribute multiple rows.",
+          "uncertainty": "None",
+          "display_transform": "Original event rows without jitter, resampling or new exclusions."
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS19",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_full_pair_matrix.pdf",
+      "producer": "presentation.figures.FigureBuilder.full_pair_matrix",
+      "method": "full_pair_matrix",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS19"
+      ],
+      "panels": [
+        {
+          "id": "FigS19",
+          "letter": "",
+          "description": "All true pair contributions",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/m2_global_pair_interactions.csv",
+              "access": "derived_summary",
+              "producer": "risk-models"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/m2_shap_global_importance.csv",
+              "access": "derived_summary",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "All 325 unordered pairs among 26 model source variables; symmetric display of mean absolute twice-off-diagonal TreeSHAP interaction from 400 held-out event rows, 100 people. Diagonal masked, not zero-valued estimated main effects.",
+          "uncertainty": "None",
+          "display_transform": "Symmetric matrix, each saved unordered pair appears twice for alignment; white diagonal is masked."
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS20",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_age_lks.pdf",
+      "producer": "presentation.figures.FigureBuilder.pair_single",
+      "method": "pair_single",
+      "args": [
+        "trust_pre_lks"
+      ],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS20"
+      ],
+      "panels": [
+        {
+          "id": "FigS20",
+          "letter": "",
+          "description": "Age by pre-task LKS trust",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/prediction/m2_sampled_true_interactions.parquet",
+              "access": "authorized_individual_output",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "100 held-out participants; 400 sampled event rows, four per person. Each point uses saved true pair contributions averaged over that participant's four sampled events.",
+          "uncertainty": "None",
+          "display_transform": "Per-participant averaging, deterministic uniform ±0.1 trust-axis jitter (seed 20261001); age positions unchanged. Symmetric colour limits ±0.11722482248175037 are the original 99th absolute percentile; values outside are colour-clipped only."
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS21",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_age_acc.pdf",
+      "producer": "presentation.figures.FigureBuilder.pair_single",
+      "method": "pair_single",
+      "args": [
+        "trust_pre_acc"
+      ],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS21"
+      ],
+      "panels": [
+        {
+          "id": "FigS21",
+          "letter": "",
+          "description": "Age by pre-task ACC trust",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/prediction/m2_sampled_true_interactions.parquet",
+              "access": "authorized_individual_output",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "100 held-out participants; 400 sampled event rows, four per person. Each point uses saved true pair contributions averaged over that participant's four sampled events.",
+          "uncertainty": "None",
+          "display_transform": "Per-participant averaging, deterministic uniform ±0.1 trust-axis jitter (seed 20261001); age positions unchanged. Symmetric colour limits ±0.052494864460489982 are the original 99th absolute percentile; values outside are colour-clipped only."
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS22",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_country_attributions.pdf",
+      "producer": "presentation.figures.FigureBuilder.country_families",
+      "method": "country_families",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS22"
+      ],
+      "panels": [
+        {
+          "id": "FigS22",
+          "letter": "",
+          "description": "Family attribution by reported country",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/m2_country_attributions.csv",
+              "access": "derived_summary",
+              "producer": "risk-models"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/d2_country_coverage.csv",
+              "access": "derived_summary",
+              "producer": "metadata"
+            }
+          ],
+          "estimator": "Previous main profile-figure country panel: all 29 countries in descending participant count; seven stacked mean absolute signed family sums. Known-country participant-held-out models; not country-held-out explanations. No new uncertainty interval.",
+          "uncertainty": "None",
+          "display_transform": "None"
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS23",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_attribute_substitution.pdf",
+      "producer": "presentation.figures.FigureBuilder.substitution_and_performance",
+      "method": "substitution_and_performance",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS23"
+      ],
+      "panels": [
+        {
+          "id": "FigS23a",
+          "letter": "a",
+          "description": "Correlated-attribute attribution substitution",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/m2_age_experience_sensitivity_attribution.csv",
+              "access": "derived_summary",
+              "producer": "risk-models"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/m2_shap_global_importance.csv",
+              "access": "derived_summary",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "Previous main profile-figure attribution substitution: saved fold-specific mean absolute SHAP weighted by event count; identical saved refits, no new fitting.",
+          "uncertainty": "None",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS23b",
+          "letter": "b",
+          "description": "Held-out performance after feature removal",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/m2_performance.csv",
+              "access": "derived_summary",
+              "producer": "risk-models"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/m2_age_experience_sensitivity_metrics.csv",
+              "access": "derived_summary",
+              "producer": "risk-models"
+            }
+          ],
+          "estimator": "Saved LightGBM participant-held-out performance: full, age omitted, or driving-experience omitted. 34566 event means; no additional tuning or refitting. Intervals are marginal per-model intervals, not a CI for the difference.",
+          "uncertainty": "Saved pointwise 95% participant-cluster bootstrap intervals; fixed held-out predictions.",
+          "display_transform": "None"
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS24",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_whatif_support.pdf",
+      "producer": "presentation.figures.FigureBuilder.whatif_support",
+      "method": "whatif_support",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS24"
+      ],
+      "panels": [
+        {
+          "id": "FigS24",
+          "letter": "",
+          "description": "Support coverage for primary one-point what-if comparisons",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/whatif/tables/whatif_support_coverage.csv",
+              "access": "derived_summary",
+              "producer": "whatif"
+            }
+          ],
+          "estimator": "Six one-item common support populations at minimum-neighbour count 10. Exclusions are sequential and mutually exclusive: boundary, then radius among boundary-valid people, then neighbour count among boundary-and-radius-valid people. Each stack totals 2164. Marginal radius/local-count validity fields are not treated as a sequential funnel.",
+          "uncertainty": "None",
+          "display_transform": "Exact source counts; no new support rule or eligibility filtering."
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS25",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_whatif_dose.pdf",
+      "producer": "presentation.figures.FigureBuilder.whatif_dose",
+      "method": "whatif_dose",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS25"
+      ],
+      "panels": [
+        {
+          "id": "FigS25a",
+          "letter": "a",
+          "description": "ACC model-response dose profile",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/whatif/tables/whatif_dose.csv",
+              "access": "derived_summary",
+              "producer": "whatif"
+            }
+          ],
+          "estimator": "Fixed-model responses to score changes −2, −1, 0, +1, +2 on the common support set for all five settings. Joining segments connect discrete evaluated settings and do not establish a smooth dose-response relationship.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap intervals.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS25b",
+          "letter": "b",
+          "description": "LKS model-response dose profile",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/whatif/tables/whatif_dose.csv",
+              "access": "derived_summary",
+              "producer": "whatif"
+            }
+          ],
+          "estimator": "Fixed-model responses to score changes −2, −1, 0, +1, +2 on the common support set for all five settings. Joining segments connect discrete evaluated settings and do not establish a smooth dose-response relationship.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap intervals.",
+          "display_transform": "None"
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS26",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_whatif_sensitivity.pdf",
+      "producer": "presentation.figures.FigureBuilder.whatif_sensitivity",
+      "method": "whatif_sensitivity",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS26"
+      ],
+      "panels": [
+        {
+          "id": "FigS26a",
+          "letter": "a",
+          "description": "Overall trust support-threshold sensitivity",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/whatif/tables/whatif_primary.csv",
+              "access": "derived_summary",
+              "producer": "whatif"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/whatif/tables/whatif_support_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "whatif"
+            }
+          ],
+          "estimator": "Pooled fixed-model responses to one-point decrements/increments under minimum-neighbour counts 5, 10, 20. Eligible participants differ by threshold; axis labels report n. Source rows with insufficient support remain unestimated and are explicitly labelled; no zero effect is imputed. This changes the support population, not only a numerical tuning value.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap intervals.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS26b",
+          "letter": "b",
+          "description": "ACC trust support-threshold sensitivity",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/whatif/tables/whatif_primary.csv",
+              "access": "derived_summary",
+              "producer": "whatif"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/whatif/tables/whatif_support_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "whatif"
+            }
+          ],
+          "estimator": "Pooled fixed-model responses to one-point decrements/increments under minimum-neighbour counts 5, 10, 20. Eligible participants differ by threshold; axis labels report n. Source rows with insufficient support remain unestimated and are explicitly labelled; no zero effect is imputed. This changes the support population, not only a numerical tuning value.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap intervals.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS26c",
+          "letter": "c",
+          "description": "LKS trust support-threshold sensitivity",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/whatif/tables/whatif_primary.csv",
+              "access": "derived_summary",
+              "producer": "whatif"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/whatif/tables/whatif_support_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "whatif"
+            }
+          ],
+          "estimator": "Pooled fixed-model responses to one-point decrements/increments under minimum-neighbour counts 5, 10, 20. Eligible participants differ by threshold; axis labels report n. Source rows with insufficient support remain unestimated and are explicitly labelled; no zero effect is imputed. This changes the support population, not only a numerical tuning value.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap intervals.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS26d",
+          "letter": "d",
+          "description": "Delegation support-threshold sensitivity",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/whatif/tables/whatif_primary.csv",
+              "access": "derived_summary",
+              "producer": "whatif"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/whatif/tables/whatif_support_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "whatif"
+            }
+          ],
+          "estimator": "Pooled fixed-model responses to one-point decrements/increments under minimum-neighbour counts 5, 10, 20. Eligible participants differ by threshold; axis labels report n. Source rows with insufficient support remain unestimated and are explicitly labelled; no zero effect is imputed. This changes the support population, not only a numerical tuning value.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap intervals.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS26e",
+          "letter": "e",
+          "description": "Supervision need support-threshold sensitivity",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/whatif/tables/whatif_primary.csv",
+              "access": "derived_summary",
+              "producer": "whatif"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/whatif/tables/whatif_support_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "whatif"
+            }
+          ],
+          "estimator": "Pooled fixed-model responses to one-point decrements/increments under minimum-neighbour counts 5, 10, 20. Eligible participants differ by threshold; axis labels report n. Source rows with insufficient support remain unestimated and are explicitly labelled; no zero effect is imputed. This changes the support population, not only a numerical tuning value.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap intervals.",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS26f",
+          "letter": "f",
+          "description": "Non-driving activities support-threshold sensitivity",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/whatif/tables/whatif_primary.csv",
+              "access": "derived_summary",
+              "producer": "whatif"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/whatif/tables/whatif_support_sensitivity.csv",
+              "access": "derived_summary",
+              "producer": "whatif"
+            }
+          ],
+          "estimator": "Pooled fixed-model responses to one-point decrements/increments under minimum-neighbour counts 5, 10, 20. Eligible participants differ by threshold; axis labels report n. Source rows with insufficient support remain unestimated and are explicitly labelled; no zero effect is imputed. This changes the support population, not only a numerical tuning value.",
+          "uncertainty": "Saved pointwise 95% participant-bootstrap intervals.",
+          "display_transform": "None"
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "FigS27",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_robustness.pdf",
+      "producer": "presentation.figures.FigureBuilder.robustness_combined",
+      "method": "robustness_combined",
+      "args": [],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS27"
+      ],
+      "panels": [
+        {
+          "id": "FigS27a",
+          "letter": "a",
+          "description": "LC sensitivity curves",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/a2_sensitivity_profiles.csv",
+              "access": "derived_summary",
+              "producer": "dynamics"
+            }
+          ],
+          "estimator": "Five saved variants: positive-score primary, zeros-as-scores diagnostic, duration-QC subset, complete-event subset, equal-country weighting. No new CI or exclusion rule.",
+          "uncertainty": "None",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS27b",
+          "letter": "b",
+          "description": "SVM sensitivity curves",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/a2_sensitivity_profiles.csv",
+              "access": "derived_summary",
+              "producer": "dynamics"
+            }
+          ],
+          "estimator": "Five saved variants: positive-score primary, zeros-as-scores diagnostic, duration-QC subset, complete-event subset, equal-country weighting. No new CI or exclusion rule.",
+          "uncertainty": "None",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS27c",
+          "letter": "c",
+          "description": "HB sensitivity curves",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/a2_sensitivity_profiles.csv",
+              "access": "derived_summary",
+              "producer": "dynamics"
+            }
+          ],
+          "estimator": "Five saved variants: positive-score primary, zeros-as-scores diagnostic, duration-QC subset, complete-event subset, equal-country weighting. No new CI or exclusion rule.",
+          "uncertainty": "None",
+          "display_transform": "None"
+        },
+        {
+          "id": "FigS27d",
+          "letter": "d",
+          "description": "MB sensitivity curves",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/core/tables/a2_sensitivity_profiles.csv",
+              "access": "derived_summary",
+              "producer": "dynamics"
+            }
+          ],
+          "estimator": "Five saved variants: positive-score primary, zeros-as-scores diagnostic, duration-QC subset, complete-event subset, equal-country weighting. No new CI or exclusion rule.",
+          "uncertainty": "None",
+          "display_transform": "None"
+        }
+      ],
+      "access": "authorized_inputs_required; not reconstructible from the four public example CSVs"
+    },
+    {
+      "id": "TableS1",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s1_country.tex",
+      "producer": "presentation.tables.build",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/d2_country_coverage.csv",
+          "access": "derived_summary",
+          "producer": "metadata"
+        }
+      ]
+    },
+    {
+      "id": "TableS2",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s2_contrasts.tex",
+      "producer": "presentation.tables.build",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/a2_position_contrasts.csv",
+          "access": "derived_summary",
+          "producer": "dynamics"
+        }
+      ]
+    },
+    {
+      "id": "TableS3",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s3_prediction.tex",
+      "producer": "presentation.tables.build",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/m2_performance.csv",
+          "access": "derived_summary",
+          "producer": "risk-models"
+        },
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/m2_person_increment.csv",
+          "access": "derived_summary",
+          "producer": "risk-models"
+        },
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/m2_participant_weighted_metrics.csv",
+          "access": "derived_summary",
+          "producer": "risk-models"
+        }
+      ]
+    },
+    {
+      "id": "TableS4",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s4_prepost.tex",
+      "producer": "presentation.tables.build",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/prepost/tables/prepost_harmonized.csv",
+          "access": "derived_summary",
+          "producer": "prepost"
+        }
+      ]
+    },
+    {
+      "id": "TableS5",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s5_trust_prediction.tex",
+      "producer": "presentation.tables.build",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/a2_trust_cv_increment.csv",
+          "access": "derived_summary",
+          "producer": "trust-models"
+        }
+      ]
+    },
+    {
+      "id": "TableS6",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s6_risk_trust_associations.tex",
+      "producer": "presentation.tables.build",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/a2_trust_risk_associations.csv",
+          "access": "derived_summary",
+          "producer": "dynamics"
+        }
+      ]
+    },
+    {
+      "id": "TableS7",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s7_country_profiles.tex",
+      "producer": "presentation.tables.build",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/a2_country_shape_similarity.csv",
+          "access": "derived_summary",
+          "producer": "dynamics"
+        },
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/a2_country_stimulus_standardized.csv",
+          "access": "derived_summary",
+          "producer": "country"
+        }
+      ]
+    },
+    {
+      "id": "TableS8",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s8_all_risk_prediction.tex",
+      "producer": "presentation.tables.build",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/m2_performance.csv",
+          "access": "derived_summary",
+          "producer": "risk-models"
+        }
+      ]
+    },
+    {
+      "id": "TableS9",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s9_all_shap_importance.tex",
+      "producer": "presentation.tables.build",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/m2_shap_global_importance.csv",
+          "access": "derived_summary",
+          "producer": "risk-models"
+        }
+      ]
+    },
+    {
+      "id": "TableS10",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s10_all_trust_coefficient_contrasts.tex",
+      "producer": "presentation.tables.build",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/a2_trust_between_item_coefficients.csv",
+          "access": "derived_summary",
+          "producer": "trust-contrasts"
+        }
+      ]
+    },
+    {
+      "id": "TableS11",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s11_all_spearman_pairs.tex",
+      "producer": "presentation.tables.build",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/d2_spearman_associations.csv",
+          "access": "derived_summary",
+          "producer": "describe"
+        }
+      ]
+    },
+    {
+      "id": "TableS12",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s12_all_trust_prediction.tex",
+      "producer": "presentation.tables.build",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/a2_trust_cv_performance.csv",
+          "access": "derived_summary",
+          "producer": "trust-models"
+        }
+      ]
+    },
+    {
+      "id": "TableS13",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s13_whatif_summary.tex",
+      "producer": "presentation.tables.build",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/whatif/tables/whatif_primary.csv",
+          "access": "derived_summary",
+          "producer": "whatif"
+        },
+        {
+          "base": "workspace",
+          "path": "outputs/whatif/tables/whatif_paired_feature.csv",
+          "access": "derived_summary",
+          "producer": "whatif"
+        },
+        {
+          "base": "workspace",
+          "path": "outputs/whatif/tables/whatif_dose.csv",
+          "access": "derived_summary",
+          "producer": "whatif"
+        },
+        {
+          "base": "workspace",
+          "path": "outputs/whatif/tables/whatif_joint.csv",
+          "access": "derived_summary",
+          "producer": "whatif"
+        }
+      ]
+    },
+    {
+      "id": "TableS14",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s14_parameter_contrasts.tex",
+      "producer": "presentation.tables.build",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/parameters/tables/controlled_parameter_paired_contrasts.csv",
+          "access": "derived_summary",
+          "producer": "parameters"
+        }
+      ]
+    },
+    {
+      "id": "TableS15",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s15_within_person_trust_contrast.tex",
+      "producer": "presentation.tables.build",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/parameters/tables/within_person_trust_contrast_risk3.csv",
+          "access": "derived_summary",
+          "producer": "differential-trust"
+        }
+      ]
+    },
+    {
+      "id": "FigS28",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_parameter_boxes_lc.pdf",
+      "producer": "presentation.figures.FigureBuilder.parameter_boxes",
+      "method": "parameter_boxes",
+      "args": [
+        "LC"
+      ],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS28"
+      ],
+      "panels": [
+        {
+          "id": "FigS28a",
+          "letter": "a",
+          "description": "LC lateral_behaviour",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_boxstats.csv",
+              "access": "authorized_individual_output",
+              "producer": "parameter-inference"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_paired_tests.csv",
+              "access": "derived_summary",
+              "producer": "parameter-inference"
+            }
+          ],
+          "estimator": "Participant-first available-event means at every assigned level and clip; same-person pair differences marginal over other factors",
+          "uncertainty": "Boxes describe median/IQR/observed 1.5-IQR whiskers; annotation=Holm195 paired t tests",
+          "display_transform": "Exact saved quantiles/whiskers/all fliers; no inferential recomputation"
+        },
+        {
+          "id": "FigS28b",
+          "letter": "b",
+          "description": "LC acc_style",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_boxstats.csv",
+              "access": "authorized_individual_output",
+              "producer": "parameter-inference"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_paired_tests.csv",
+              "access": "derived_summary",
+              "producer": "parameter-inference"
+            }
+          ],
+          "estimator": "Participant-first available-event means at every assigned level and clip; same-person pair differences marginal over other factors",
+          "uncertainty": "Boxes describe median/IQR/observed 1.5-IQR whiskers; annotation=Holm195 paired t tests",
+          "display_transform": "Exact saved quantiles/whiskers/all fliers; no inferential recomputation"
+        },
+        {
+          "id": "FigS28c",
+          "letter": "c",
+          "description": "LC design_distance",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_boxstats.csv",
+              "access": "authorized_individual_output",
+              "producer": "parameter-inference"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_paired_tests.csv",
+              "access": "derived_summary",
+              "producer": "parameter-inference"
+            }
+          ],
+          "estimator": "Participant-first available-event means at every assigned level and clip; same-person pair differences marginal over other factors",
+          "uncertainty": "Boxes describe median/IQR/observed 1.5-IQR whiskers; annotation=Holm195 paired t tests",
+          "display_transform": "Exact saved quantiles/whiskers/all fliers; no inferential recomputation"
+        }
+      ],
+      "access": "authorized boxstat inputs with individual flier values; no participant data included"
+    },
+    {
+      "id": "FigS29",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_parameter_boxes_svm.pdf",
+      "producer": "presentation.figures.FigureBuilder.parameter_boxes",
+      "method": "parameter_boxes",
+      "args": [
+        "SVM"
+      ],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS29"
+      ],
+      "panels": [
+        {
+          "id": "FigS29a",
+          "letter": "a",
+          "description": "SVM design_speed",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_boxstats.csv",
+              "access": "authorized_individual_output",
+              "producer": "parameter-inference"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_paired_tests.csv",
+              "access": "derived_summary",
+              "producer": "parameter-inference"
+            }
+          ],
+          "estimator": "Participant-first available-event means at every assigned level and clip; same-person pair differences marginal over other factors",
+          "uncertainty": "Boxes describe median/IQR/observed 1.5-IQR whiskers; annotation=Holm195 paired t tests",
+          "display_transform": "Exact saved quantiles/whiskers/all fliers; no inferential recomputation"
+        },
+        {
+          "id": "FigS29b",
+          "letter": "b",
+          "description": "SVM design_braking",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_boxstats.csv",
+              "access": "authorized_individual_output",
+              "producer": "parameter-inference"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_paired_tests.csv",
+              "access": "derived_summary",
+              "producer": "parameter-inference"
+            }
+          ],
+          "estimator": "Participant-first available-event means at every assigned level and clip; same-person pair differences marginal over other factors",
+          "uncertainty": "Boxes describe median/IQR/observed 1.5-IQR whiskers; annotation=Holm195 paired t tests",
+          "display_transform": "Exact saved quantiles/whiskers/all fliers; no inferential recomputation"
+        },
+        {
+          "id": "FigS29c",
+          "letter": "c",
+          "description": "SVM design_distance",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_boxstats.csv",
+              "access": "authorized_individual_output",
+              "producer": "parameter-inference"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_paired_tests.csv",
+              "access": "derived_summary",
+              "producer": "parameter-inference"
+            }
+          ],
+          "estimator": "Participant-first available-event means at every assigned level and clip; same-person pair differences marginal over other factors",
+          "uncertainty": "Boxes describe median/IQR/observed 1.5-IQR whiskers; annotation=Holm195 paired t tests",
+          "display_transform": "Exact saved quantiles/whiskers/all fliers; no inferential recomputation"
+        }
+      ],
+      "access": "authorized boxstat inputs with individual flier values; no participant data included"
+    },
+    {
+      "id": "FigS30",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_parameter_boxes_hb.pdf",
+      "producer": "presentation.figures.FigureBuilder.parameter_boxes",
+      "method": "parameter_boxes",
+      "args": [
+        "HB"
+      ],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS30"
+      ],
+      "panels": [
+        {
+          "id": "FigS30a",
+          "letter": "a",
+          "description": "HB design_speed",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_boxstats.csv",
+              "access": "authorized_individual_output",
+              "producer": "parameter-inference"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_paired_tests.csv",
+              "access": "derived_summary",
+              "producer": "parameter-inference"
+            }
+          ],
+          "estimator": "Participant-first available-event means at every assigned level and clip; same-person pair differences marginal over other factors",
+          "uncertainty": "Boxes describe median/IQR/observed 1.5-IQR whiskers; annotation=Holm195 paired t tests",
+          "display_transform": "Exact saved quantiles/whiskers/all fliers; no inferential recomputation"
+        },
+        {
+          "id": "FigS30b",
+          "letter": "b",
+          "description": "HB design_braking",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_boxstats.csv",
+              "access": "authorized_individual_output",
+              "producer": "parameter-inference"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_paired_tests.csv",
+              "access": "derived_summary",
+              "producer": "parameter-inference"
+            }
+          ],
+          "estimator": "Participant-first available-event means at every assigned level and clip; same-person pair differences marginal over other factors",
+          "uncertainty": "Boxes describe median/IQR/observed 1.5-IQR whiskers; annotation=Holm195 paired t tests",
+          "display_transform": "Exact saved quantiles/whiskers/all fliers; no inferential recomputation"
+        },
+        {
+          "id": "FigS30c",
+          "letter": "c",
+          "description": "HB design_distance",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_boxstats.csv",
+              "access": "authorized_individual_output",
+              "producer": "parameter-inference"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_paired_tests.csv",
+              "access": "derived_summary",
+              "producer": "parameter-inference"
+            }
+          ],
+          "estimator": "Participant-first available-event means at every assigned level and clip; same-person pair differences marginal over other factors",
+          "uncertainty": "Boxes describe median/IQR/observed 1.5-IQR whiskers; annotation=Holm195 paired t tests",
+          "display_transform": "Exact saved quantiles/whiskers/all fliers; no inferential recomputation"
+        }
+      ],
+      "access": "authorized boxstat inputs with individual flier values; no participant data included"
+    },
+    {
+      "id": "FigS31",
+      "kind": "supplement_figure",
+      "output": "outputs/presentation/figures/figure_s_parameter_boxes_mb.pdf",
+      "producer": "presentation.figures.FigureBuilder.parameter_boxes",
+      "method": "parameter_boxes",
+      "args": [
+        "MB"
+      ],
+      "command": [
+        "python",
+        "manuscript.py",
+        "figures",
+        "FigS31"
+      ],
+      "panels": [
+        {
+          "id": "FigS31a",
+          "letter": "a",
+          "description": "MB design_speed",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_boxstats.csv",
+              "access": "authorized_individual_output",
+              "producer": "parameter-inference"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_paired_tests.csv",
+              "access": "derived_summary",
+              "producer": "parameter-inference"
+            }
+          ],
+          "estimator": "Participant-first available-event means at every assigned level and clip; same-person pair differences marginal over other factors",
+          "uncertainty": "Boxes describe median/IQR/observed 1.5-IQR whiskers; annotation=Holm195 paired t tests",
+          "display_transform": "Exact saved quantiles/whiskers/all fliers; no inferential recomputation"
+        },
+        {
+          "id": "FigS31b",
+          "letter": "b",
+          "description": "MB design_braking",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_boxstats.csv",
+              "access": "authorized_individual_output",
+              "producer": "parameter-inference"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_paired_tests.csv",
+              "access": "derived_summary",
+              "producer": "parameter-inference"
+            }
+          ],
+          "estimator": "Participant-first available-event means at every assigned level and clip; same-person pair differences marginal over other factors",
+          "uncertainty": "Boxes describe median/IQR/observed 1.5-IQR whiskers; annotation=Holm195 paired t tests",
+          "display_transform": "Exact saved quantiles/whiskers/all fliers; no inferential recomputation"
+        },
+        {
+          "id": "FigS31c",
+          "letter": "c",
+          "description": "MB design_distance",
+          "inputs": [
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_boxstats.csv",
+              "access": "authorized_individual_output",
+              "producer": "parameter-inference"
+            },
+            {
+              "base": "workspace",
+              "path": "outputs/parameter_inference/tables/parameter_paired_tests.csv",
+              "access": "derived_summary",
+              "producer": "parameter-inference"
+            }
+          ],
+          "estimator": "Participant-first available-event means at every assigned level and clip; same-person pair differences marginal over other factors",
+          "uncertainty": "Boxes describe median/IQR/observed 1.5-IQR whiskers; annotation=Holm195 paired t tests",
+          "display_transform": "Exact saved quantiles/whiskers/all fliers; no inferential recomputation"
+        }
+      ],
+      "access": "authorized boxstat inputs with individual flier values; no participant data included"
+    },
+    {
+      "id": "TableS16",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s16_configuration_lc.tex",
+      "producer": "presentation.tables_parameters.build_tables",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/parameter_inference/tables/parameter_configurations.csv",
+          "access": "derived_summary",
+          "producer": "parameter-inference"
+        }
+      ]
+    },
+    {
+      "id": "TableS17",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s17_configuration_svm.tex",
+      "producer": "presentation.tables_parameters.build_tables",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/parameter_inference/tables/parameter_configurations.csv",
+          "access": "derived_summary",
+          "producer": "parameter-inference"
+        }
+      ]
+    },
+    {
+      "id": "TableS18",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s18_configuration_hb.tex",
+      "producer": "presentation.tables_parameters.build_tables",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/parameter_inference/tables/parameter_configurations.csv",
+          "access": "derived_summary",
+          "producer": "parameter-inference"
+        }
+      ]
+    },
+    {
+      "id": "TableS19",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s19_configuration_mb.tex",
+      "producer": "presentation.tables_parameters.build_tables",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/parameter_inference/tables/parameter_configurations.csv",
+          "access": "derived_summary",
+          "producer": "parameter-inference"
+        }
+      ]
+    },
+    {
+      "id": "TableS20",
+      "kind": "supplement_table",
+      "output": "outputs/presentation/tables/table_s20_parameter_omnibus.tex",
+      "producer": "presentation.tables_parameters.build_tables",
+      "command": [
+        "python",
+        "manuscript.py",
+        "tables"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/parameter_inference/tables/parameter_omnibus_tests.csv",
+          "access": "derived_summary",
+          "producer": "parameter-inference"
+        }
+      ]
+    }
+  ],
+  "analysis_entrypoint": "run.py",
+  "current_numbering": {
+    "main_figures": 5,
+    "supplement_figures": 31,
+    "supplement_tables": 20
+  },
+  "analysis_config": "config/analysis_stages.json",
+  "panel_export": {
+    "command": [
+      "python",
+      "manuscript.py",
+      "panels"
+    ],
+    "source_mode": "Only current renderer/version/hash/page-size-verified Arial parents; frozen crop rules unchanged",
+    "count": 38,
+    "config": "config/main_panel_export_config.json",
+    "requires": [
+      "pypdf",
+      "Pillow",
+      "Poppler pdftoppm"
+    ]
+  }
+}

@@ -1,0 +1,480 @@
+{
+  "schema_version": 1,
+  "stages": [
+    {
+      "id": "build",
+      "script": "analysis/build_data.py",
+      "command": [
+        "python",
+        "run.py",
+        "build"
+      ],
+      "inputs": [
+        {
+          "base": "questionnaire",
+          "path": "configured workbook",
+          "access": "authorized_source_workbook"
+        },
+        {
+          "base": "repository",
+          "path": "config/risk_column_mapping.json",
+          "access": "included_schema"
+        }
+      ],
+      "requires_stages": [],
+      "output_directory": "outputs/core",
+      "heavy": false,
+      "arguments": []
+    },
+    {
+      "id": "metadata",
+      "script": "analysis/derive_metadata.py",
+      "command": [
+        "python",
+        "run.py",
+        "metadata"
+      ],
+      "inputs": [
+        {
+          "base": "data",
+          "path": "participants.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "data",
+          "path": "events.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "data",
+          "path": "windows.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "data",
+          "path": "source_participants.parquet",
+          "access": "authorized_individual_data"
+        }
+      ],
+      "requires_stages": [],
+      "output_directory": "outputs/core",
+      "heavy": false,
+      "arguments": []
+    },
+    {
+      "id": "describe",
+      "script": "analysis/describe_round2.py",
+      "command": [
+        "python",
+        "run.py",
+        "describe"
+      ],
+      "inputs": [
+        {
+          "base": "data",
+          "path": "participants.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "data",
+          "path": "events.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "data",
+          "path": "windows.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "data",
+          "path": "source_participants.parquet",
+          "access": "authorized_individual_data"
+        }
+      ],
+      "requires_stages": [],
+      "output_directory": "outputs/core",
+      "heavy": false,
+      "arguments": []
+    },
+    {
+      "id": "risk-distribution",
+      "script": "analysis/risk_distribution.py",
+      "command": [
+        "python",
+        "run.py",
+        "risk-distribution"
+      ],
+      "inputs": [
+        {
+          "base": "data",
+          "path": "windows.parquet",
+          "access": "authorized_individual_data"
+        }
+      ],
+      "requires_stages": [],
+      "output_directory": "outputs/core",
+      "heavy": false,
+      "arguments": []
+    },
+    {
+      "id": "dynamics",
+      "script": "analysis/analyse_dynamics.py",
+      "command": [
+        "python",
+        "run.py",
+        "dynamics"
+      ],
+      "inputs": [
+        {
+          "base": "data",
+          "path": "participants.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "data",
+          "path": "events.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "data",
+          "path": "windows.parquet",
+          "access": "authorized_individual_data"
+        }
+      ],
+      "requires_stages": [],
+      "output_directory": "outputs/core",
+      "heavy": false,
+      "arguments": []
+    },
+    {
+      "id": "country",
+      "script": "analysis/country_standardization.py",
+      "command": [
+        "python",
+        "run.py",
+        "country"
+      ],
+      "inputs": [
+        {
+          "base": "data",
+          "path": "participants.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "data",
+          "path": "windows.parquet",
+          "access": "authorized_individual_data"
+        }
+      ],
+      "requires_stages": [],
+      "output_directory": "outputs/core",
+      "heavy": false,
+      "arguments": []
+    },
+    {
+      "id": "risk-models",
+      "script": "analysis/model_shap.py",
+      "command": [
+        "python",
+        "run.py",
+        "risk-models"
+      ],
+      "inputs": [
+        {
+          "base": "data",
+          "path": "participants.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "data",
+          "path": "events.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "data",
+          "path": "windows.parquet",
+          "access": "authorized_individual_data"
+        }
+      ],
+      "requires_stages": [],
+      "output_directory": "outputs/core",
+      "heavy": true,
+      "arguments": [
+        "--stage",
+        "all"
+      ]
+    },
+    {
+      "id": "trust-models",
+      "script": "analysis/trust_prediction.py",
+      "command": [
+        "python",
+        "run.py",
+        "trust-models"
+      ],
+      "inputs": [
+        {
+          "base": "data",
+          "path": "participants.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "data",
+          "path": "windows.parquet",
+          "access": "authorized_individual_data"
+        }
+      ],
+      "requires_stages": [],
+      "output_directory": "outputs/core",
+      "heavy": true,
+      "arguments": []
+    },
+    {
+      "id": "trust-contrasts",
+      "script": "analysis/trust_coefficient_contrasts.py",
+      "command": [
+        "python",
+        "run.py",
+        "trust-contrasts"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/a2_trust_risk_associations.csv",
+          "access": "authorized_derived_outputs"
+        },
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/a2_participant_risk_features.csv",
+          "access": "authorized_derived_outputs"
+        },
+        {
+          "base": "data",
+          "path": "participants.parquet",
+          "access": "authorized_individual_data"
+        }
+      ],
+      "requires_stages": [
+        "dynamics"
+      ],
+      "output_directory": "outputs/core",
+      "heavy": false,
+      "arguments": []
+    },
+    {
+      "id": "multiplicity",
+      "script": "analysis/multiplicity_sensitivity.py",
+      "command": [
+        "python",
+        "run.py",
+        "multiplicity"
+      ],
+      "inputs": [
+        {
+          "base": "workspace",
+          "path": "outputs/core/prediction/a2_trust_oof.parquet",
+          "access": "authorized_derived_outputs"
+        }
+      ],
+      "requires_stages": [
+        "trust-models"
+      ],
+      "output_directory": "outputs/core",
+      "heavy": false,
+      "arguments": []
+    },
+    {
+      "id": "mixed",
+      "script": "analysis/mixed_components.py",
+      "command": [
+        "python",
+        "run.py",
+        "mixed"
+      ],
+      "inputs": [
+        {
+          "base": "data",
+          "path": "events.parquet",
+          "access": "authorized_individual_data"
+        }
+      ],
+      "requires_stages": [],
+      "output_directory": "outputs/core",
+      "heavy": true,
+      "arguments": []
+    },
+    {
+      "id": "prepost",
+      "script": "analysis/harmonize_prepost.py",
+      "command": [
+        "python",
+        "run.py",
+        "prepost"
+      ],
+      "inputs": [
+        {
+          "base": "data",
+          "path": "participants.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/a2_trust_changes.csv",
+          "access": "authorized_derived_outputs"
+        }
+      ],
+      "requires_stages": [
+        "dynamics"
+      ],
+      "output_directory": "outputs/prepost",
+      "heavy": false,
+      "arguments": []
+    },
+    {
+      "id": "parameters",
+      "script": "analysis/analyse_parameters.py",
+      "command": [
+        "python",
+        "run.py",
+        "parameters"
+      ],
+      "inputs": [
+        {
+          "base": "data",
+          "path": "participants.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "data",
+          "path": "windows.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "repository",
+          "path": "data/event_design.csv",
+          "access": "included_stimulus_design"
+        }
+      ],
+      "requires_stages": [],
+      "output_directory": "outputs/parameters",
+      "heavy": false,
+      "arguments": []
+    },
+    {
+      "id": "differential-trust",
+      "script": "analysis/analyse_trust_contrast.py",
+      "command": [
+        "python",
+        "run.py",
+        "differential-trust"
+      ],
+      "inputs": [
+        {
+          "base": "data",
+          "path": "participants.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "workspace",
+          "path": "outputs/core/tables/a2_participant_risk_features.csv",
+          "access": "authorized_derived_outputs"
+        }
+      ],
+      "requires_stages": [
+        "dynamics"
+      ],
+      "output_directory": "outputs/parameters",
+      "heavy": false,
+      "arguments": []
+    },
+    {
+      "id": "whatif",
+      "script": "analysis/analyse_whatif.py",
+      "command": [
+        "python",
+        "run.py",
+        "whatif"
+      ],
+      "inputs": [
+        {
+          "base": "data",
+          "path": "participants.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "workspace",
+          "path": "outputs/core/prediction",
+          "access": "authorized_derived_outputs"
+        }
+      ],
+      "requires_stages": [
+        "risk-models"
+      ],
+      "output_directory": "outputs/whatif",
+      "heavy": true,
+      "arguments": []
+    },
+    {
+      "id": "aggregate-figures",
+      "script": "analysis/plot_aggregates.py",
+      "command": [
+        "python",
+        "run.py",
+        "aggregate-figures"
+      ],
+      "inputs": [
+        {
+          "base": "repository",
+          "path": "data/aggregate",
+          "access": "included_aggregate_examples"
+        }
+      ],
+      "requires_stages": [],
+      "output_directory": "outputs/public_aggregate_figures",
+      "heavy": false,
+      "arguments": []
+    },
+    {
+      "id": "parameter-inference",
+      "script": "analysis/parameter_inference.py",
+      "command": [
+        "python",
+        "run.py",
+        "parameter-inference"
+      ],
+      "inputs": [
+        {
+          "base": "data",
+          "path": "participants.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "data",
+          "path": "windows.parquet",
+          "access": "authorized_individual_data"
+        },
+        {
+          "base": "repository",
+          "path": "data/event_design.csv",
+          "access": "included_stimulus_design"
+        },
+        {
+          "base": "repository",
+          "path": "data/parameter_configurations.csv",
+          "access": "included_stimulus_design"
+        },
+        {
+          "base": "workspace",
+          "path": "outputs/parameters/tables",
+          "access": "derived_summary"
+        }
+      ],
+      "requires_stages": [
+        "parameters"
+      ],
+      "output_directory": "outputs/parameter_inference",
+      "heavy": false,
+      "arguments": []
+    }
+  ]
+}

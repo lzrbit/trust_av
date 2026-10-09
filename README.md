@@ -1,14 +1,16 @@
 # Trust and perceived risk in automated driving
 
-Scientific analysis code for *Shared risk patterns and divergent trust in automated driving: A systematic analysis of 179K ratings across 29 countries*.
+Scientific analysis and manuscript-production code for *Shared risk patterns and divergent trust in automated driving: A systematic analysis of 179K ratings across 29 countries*.
 
-This repository contains the study's data-building, descriptive, inference, prediction, held-out SHAP, controlled-parameter and model-sensitivity calculations. It does **not** contain original questionnaires, participant-level derived data, prediction/SHAP records, fitted model files, or a complete manuscript/PDF bundle. The supplied aggregate tables support three small plotting examples and the 15-test HB annotation family. They are not sufficient to recreate every manuscript panel.
+The repository contains the actual numeric rendering code for **all 5 main figures, every lettered main panel, 31 supplementary figures and 20 supplementary tables**, together with the analyses producing their inputs. [The manuscript map](config/manuscript_map.json) links each ID to its input files, producer, command and output. Figures are redrawn from numbers; the rendering commands do not copy old PDFs.
 
-No reuse license has yet been selected; see [LICENSE_STATUS.md](LICENSE_STATUS.md). Please do not describe this as licensed open-source software until the authors add a license.
+Original questionnaires, participant-level derived tables, OOF/SHAP records, model bundles and individual boxplot fliers are **not included**. Exact full reproduction needs authorized inputs. Included aggregates support runnable examples and inspection of all 189 parameter boxes, 195 paired comparisons and 12 joint-factor tests, with individual fliers removed. They cannot reconstruct every manuscript panel on their own.
+
+No reuse license has yet been selected; see [LICENSE_STATUS.md](LICENSE_STATUS.md).
 
 ## Environment
 
-The tested study runtime used Python 3.12. Install dependencies in a separate environment:
+The study runtime used Python 3.12. Install dependencies in a separate environment:
 
 ```sh
 python -m venv .venv
@@ -17,72 +19,63 @@ python -m pip install -r requirements.txt
 python tests/smoke.py --with-model
 ```
 
-LightGBM needs OpenMP. On macOS an existing Homebrew `libomp` installation is normally sufficient (`brew install libomp`); Linux wheels may require the distribution's OpenMP runtime. Do not copy someone else's model environment or load untrusted pickle/joblib files. No fonts or other third-party source are bundled. Plot previews use Matplotlib's installed font defaults.
+For numeric-results-to-figure/table production without model fitting, `requirements-presentation.txt` is sufficient. For the included aggregate examples alone, use `requirements-preview.txt`.
 
-## Public aggregate examples
+LightGBM needs OpenMP. On macOS an existing Homebrew `libomp` installation is normally sufficient; Linux wheels may require the distribution's OpenMP runtime. Only load model bundles you created or trust. Paper layouts require locally installed, legitimately obtained **Arial**; no fonts are bundled. Pass `--font-dir` to locate licensed TTF files. The renderer checks missing fonts and text outside the canvas instead of silently changing typography.
+
+## Quick start with included aggregates
 
 ```sh
 python run.py aggregate-figures
+python manuscript.py list
+python manuscript.py check
 ```
 
-This generates HB braking boxes, pre/post item summaries and prediction-performance plots under `work/outputs/public_aggregate_figures/`. The 15 HB boxes use saved participant-first quartiles, medians and observed 1.5-IQR whiskers. Individual outlier values are intentionally absent from the public tables, and the preview states that they are not displayed. These are data-reproduction examples, not pixel-identical reconstruction of the typeset article.
+The example command writes HB-distance boxes, pre/post summaries and prediction-performance plots under `work/outputs/public_aggregate_figures/`. The HB preview explicitly omits individual outlier points. These examples are not the full typeset figures.
 
-## Reproduction with authorized participant data
+## Full analysis and manuscript reproduction
 
-Participant data are not downloaded automatically. Obtain permission and supply the documented derived tables, or the study's original workbook using the exact questionnaire layout. Replacing the input with another survey does not automatically make the study-specific column map, sample assertions or measurement definitions valid.
+Use one private workspace outside the checkout. Obtain permission for the exact source workbook or supply the documented derived tables. No participant data are downloaded automatically.
 
 ```sh
-# Option A: original study workbook; keep the workspace outside the Git checkout.
+# Original study workbook, read-only; optional when derived inputs are available.
 python run.py --workspace /path/to/private-workspace --questionnaire /path/to/questionnaire.xlsx build
 
-# Option B: already derived study data; no original workbook is needed.
-python run.py --workspace /path/to/private-workspace --data-dir /path/to/derived describe risk-distribution dynamics country
+# Existing derived data can be supplied with --data-dir on subsequent commands.
+python run.py --workspace /path/to/private-workspace metadata describe risk-distribution dynamics country
+python run.py --workspace /path/to/private-workspace risk-models trust-models
+python run.py --workspace /path/to/private-workspace trust-contrasts multiplicity prepost parameters differential-trust whatif parameter-inference
+
+# Render from the resulting saved numeric outputs, without refitting.
+python manuscript.py --workspace /path/to/private-workspace prepare
+python manuscript.py --workspace /path/to/private-workspace check --inputs
+python manuscript.py --workspace /path/to/private-workspace figures
+python manuscript.py --workspace /path/to/private-workspace tables
+python manuscript.py --workspace /path/to/private-workspace panels
+python manuscript.py --workspace /path/to/private-workspace check --inputs --outputs
 ```
 
-Inputs are configurable. `--workspace` controls outputs; `--data-dir` overrides the derived input directory; otherwise derived tables are read/written at `<workspace>/inputs/derived`. The workbook is read-only. Keep using the same `--workspace` and `--data-dir` for later stages. `python run.py --list` lists stages; `--dry-run` prints commands without running them. Local outputs can contain sensitive individual records and must not be uploaded without a separate disclosure review.
+`run.py --list` lists analysis stages; `--dry-run` prints their commands. Heavy prediction and what-if stages run only when explicitly selected. `manuscript.py figures Fig1 FigS28` rebuilds selected compound figures. `tables` regenerates the complete SI table set. `panels` exports all 38 standalone panels from verified current Arial renders, preserving the frozen physical clipping rules. `Makefile` provides equivalent `map`, `check`, `prepare`, `figures`, `tables`, `panels`, `examples` and `smoke` targets.
 
-Run dependencies in this order as needed:
+See [reproduction instructions](docs/reproducing_the_manuscript.md), [readable figure/table map](docs/manuscript_map.md), [analysis-stage registry](config/analysis_stages.json), [data schema](docs/data_schema.md), [machine-readable fields](docs/derived_schema.json), [methods](docs/methods.md) and [source provenance](docs/source_provenance.json). Sample checks deliberately enforce this study's cohort and questionnaire coding; a different survey is not a drop-in input.
 
-| Stage | Prerequisites | Scope |
-|---|---|---|
-| `build` | Original workbook | Reconstructs completed/licensed cohort and event/clip tables; original workbook unchanged |
-| `describe risk-distribution dynamics country` | Derived participant/event/window tables; `describe` also uses source-participant flow table | Participant-first profiles, descriptive summaries, risk/trust associations and country standardization |
-| `risk-models` | Derived participant/event/window tables | **Heavy:** four generalization protocols, matched comparators, training-only processing/tuning and held-out TreeSHAP |
-| `trust-models` | Derived participant/window tables | **Heavy:** post-task trust prediction with training-fold risk features |
-| `trust-contrasts multiplicity` | Dynamics and trust-model outputs | Cross-outcome coefficient contrasts and multiplicity sensitivity |
-| `prepost` | Derived participants and dynamics trust-change table | Six paired item summaries with 2,000 participant bootstrap draws |
-| `parameters` | Derived participants/windows and supplied 105-event design | Full design-factor profiles, paired contrasts, additive participant fixed-effects sensitivity |
-| `hb-boxes hb-tests` | Derived windows; `hb-boxes` also needs `parameters` outputs | Descriptive boxes and post hoc 15-test paired-mean/Holm annotation family |
-| `differential-trust` | Derived participants and dynamics participant risk-feature table | Exploratory differential trust-change OLS/HC1 association |
-| `whatif` | Locally fitted risk-model bundles, OOF predictions and fold membership | Fixed held-out model sensitivity under local training-support rules; no refitting |
-| `mixed` | Derived events | Optional POSIX-only crossed random-intercept diagnostic |
+Local outputs may contain sensitive individual records. The source questionnaire remains unchanged. Risk 0 denotes no operation and is excluded only from video-risk observations; trust/acceptance 0 remains valid. All 29 reported countries remain included. Existing LC distance and HB acceleration-channel caveats are preserved.
 
-`risk-models`, `trust-models` and `whatif` are explicit choices; no heavyweight fitting runs by default. Scientific outputs remain in descriptive folders under `<workspace>/outputs/`. `parameters` and `hb-boxes` retain study-cohort assertions (2,164 participants, 179,966 operated ratings), deliberately preventing silent reuse with an incompatible cohort.
+## Verification and limits
 
-See [data schema](docs/data_schema.md), [machine-readable fields](docs/derived_schema.json), [methods and limitations](docs/methods.md), and [source provenance](docs/source_provenance.json). Metadata/hash checks tied to private historical audit files have been replaced by run-local source checks. Estimators, seeds, weighting, contrasts and test families are preserved; the public code does not claim that a new execution was preregistered.
+Release checks actually render every mapped figure and regenerate every table from the authors' authorized saved outputs in an isolated output directory. They also compare the portable parameter analysis with saved numerical results. Synthetic checks cover participant-first aggregation, bootstrap behavior, disjoint evaluation groups and LightGBM attribution additivity. The full heavy model-training/bootstrap pipeline is not rerun just to package a release. Run manifests record source/output hashes, fonts, geometry and display definitions; final artwork still needs visual review.
 
-## Verification scope
+The 75 original bootstrap contrasts, 195 paired t-test comparisons and 12 joint-factor tests are separate families. Country coverage does not establish representativeness, SHAP is model attribution, and fixed-model input perturbations are not intervention effects.
 
-The preparation checks cover syntax/imports, synthetic bootstrap/profile invariants, disjoint held-out groups and synthetic LightGBM attribution additivity; HB test output is also compared with the study's saved table. Aggregate examples are actually run. The entire expensive modeling/bootstrap pipeline is **not** rerun as part of public-package preparation. Exact numerical reproduction additionally depends on the authorized study inputs, compatible dependency versions and the documented fixed seeds.
-
-Current paper-specific vector layout and participant-level scatter/beeswarm panels are not reconstructible from the public aggregate files alone. Relevant analysis/plotting algorithms remain in the scientific modules; display exports requiring individual data need authorized local inputs. No raw individual table is disguised as an aggregate release.
-
-## Standalone vector-panel export
-
-A separate tool extracts the specified manuscript panels from **user-supplied**
-parent PDFs. The parent PDFs are not included. This is native-scale vector
-clipping/composition, with explicit foreign-text exclusions and shared-key
-components; it is not a redraw from numerical data. The configuration checks the
-exact five parent-file hashes, so an unrelated or edited PDF is rejected.
+## Separate vector-panel export
 
 ```sh
 python analysis/export_main_panels.py --input-dir /path/to/parent-pdfs --config config/main_panel_export_config.json --output-dir /path/to/panels
 python tests/test_panel_export.py
 ```
 
-The configuration describes 37 panels plus the Fig. 1a inset (38 exports).
-Export dimensions are recorded in millimetres with scale fixed at 1. This
-engineering operation adds no estimates, stars, confidence intervals or models.
-The synthetic test checks dimensions, vector content, explicit text exclusion,
-source immutability and rejection of a mismatched parent hash. Each real export
-still requires visual review; the exporter labels its manifest accordingly.
+Whitespace trimming requires Pillow and Poppler (`pdftoppm`). Temporary PNGs measure margins only; final output remains original vector content at 1:1 scale.
+
+The unified `manuscript.py panels` command verifies the current renderer version, manuscript map, five parent hashes and page sizes, then records a run-specific configuration with unchanged crop rules. It has no arbitrary hash-bypass option.
+
+This separate tool clips/composes panels from explicitly supplied parent PDFs and checks their hashes. It does not replace numeric rendering. Its manifest describes clipping/composition and physical dimensions; no new estimates or intervals are created. Parent PDFs are not included.

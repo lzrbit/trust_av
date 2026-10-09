@@ -8,10 +8,10 @@ import csv,json,re,subprocess
 ROOT=Path(__file__).resolve().parents[1]
 def main():
  found=subprocess.run(['git','ls-files','--cached','--others','--exclude-standard','-z'],cwd=ROOT,capture_output=True,text=True,check=True)
- paths=[ROOT/n for n in found.stdout.split('\0') if n]
+ paths=[ROOT/n for n in found.stdout.split('\0') if n and (ROOT/n).exists()]
  violations=[];csvs=[]
  forbidden={'.parquet','.joblib','.pkl','.pickle','.npz','.xlsx','.xls','.mat','.pem','.key','.pdf','.png','.svg'}
- patterns=[r'/Users/[^\s]+',r'/home/[^\s]+',r'C:\\Users\\',r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',r'github_pat_[A-Za-z0-9_]{20,}',r'ghp_[A-Za-z0-9]{20,}',r'sk-[A-Za-z0-9_-]{25,}',r'xox[baprs]-[A-Za-z0-9-]{20,}']
+ patterns=[r'/Users/[^\s]+',r'/home/[^\s]+',r'C:\\Users\\',r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',r'github_pat_[A-Za-z0-9_]{20,}',r'ghp_[A-Za-z0-9]{20,}',r'(?<![A-Za-z0-9])olp_[A-Za-z0-9_-]{16,}',r'(?<![A-Za-z0-9])sk-[A-Za-z0-9_-]{25,}',r'xox[baprs]-[A-Za-z0-9-]{20,}']
  protected={'participant_id','source_row_id','window_row_id','event_row_id','fliers_json','flier_index','participant_mean_risk'}
  for p in paths:
   if p.suffix.lower() in forbidden:violations.append({'file':str(p.relative_to(ROOT)),'reason':'participant/cache/key file type'})

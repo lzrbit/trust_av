@@ -18,7 +18,7 @@ def main():
   assert result['export_count']==1 and not list(page.images)
   assert abs(float(page.mediabox.width)/MM-44)<1e-6 and abs(float(page.mediabox.height)/MM-44)<1e-6
   assert 'keep label' in page.extract_text() and 'foreign heading' not in page.extract_text()
-  assert result['exports'][0]['components'][0]['scale']==1
+  assert result['exports'][0]['components_before_whitespace_trim'][0]['scale']==1
   assert hashlib.sha256(source.read_bytes()).hexdigest()==digest
   config['source_sha256']['synthetic.pdf']='0'*64;cfg.write_text(json.dumps(config))
   try:export(root,cfg,root/'rejected')

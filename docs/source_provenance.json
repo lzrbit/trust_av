@@ -1,5 +1,5 @@
 {
-  "scope": "Portable scientific-code copies. This record does not distribute participant data or historical audit outputs.",
+  "scope": "Portable scientific code and stimulus/aggregate exports. No participant data or historical audit files are distributed. Source paths are relative provenance labels, not runtime dependencies. New orchestration, validation and path-adaptation modules were written for this release.",
   "files": [
     {
       "published_file": "analysis/describe_round2.py",
@@ -100,25 +100,11 @@
       "changes": "Portable input/output paths; historical run-only guards removed where documented; scientific calculations retained."
     },
     {
-      "published_file": "analysis/build_hb_boxstats.py",
-      "source_file": "Scripts/manuscript_20261007_v6/build_hb_braking_boxstats.py",
-      "source_sha256": "50294c5e82742386eee129a3c70fd4b3cb3ea17039263f1aaf684279e58d4f11",
-      "published_sha256": "a6eb0428bbe3bf1c9497899651846309e0fed0998dd7efef07553fb2b97c3a7c",
-      "changes": "Portable input/output paths; historical run-only guards removed where documented; scientific calculations retained."
-    },
-    {
       "published_file": "data/aggregate/risk_prediction.csv",
       "source_file": "Results/nhb_round2_20261001/tables/m2_performance.csv",
       "source_sha256": "4557a8a48052df870981773f8b63eab03cdaae2d02550d6dd66943b05979df2d",
       "published_sha256": "e3ee6c031b3e12d6e7aacd05a1f2bf24985220acaaef9056a77a112be7b67aec",
       "changes": "CSV serialization; aggregate columns retained"
-    },
-    {
-      "published_file": "data/aggregate/hb_boxstats.csv",
-      "source_file": "Results/manuscript_20261007_v6/tables/figure_1_hb_braking_boxstats.csv",
-      "source_sha256": "51b7557ebd7aa9332ef4cc969d770ea139d4d3fe0c746eaffffaa48d949c590b",
-      "published_sha256": "6384c543ced0a47db668a18aa2e81a694b514cc91ca9a7d283ee6d21143d8f4e",
-      "changes": "CSV serialization; removed fliers_json"
     },
     {
       "published_file": "data/aggregate/prepost.csv",
@@ -128,32 +114,181 @@
       "changes": "Byte-identical aggregate six-item summary; no participant records"
     },
     {
-      "published_file": "analysis/analyse_hb_tests.py",
-      "source_file": "Scripts/manuscript_20261008_v7/analyse_hb_braking_significance.py",
-      "source_sha256": "ce74c143e7f5d625ac528f532a97e1a8050ea59022a988bb6b9dbb5197b6dee0",
-      "published_sha256": "2cd551508f705677f0c2b295cc7e84d8f9d5e95b07d4055ada649b9896626eaf",
-      "changes": "Input/output paths only; paired tests and Holm correction unchanged."
-    },
-    {
-      "published_file": "data/aggregate/hb_paired_tests.csv",
-      "source_file": "Results/manuscript_20261008_v7/tables/hb_braking_paired_tests.csv",
-      "source_sha256": "3a6320c686e9410ad740a7bfd3172291541706875a1888f625dea64b874c7dc3",
-      "published_sha256": "3a6320c686e9410ad740a7bfd3172291541706875a1888f625dea64b874c7dc3",
-      "changes": "Byte-identical 15-row aggregate paired-test family; no participant records."
-    },
-    {
       "published_file": "analysis/export_main_panels.py",
-      "source_file": "Scripts/manuscript_20261008_v7/export_main_panels.py",
-      "source_sha256": "d99b26e6519a293dd4b549d7396d6bba7f06e2a7f49d8ea119f0441622b22125",
-      "published_sha256": "d99b26e6519a293dd4b549d7396d6bba7f06e2a7f49d8ea119f0441622b22125",
-      "changes": "Byte-identical portable tool/config; manuscript PDFs are not bundled."
+      "source_files": [
+        {
+          "path": "Scripts/manuscript_20261009_v8/export_main_panels.py",
+          "sha256": "5f6acd666d633c7298a90b52e382311bc2190a68feefcdba5753f9a245c8c708"
+        }
+      ],
+      "published_sha256": "5f6acd666d633c7298a90b52e382311bc2190a68feefcdba5753f9a245c8c708",
+      "changes": "Byte-identical frozen portable exporter/configuration. Parent PDFs and fonts are not bundled."
     },
     {
       "published_file": "config/main_panel_export_config.json",
-      "source_file": "Scripts/manuscript_20261008_v7/main_panel_export_config.json",
-      "source_sha256": "11265d66ba35f207eca01ef9032ec7823eeab220970e0253dc43d3471700484b",
-      "published_sha256": "11265d66ba35f207eca01ef9032ec7823eeab220970e0253dc43d3471700484b",
-      "changes": "Byte-identical portable tool/config; manuscript PDFs are not bundled."
+      "source_files": [
+        {
+          "path": "Scripts/manuscript_20261009_v8/main_panel_export_config.json",
+          "sha256": "0e10ec33c531a810870483ece65221bb90ee7249a9e64870aee56197647db797"
+        }
+      ],
+      "published_sha256": "0e10ec33c531a810870483ece65221bb90ee7249a9e64870aee56197647db797",
+      "changes": "Byte-identical frozen portable exporter/configuration. Parent PDFs and fonts are not bundled."
+    },
+    {
+      "published_file": "analysis/derive_metadata.py",
+      "source_files": [
+        {
+          "path": "Scripts/nhb_round2_20261001/build_round2.py",
+          "sha256": "cc830efc804b1cb320228031e2f155f0313edc9fee99c9c9c4d6909d0c74a490"
+        }
+      ],
+      "published_sha256": "638d0c0d1e355a2aca503375f927ecbc702b24be24f320b1e2e46424c03634b0",
+      "changes": "Same accounting aggregations exposed for authorized derived tables, without raw-workbook access."
+    },
+    {
+      "published_file": "analysis/parameter_inference.py",
+      "source_files": [
+        {
+          "path": "Scripts/manuscript_20261009_v8/parameter_analysis.py",
+          "sha256": "a23290cf24b5acc3b9d2d30113de21035a41e8ccbf91ce4bf263d5720c6736bb"
+        }
+      ],
+      "published_sha256": "2fc19b53342eae8a1564230506a3c7db423d4a220628c6c7a38f870d6a1d8f09",
+      "changes": "Portable paths; optional original-workbook verification; default validated stimulus configuration export. Statistical calculations retained."
+    },
+    {
+      "published_file": "presentation/figures.py",
+      "source_files": [
+        {
+          "path": "Scripts/manuscript_20261007_v5/build_figures.py",
+          "sha256": "9767d69c20e05191fcca66284ac47ac8f7cf04af826c274b0ca34ca6311288dc"
+        },
+        {
+          "path": "Scripts/manuscript_20261009_v8/build_dataset_figure.py",
+          "sha256": "777366bb6edfca92ff459505e6709caa94753d5290e79d972a80bc5ede9ee403"
+        },
+        {
+          "path": "Scripts/manuscript_20261009_v8/build_workflow.py",
+          "sha256": "782827cee0b9bc70b87fa88004585c46a2ea52113a9a843075bbd7fb58ab483b"
+        },
+        {
+          "path": "Scripts/manuscript_20261009_v8/parameter_figures.py",
+          "sha256": "a8b0a4c46652073d5d4df4f4dbe18a0d00bf534ead8c01d41abf99319f51d2fc"
+        }
+      ],
+      "published_sha256": "d48cd4ed83794212fccc7650cecb406a9aad34401e012bd29b699efeea269413",
+      "changes": "Numeric rendering methods consolidated; current figure numbering, letter-only headings and geometry; no archive/PDF-copy code."
+    },
+    {
+      "published_file": "presentation/tables_core.py",
+      "source_files": [
+        {
+          "path": "Scripts/manuscript_20261007_v4/build_supplement_tables.py",
+          "sha256": "ba06f4a610a695088310131e730250d190ed735b28e44baa387dbad28c52cec6"
+        }
+      ],
+      "published_sha256": "1bfd9d80f5cb351456674418ff77ed190905bb15c87145d0e795ad52dd3e6455",
+      "changes": "Portable input/output paths and current manuscript labels. Table values/rendering statistics retained; historical run-only copy guards omitted."
+    },
+    {
+      "published_file": "presentation/full_tables.py",
+      "source_files": [
+        {
+          "path": "Scripts/manuscript_20261007_v4/full_saved_tables.py",
+          "sha256": "c217a0e0f62db7cb02ad67b5b8ceadb8dd2cfe59993baec5c4d5964d3a163da6"
+        }
+      ],
+      "published_sha256": "fe2a72554b36c8009f5ac7ab4ecdd52d65d0f25b59c94ec5c89d4dff8e675501",
+      "changes": "Portable input/output paths and current manuscript labels. Table values/rendering statistics retained; historical run-only copy guards omitted."
+    },
+    {
+      "published_file": "presentation/tables_extra.py",
+      "source_files": [
+        {
+          "path": "Scripts/manuscript_20261007_v5/build_supplement_tables.py",
+          "sha256": "d234a8eba3edbb620a8c641490d0cd6e5f38c6c2b7511425093a83ebc392b65d"
+        }
+      ],
+      "published_sha256": "5a70ea136b0a7e23bfaee1ea1ff428f55baeb1f6427dbbc159a2c0807e104a7d",
+      "changes": "Portable input/output paths and current manuscript labels. Table values/rendering statistics retained; historical run-only copy guards omitted."
+    },
+    {
+      "published_file": "presentation/tables_parameters.py",
+      "source_files": [
+        {
+          "path": "Scripts/manuscript_20261009_v8/parameter_tables.py",
+          "sha256": "81ad694c2504be734b4891249fe8362baab5c2da50e06a65e6a25fe6ecb90a3e"
+        }
+      ],
+      "published_sha256": "7495abaed04c20b905dcd3e769c36957924406913eb28d218a28580c1debe8cc",
+      "changes": "Portable input/output paths and current manuscript labels. Table values/rendering statistics retained; historical run-only copy guards omitted."
+    },
+    {
+      "published_file": "presentation/parameter_boxes.py",
+      "source_files": [
+        {
+          "path": "Scripts/manuscript_20261009_v8/parameter_figures.py",
+          "sha256": "a8b0a4c46652073d5d4df4f4dbe18a0d00bf534ead8c01d41abf99319f51d2fc"
+        }
+      ],
+      "published_sha256": "dbcb90068fab653c4de1d1661c0294cd507ce8db76972ac9255bc8c4eb4927b1",
+      "changes": "Portable input/output paths and current manuscript labels. Table values/rendering statistics retained; historical run-only copy guards omitted."
+    },
+    {
+      "published_file": "data/aggregate/parameter_boxstats.csv",
+      "source_files": [
+        {
+          "path": "Results/manuscript_20261009_v8/tables/parameter_boxstats.csv",
+          "sha256": "5c0958993a7fde5407eda8d47509fca2d76946285f6950227c9ece0f3106715e"
+        }
+      ],
+      "published_sha256": "aa22e637b6ee8e31678583719f4de74ec11ec6002b0865186dfc79e5365ec974",
+      "changes": "Aggregate CSV export. Individual flier values omitted from boxstats; no participant keys."
+    },
+    {
+      "published_file": "data/aggregate/parameter_paired_tests.csv",
+      "source_files": [
+        {
+          "path": "Results/manuscript_20261009_v8/tables/parameter_paired_tests.csv",
+          "sha256": "c0b47dc896dcb8adbb24acdaf4dd0bfb3bd57e35b399226251084dbee8e31c8b"
+        }
+      ],
+      "published_sha256": "3a8236550cf6c763cfc6e144bcab04e1871eba1029bfd4d7f1e9e0a9b21196d2",
+      "changes": "Aggregate CSV export. Individual flier values omitted from boxstats; no participant keys."
+    },
+    {
+      "published_file": "data/aggregate/parameter_omnibus_tests.csv",
+      "source_files": [
+        {
+          "path": "Results/manuscript_20261009_v8/tables/parameter_omnibus_tests.csv",
+          "sha256": "a2fc18d3c291cda480242932cdf8e862b71f0d34c7bf962b24e6e035076b6b76"
+        }
+      ],
+      "published_sha256": "704eba7d4dde566b6d2eb2a4c8362462295d57c93a056c0786059df5086cf304",
+      "changes": "Aggregate CSV export. Individual flier values omitted from boxstats; no participant keys."
+    },
+    {
+      "published_file": "data/parameter_configurations.csv",
+      "source_files": [
+        {
+          "path": "Results/manuscript_20261009_v8/tables/parameter_configurations.csv",
+          "sha256": "139b1df94f5ecb8767fc2b8aa52a35aa97216f56a6a3786e098c77e6c7176f13"
+        }
+      ],
+      "published_sha256": "139b1df94f5ecb8767fc2b8aa52a35aa97216f56a6a3786e098c77e6c7176f13",
+      "changes": "Stimulus-design metadata only; original workbook cell coordinates are not participant identifiers."
+    },
+    {
+      "published_file": "data/parameter_configuration_source_cells.csv",
+      "source_files": [
+        {
+          "path": "Results/manuscript_20261009_v8/tables/parameter_configuration_source_cells.csv",
+          "sha256": "ae9731ebf1d880d032a479014b1362ad9e2edbdf7c70725f7287d6339e2ddd99"
+        }
+      ],
+      "published_sha256": "ae9731ebf1d880d032a479014b1362ad9e2edbdf7c70725f7287d6339e2ddd99",
+      "changes": "Stimulus-design metadata only; original workbook cell coordinates are not participant identifiers."
     }
   ]
 }

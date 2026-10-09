@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """Export independent vector panels at 1:1 physical scale from supplied PDFs.
 
-Needs pypdf only. The JSON config explicitly defines native-mm clipping regions,
+Needs pypdf; optional whitespace trimming also requires Pillow and Poppler.
+The JSON config explicitly defines native-mm clipping regions,
 foreign heading/text exclusions and optional shared-key components. This is
-vector clipping/composition, NOT a statistical redraw. No image conversion or
-rescaling is performed. Content is clipped by PDF graphics operators (not merely
+vector clipping/composition, not a statistical redraw. Output is never rasterized
+or rescaled; optional temporary rendering only measures whitespace. Content is
+clipped by PDF graphics operators (not merely
 by setting a CropBox). Shared legends/country labels are copied at native scale.
 Inputs must be supplied by the user; this script contains no participant data.
 """
 from pathlib import Path
-import argparse,copy,csv,hashlib,json
+import argparse,copy,csv,hashlib,json,subprocess,tempfile
 from pypdf import PdfReader,PdfWriter,PageObject,Transformation
 from pypdf.generic import ContentStream,NameObject,RectangleObject
 MM=72/25.4
@@ -30,6 +32,23 @@ def filter_text(page,positions,prefixes):
         else:result.append((a,op))
     cs.operations=result;page[NameObject('/Contents')]=cs;return removed
 
+def trim_vector_page(page):
+    # Rendering locates white margins only. The retained content is vector and
+    # is translated, never sampled or rescaled.
+    from PIL import Image,ImageChops
+    with tempfile.TemporaryDirectory(prefix='panel_margin_') as temp:
+        folder=Path(temp);p=folder/'page.pdf';w=PdfWriter();w.add_page(page);w.write(p)
+        subprocess.run(['pdftoppm','-singlefile','-r','150','-png',str(p),str(folder/'page')],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.PIPE)
+        im=Image.open(folder/'page.png').convert('RGB');delta=ImageChops.difference(im,Image.new('RGB',im.size,'white')).convert('L');bb=delta.point(lambda v:255 if v>3 else 0).getbbox()
+        if bb is None:raise ValueError('Exported panel is blank')
+        pw,ph=float(page.mediabox.width),float(page.mediabox.height)
+        x0=max(0,bb[0]/im.width*pw-MM);x1=min(pw,bb[2]/im.width*pw+MM)
+        y0=max(0,(1-bb[3]/im.height)*ph-MM);y1=min(ph,(1-bb[1]/im.height)*ph+MM)
+        clipped=copy.copy(page);clipped.cropbox=RectangleObject([x0,y0,x1,y1]);clipped.trimbox=clipped.cropbox
+        trimmed=PageObject.create_blank_page(width=x1-x0,height=y1-y0)
+        trimmed.merge_transformed_page(clipped,Transformation().translate(-x0,-y0),expand=False)
+        return trimmed,{'retained_bounds_before_translation_mm':[x0/MM,y0/MM,x1/MM,y1/MM],'padding_mm':1.0,'scale':1.0,'method':'PNG used only for whitespace measurement; original vector content retained'}
+
 def export(input_dir,config_path,output_dir):
     cfg=json.loads(config_path.read_text());output_dir.mkdir(parents=True,exist_ok=True);readers={};records=[]
     for panel in cfg['panels']:
@@ -45,10 +64,12 @@ def export(input_dir,config_path,output_dir):
             page.cropbox=RectangleObject([x0*MM,y0*MM,x1*MM,y1*MM]);page.trimbox=page.cropbox
             dest.merge_transformed_page(page,Transformation().translate((atx-x0)*MM,(aty-y0)*MM),expand=False)
             parts.append({**comp,'removed_text_operations':removed,'scale':1.0})
+        trim=None
+        if cfg.get('trim_whitespace',False):dest,trim=trim_vector_page(dest)
         path=output_dir/panel['file'];path.parent.mkdir(parents=True,exist_ok=True);writer=PdfWriter();writer.add_page(dest);writer.pages[0].compress_content_streams();writer.add_metadata({'/Title':panel['id'],'/Subject':'Native-scale vector panel extraction; exact parent clipping and shared-key composition; no re-estimation'});writer.write(path)
         output=PdfReader(path).pages[0];assert not list(output.images)
         fonts=[str(f.get_object().get('/BaseFont')) for f in output['/Resources'].get('/Font',{}).values()]
-        records.append({'id':panel['id'],'file':str(path.relative_to(output_dir)),'source_pdf':name,'source_sha256':sha(src),'sha256':sha(path),'bytes':path.stat().st_size,'width_mm':float(output.mediabox.width)/MM,'height_mm':float(output.mediabox.height)/MM,'native_scale':1.0,'raster_images':0,'fonts':sorted(set(fonts)),'method':'vector clipping with text-operation exclusions; optional 1:1 shared-component composition','components':parts,'notes':panel.get('notes','')})
+        records.append({'id':panel['id'],'file':str(path.relative_to(output_dir)),'source_pdf':name,'source_sha256':sha(src),'sha256':sha(path),'bytes':path.stat().st_size,'width_mm':float(output.mediabox.width)/MM,'height_mm':float(output.mediabox.height)/MM,'native_scale':1.0,'raster_images':0,'fonts':sorted(set(fonts)),'method':'vector clipping with text-operation exclusions; optional 1:1 shared-component composition','components_before_whitespace_trim':parts,'whitespace_trim':trim,'notes':panel.get('notes','')})
         print(panel['id'],flush=True)
     manifest={'status':'pending_visual_QA','export_count':len(records),'config_sha256':sha(config_path),'script_sha256':sha(__file__),'native_scale_all':1.0,'no_rasterisation':True,'exports':records}
     (output_dir/'panel_manifest.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n')

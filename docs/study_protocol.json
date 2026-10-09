@@ -1,0 +1,39 @@
+{
+  "source_title": "Perceived risk evolution in automated driving",
+  "source_url": "https://arxiv.org/abs/2508.19121v2",
+  "source_version": "v2",
+  "recruitment_platform": "Prolific",
+  "recruitment_dates": "11 July\u201319 September 2023",
+  "procedure_components": [
+    "Consent and eligibility",
+    "Background information",
+    "Six pre-task attitude items",
+    "Practice",
+    "Video task",
+    "Six post-task attitude items"
+  ],
+  "preparation_order": "No finer within-preparation ordering is inferred",
+  "event_library": 105,
+  "events_per_person": 16,
+  "events_per_scenario": 4,
+  "clips_seconds": 6,
+  "ratings_per_person": 84,
+  "rating_focus": "Most dangerous moment within the preceding clip",
+  "risk_instructions": "Operated risk scores 1\u201310",
+  "post_attitude_scale": "0\u201310",
+  "source_participant_counts": {
+    "started": 2341,
+    "incomplete_or_under_504_seconds": 177,
+    "retained": 2164
+  },
+  "coding_clarification": "Video-risk zero means no operation (author clarification); attitude zero remains a valid score",
+  "derived_response_counts": {
+    "assigned_clip_slots": 181776,
+    "operated_ratings": 179966,
+    "no_operation_zeros": 1810,
+    "assigned_person_events": 34624,
+    "usable_event_means": 34566,
+    "all_no_operation_events": 58
+  },
+  "scope": "Compact author-curated protocol metadata for workflow rendering; not participant records or source-paper full text."
+}

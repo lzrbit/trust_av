@@ -1,0 +1,106 @@
+scenario,display_scenario,event_key,source_sheet,source_row,source_event_name,factor1_source_header,factor1_value,factor2_source_header,factor2_value,factor3_source_header,factor3_value,lc_distance_conflict,stored_ax_n_conflict
+B1,LC,B1_E01,MAL,2,MAL_1,lateral categories,1m/s,ACC categories,cautious,neighbour vehicle merging distance (m),5,False,False
+B1,LC,B1_E02,MAL,3,MAL_2,lateral categories,1m/s,ACC categories,cautious,neighbour vehicle merging distance (m),15,False,False
+B1,LC,B1_E03,MAL,4,MAL_3,lateral categories,1m/s,ACC categories,mild,neighbour vehicle merging distance (m),5,False,False
+B1,LC,B1_E04,MAL,5,MAL_4,lateral categories,1m/s,ACC categories,mild,neighbour vehicle merging distance (m),15,False,False
+B1,LC,B1_E05,MAL,6,MAL_5,lateral categories,1m/s,ACC categories,aggressive,neighbour vehicle merging distance (m),5,False,False
+B1,LC,B1_E06,MAL,7,MAL_6,lateral categories,1m/s,ACC categories,aggressive,neighbour vehicle merging distance (m),15,False,False
+B1,LC,B1_E07,MAL,8,MAL_7,lateral categories,3m/s,ACC categories,cautious,neighbour vehicle merging distance (m),5,False,False
+B1,LC,B1_E08,MAL,9,MAL_8,lateral categories,3m/s,ACC categories,cautious,neighbour vehicle merging distance (m),15,False,False
+B1,LC,B1_E09,MAL,10,MAL_9,lateral categories,3m/s,ACC categories,mild,neighbour vehicle merging distance (m),5,False,False
+B1,LC,B1_E10,MAL,11,MAL_10,lateral categories,3m/s,ACC categories,mild,neighbour vehicle merging distance (m),15,False,False
+B1,LC,B1_E11,MAL,12,MAL_11,lateral categories,3m/s,ACC categories,aggressive,neighbour vehicle merging distance (m),5,False,False
+B1,LC,B1_E12,MAL,13,MAL_12,lateral categories,3m/s,ACC categories,aggressive,neighbour vehicle merging distance (m),15,False,False
+B1,LC,B1_E13,MAL,14,MAL_13,lateral categories,Fragmented,ACC categories,cautious,neighbour vehicle merging distance (m),5,False,False
+B1,LC,B1_E14,MAL,15,MAL_14,lateral categories,Fragmented,ACC categories,cautious,neighbour vehicle merging distance (m),15,False,False
+B1,LC,B1_E15,MAL,16,MAL_15,lateral categories,Fragmented,ACC categories,mild,neighbour vehicle merging distance (m),5,False,False
+B1,LC,B1_E16,MAL,17,MAL_16,lateral categories,Fragmented,ACC categories,mild,neighbour vehicle merging distance (m),15,False,False
+B1,LC,B1_E17,MAL,18,MAL_17,lateral categories,Fragmented,ACC categories,aggressive,neighbour vehicle merging distance (m),5,False,False
+B1,LC,B1_E18,MAL,19,MAL_18,lateral categories,Fragmented,ACC categories,aggressive,neighbour vehicle merging distance (m),15,False,False
+B1,LC,B1_E19,MAL,20,MAL_19,lateral categories,Abortion,ACC categories,cautious,neighbour vehicle merging distance (m),5,True,False
+B1,LC,B1_E20,MAL,21,MAL_20,lateral categories,Abortion,ACC categories,cautious,neighbour vehicle merging distance (m),15,True,False
+B1,LC,B1_E21,MAL,22,MAL_21,lateral categories,Abortion,ACC categories,mild,neighbour vehicle merging distance (m),5,True,False
+B1,LC,B1_E22,MAL,23,MAL_22,lateral categories,Abortion,ACC categories,mild,neighbour vehicle merging distance (m),15,True,False
+B1,LC,B1_E23,MAL,24,MAL_23,lateral categories,Abortion,ACC categories,aggressive,neighbour vehicle merging distance (m),5,True,False
+B1,LC,B1_E24,MAL,25,MAL_24,lateral categories,Abortion,ACC categories,aggressive,neighbour vehicle merging distance (m),15,True,False
+B2,SVM,B2_E01,AMB,2,AMB_1,speed(km/h),80,braking intensity of the leading vehicle (m/s2),-2,ego vehicle merging distance (m),5,False,False
+B2,SVM,B2_E02,AMB,3,AMB_2,speed(km/h),80,braking intensity of the leading vehicle (m/s2),-2,ego vehicle merging distance (m),15,False,False
+B2,SVM,B2_E03,AMB,4,AMB_3,speed(km/h),80,braking intensity of the leading vehicle (m/s2),-2,ego vehicle merging distance (m),25,False,False
+B2,SVM,B2_E04,AMB,5,AMB_4,speed(km/h),80,braking intensity of the leading vehicle (m/s2),-5,ego vehicle merging distance (m),5,False,False
+B2,SVM,B2_E05,AMB,6,AMB_5,speed(km/h),80,braking intensity of the leading vehicle (m/s2),-5,ego vehicle merging distance (m),15,False,False
+B2,SVM,B2_E06,AMB,7,AMB_6,speed(km/h),80,braking intensity of the leading vehicle (m/s2),-5,ego vehicle merging distance (m),25,False,False
+B2,SVM,B2_E07,AMB,8,AMB_7,speed(km/h),80,braking intensity of the leading vehicle (m/s2),-8,ego vehicle merging distance (m),5,False,False
+B2,SVM,B2_E08,AMB,9,AMB_8,speed(km/h),80,braking intensity of the leading vehicle (m/s2),-8,ego vehicle merging distance (m),15,False,False
+B2,SVM,B2_E09,AMB,10,AMB_9,speed(km/h),80,braking intensity of the leading vehicle (m/s2),-8,ego vehicle merging distance (m),25,False,False
+B2,SVM,B2_E10,AMB,11,AMB_10,speed(km/h),100,braking intensity of the leading vehicle (m/s2),-2,ego vehicle merging distance (m),5,False,False
+B2,SVM,B2_E11,AMB,12,AMB_11,speed(km/h),100,braking intensity of the leading vehicle (m/s2),-2,ego vehicle merging distance (m),15,False,False
+B2,SVM,B2_E12,AMB,13,AMB_12,speed(km/h),100,braking intensity of the leading vehicle (m/s2),-2,ego vehicle merging distance (m),25,False,False
+B2,SVM,B2_E13,AMB,14,AMB_13,speed(km/h),100,braking intensity of the leading vehicle (m/s2),-5,ego vehicle merging distance (m),5,False,False
+B2,SVM,B2_E14,AMB,15,AMB_14,speed(km/h),100,braking intensity of the leading vehicle (m/s2),-5,ego vehicle merging distance (m),15,False,False
+B2,SVM,B2_E15,AMB,16,AMB_15,speed(km/h),100,braking intensity of the leading vehicle (m/s2),-5,ego vehicle merging distance (m),25,False,False
+B2,SVM,B2_E16,AMB,17,AMB_16,speed(km/h),100,braking intensity of the leading vehicle (m/s2),-8,ego vehicle merging distance (m),5,False,False
+B2,SVM,B2_E17,AMB,18,AMB_17,speed(km/h),100,braking intensity of the leading vehicle (m/s2),-8,ego vehicle merging distance (m),15,False,False
+B2,SVM,B2_E18,AMB,19,AMB_18,speed(km/h),100,braking intensity of the leading vehicle (m/s2),-8,ego vehicle merging distance (m),25,False,False
+B2,SVM,B2_E19,AMB,20,AMB_19,speed(km/h),120,braking intensity of the leading vehicle (m/s2),-2,ego vehicle merging distance (m),5,False,False
+B2,SVM,B2_E20,AMB,21,AMB_20,speed(km/h),120,braking intensity of the leading vehicle (m/s2),-2,ego vehicle merging distance (m),15,False,False
+B2,SVM,B2_E21,AMB,22,AMB_21,speed(km/h),120,braking intensity of the leading vehicle (m/s2),-2,ego vehicle merging distance (m),25,False,False
+B2,SVM,B2_E22,AMB,23,AMB_22,speed(km/h),120,braking intensity of the leading vehicle (m/s2),-5,ego vehicle merging distance (m),5,False,False
+B2,SVM,B2_E23,AMB,24,AMB_23,speed(km/h),120,braking intensity of the leading vehicle (m/s2),-5,ego vehicle merging distance (m),15,False,False
+B2,SVM,B2_E24,AMB,25,AMB_24,speed(km/h),120,braking intensity of the leading vehicle (m/s2),-5,ego vehicle merging distance (m),25,False,False
+B2,SVM,B2_E25,AMB,26,AMB_25,speed(km/h),120,braking intensity of the leading vehicle (m/s2),-8,ego vehicle merging distance (m),5,False,False
+B2,SVM,B2_E26,AMB,27,AMB_26,speed(km/h),120,braking intensity of the leading vehicle (m/s2),-8,ego vehicle merging distance (m),15,False,False
+B2,SVM,B2_E27,AMB,28,AMB_27,speed(km/h),120,braking intensity of the leading vehicle (m/s2),-8,ego vehicle merging distance (m),25,False,False
+B3,HB,B3_E01,HB,2,HB_1,speed(km/h),80,braking intensity (m/s2),-2,initial braking distance (m),5,False,False
+B3,HB,B3_E02,HB,3,HB_2,speed(km/h),80,braking intensity (m/s2),-2,initial braking distance (m),15,False,False
+B3,HB,B3_E03,HB,4,HB_3,speed(km/h),80,braking intensity (m/s2),-2,initial braking distance (m),25,False,False
+B3,HB,B3_E04,HB,5,HB_4,speed(km/h),80,braking intensity (m/s2),-5,initial braking distance (m),5,False,False
+B3,HB,B3_E05,HB,6,HB_5,speed(km/h),80,braking intensity (m/s2),-5,initial braking distance (m),15,False,False
+B3,HB,B3_E06,HB,7,HB_6,speed(km/h),80,braking intensity (m/s2),-5,initial braking distance (m),25,False,False
+B3,HB,B3_E07,HB,8,HB_7,speed(km/h),80,braking intensity (m/s2),-8,initial braking distance (m),5,False,True
+B3,HB,B3_E08,HB,9,HB_8,speed(km/h),80,braking intensity (m/s2),-8,initial braking distance (m),15,False,True
+B3,HB,B3_E09,HB,10,HB_9,speed(km/h),80,braking intensity (m/s2),-8,initial braking distance (m),25,False,True
+B3,HB,B3_E10,HB,11,HB_10,speed(km/h),100,braking intensity (m/s2),-2,initial braking distance (m),5,False,False
+B3,HB,B3_E11,HB,12,HB_11,speed(km/h),100,braking intensity (m/s2),-2,initial braking distance (m),15,False,False
+B3,HB,B3_E12,HB,13,HB_12,speed(km/h),100,braking intensity (m/s2),-2,initial braking distance (m),25,False,False
+B3,HB,B3_E13,HB,14,HB_13,speed(km/h),100,braking intensity (m/s2),-5,initial braking distance (m),5,False,False
+B3,HB,B3_E14,HB,15,HB_14,speed(km/h),100,braking intensity (m/s2),-5,initial braking distance (m),15,False,False
+B3,HB,B3_E15,HB,16,HB_15,speed(km/h),100,braking intensity (m/s2),-5,initial braking distance (m),25,False,False
+B3,HB,B3_E16,HB,17,HB_16,speed(km/h),100,braking intensity (m/s2),-8,initial braking distance (m),5,False,False
+B3,HB,B3_E17,HB,18,HB_17,speed(km/h),100,braking intensity (m/s2),-8,initial braking distance (m),15,False,False
+B3,HB,B3_E18,HB,19,HB_18,speed(km/h),100,braking intensity (m/s2),-8,initial braking distance (m),25,False,False
+B3,HB,B3_E19,HB,20,HB_19,speed(km/h),120,braking intensity (m/s2),-2,initial braking distance (m),5,False,False
+B3,HB,B3_E20,HB,21,HB_20,speed(km/h),120,braking intensity (m/s2),-2,initial braking distance (m),15,False,False
+B3,HB,B3_E21,HB,22,HB_21,speed(km/h),120,braking intensity (m/s2),-2,initial braking distance (m),25,False,False
+B3,HB,B3_E22,HB,23,HB_22,speed(km/h),120,braking intensity (m/s2),-5,initial braking distance (m),5,False,False
+B3,HB,B3_E23,HB,24,HB_23,speed(km/h),120,braking intensity (m/s2),-5,initial braking distance (m),15,False,False
+B3,HB,B3_E24,HB,25,HB_24,speed(km/h),120,braking intensity (m/s2),-5,initial braking distance (m),25,False,False
+B3,HB,B3_E25,HB,26,HB_25,speed(km/h),120,braking intensity (m/s2),-8,initial braking distance (m),5,False,False
+B3,HB,B3_E26,HB,27,HB_26,speed(km/h),120,braking intensity (m/s2),-8,initial braking distance (m),15,False,False
+B3,HB,B3_E27,HB,28,HB_27,speed(km/h),120,braking intensity (m/s2),-8,initial braking distance (m),25,False,False
+B4,MB,B4_E01,MB,2,MB_1,speed(km/h),80,braking intensity (m/s2),-2,merging distance (m),5,False,False
+B4,MB,B4_E02,MB,3,MB_2,speed(km/h),80,braking intensity (m/s2),-2,merging distance (m),15,False,False
+B4,MB,B4_E03,MB,4,MB_3,speed(km/h),80,braking intensity (m/s2),-2,merging distance (m),25,False,False
+B4,MB,B4_E04,MB,5,MB_4,speed(km/h),80,braking intensity (m/s2),-5,merging distance (m),5,False,False
+B4,MB,B4_E05,MB,6,MB_5,speed(km/h),80,braking intensity (m/s2),-5,merging distance (m),15,False,False
+B4,MB,B4_E06,MB,7,MB_6,speed(km/h),80,braking intensity (m/s2),-5,merging distance (m),25,False,False
+B4,MB,B4_E07,MB,8,MB_7,speed(km/h),80,braking intensity (m/s2),-8,merging distance (m),5,False,False
+B4,MB,B4_E08,MB,9,MB_8,speed(km/h),80,braking intensity (m/s2),-8,merging distance (m),15,False,False
+B4,MB,B4_E09,MB,10,MB_9,speed(km/h),80,braking intensity (m/s2),-8,merging distance (m),25,False,False
+B4,MB,B4_E10,MB,11,MB_10,speed(km/h),100,braking intensity (m/s2),-2,merging distance (m),5,False,False
+B4,MB,B4_E11,MB,12,MB_11,speed(km/h),100,braking intensity (m/s2),-2,merging distance (m),15,False,False
+B4,MB,B4_E12,MB,13,MB_12,speed(km/h),100,braking intensity (m/s2),-2,merging distance (m),25,False,False
+B4,MB,B4_E13,MB,14,MB_13,speed(km/h),100,braking intensity (m/s2),-5,merging distance (m),5,False,False
+B4,MB,B4_E14,MB,15,MB_14,speed(km/h),100,braking intensity (m/s2),-5,merging distance (m),15,False,False
+B4,MB,B4_E15,MB,16,MB_15,speed(km/h),100,braking intensity (m/s2),-5,merging distance (m),25,False,False
+B4,MB,B4_E16,MB,17,MB_16,speed(km/h),100,braking intensity (m/s2),-8,merging distance (m),5,False,False
+B4,MB,B4_E17,MB,18,MB_17,speed(km/h),100,braking intensity (m/s2),-8,merging distance (m),15,False,False
+B4,MB,B4_E18,MB,19,MB_18,speed(km/h),100,braking intensity (m/s2),-8,merging distance (m),25,False,False
+B4,MB,B4_E19,MB,20,MB_19,speed(km/h),120,braking intensity (m/s2),-2,merging distance (m),5,False,False
+B4,MB,B4_E20,MB,21,MB_20,speed(km/h),120,braking intensity (m/s2),-2,merging distance (m),15,False,False
+B4,MB,B4_E21,MB,22,MB_21,speed(km/h),120,braking intensity (m/s2),-2,merging distance (m),25,False,False
+B4,MB,B4_E22,MB,23,MB_22,speed(km/h),120,braking intensity (m/s2),-5,merging distance (m),5,False,False
+B4,MB,B4_E23,MB,24,MB_23,speed(km/h),120,braking intensity (m/s2),-5,merging distance (m),15,False,False
+B4,MB,B4_E24,MB,25,MB_24,speed(km/h),120,braking intensity (m/s2),-5,merging distance (m),25,False,False
+B4,MB,B4_E25,MB,26,MB_25,speed(km/h),120,braking intensity (m/s2),-8,merging distance (m),5,False,False
+B4,MB,B4_E26,MB,27,MB_26,speed(km/h),120,braking intensity (m/s2),-8,merging distance (m),15,False,False
+B4,MB,B4_E27,MB,28,MB_27,speed(km/h),120,braking intensity (m/s2),-8,merging distance (m),25,False,False

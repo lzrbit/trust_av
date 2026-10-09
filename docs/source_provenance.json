@@ -177,7 +177,7 @@
           "sha256": "a8b0a4c46652073d5d4df4f4dbe18a0d00bf534ead8c01d41abf99319f51d2fc"
         }
       ],
-      "published_sha256": "d48cd4ed83794212fccc7650cecb406a9aad34401e012bd29b699efeea269413",
+      "published_sha256": "92ffb02fb6d6c7c6ac0652d77caa7d580cae0c20659c65901423750a3944bfad",
       "changes": "Numeric rendering methods consolidated; current figure numbering, letter-only headings and geometry; no archive/PDF-copy code."
     },
     {
@@ -208,10 +208,14 @@
         {
           "path": "Scripts/manuscript_20261007_v5/build_supplement_tables.py",
           "sha256": "d234a8eba3edbb620a8c641490d0cd6e5f38c6c2b7511425093a83ebc392b65d"
+        },
+        {
+          "path": "Scripts/manuscript_20261009_v9/build_v9_tables.py",
+          "sha256": "6ee12a82ea136de132fd635ae0062f1bf27ed5f39c7f835ca5e74ca45057d25e"
         }
       ],
-      "published_sha256": "5a70ea136b0a7e23bfaee1ea1ff428f55baeb1f6427dbbc159a2c0807e104a7d",
-      "changes": "Portable input/output paths and current manuscript labels. Table values/rendering statistics retained; historical run-only copy guards omitted."
+      "published_sha256": "df108463760694a45021ca8119684dac62b7f94cc5146e234509cf96131c7d6c",
+      "changes": "Portable input/output paths and current manuscript labels; table21/table22 formatters added for Supplementary Tables S21-S22. Table values/rendering statistics retained."
     },
     {
       "published_file": "presentation/tables_parameters.py",
@@ -289,6 +293,127 @@
       ],
       "published_sha256": "ae9731ebf1d880d032a479014b1362ad9e2edbdf7c70725f7287d6339e2ddd99",
       "changes": "Stimulus-design metadata only; original workbook cell coordinates are not participant identifiers."
+    },
+    {
+      "published_file": "analysis/analyse_scenario_family.py",
+      "source_files": [
+        {
+          "path": "Scripts/manuscript_20261009_v9/analyse_scenario_family_trust_contrast.py",
+          "sha256": "31ee439f435a21522a36240c0f498734ff937600e07b1b319c990b56adc5b5f2"
+        }
+      ],
+      "published_sha256": "9d2e8da877d85ebf2aaf3483a2ee2bd0d3cfb7aab20cb1d50ef1f8c04e306e53",
+      "changes": "Portable paths via settings.py and config/scenario_family.json; fold constants imported from analyse_dynamics; identical estimators, seeds and validation asserts. Output files renamed with the scenario_family_ prefix."
+    },
+    {
+      "published_file": "config/scenario_family.json",
+      "source_files": [
+        {
+          "path": "Results/manuscript_20261009_v9/reports/scenario_family_trust_contrast_plan.json",
+          "sha256": "75ac1e1aa0ff210769066e4a9ce689b7cd3d22f85fbebe1282f283b869648b9a"
+        }
+      ],
+      "published_sha256": "6d714f479267dbc37bdaec1d9ae748362d8aba5bc02a8fc871218a511e5e23a9",
+      "changes": "Frozen specification restated without repository-external source hashes; formulas and multiplicity families unchanged."
+    },
+    {
+      "published_file": "docs/figure_s1_provenance.md",
+      "source_files": [
+        {
+          "path": "maintenance/20261009_v9/overleaf_received/figure_s_workflow_author_c3977aa.pdf",
+          "sha256": "cf5ee21124bc499a75fc9e0db6e40332b88a3657f66ee7f852b94c4e15640f31"
+        }
+      ],
+      "published_sha256": "e8d6cc1f498a896f552943a5882dc4ef473f4381f3a8d31a0c5cd758ae5d5657",
+      "changes": "Provenance note for the author-supplied Supplementary Fig. S1 schematic; the artwork itself is not distributed here."
+    },
+    {
+      "published_file": "data/aggregate/scenario_family/scenario_family_direction_classification.csv",
+      "source_files": [
+        {
+          "path": "Results/manuscript_20261009_v9/tables/trust_change_direction_classification.csv",
+          "sha256": "b9ecc9709fd744c6c068069dd48861e6d916c6026854f1488567a57edffaa9b9"
+        }
+      ],
+      "published_sha256": "b9ecc9709fd744c6c068069dd48861e6d916c6026854f1488567a57edffaa9b9",
+      "changes": "Aggregate CSV export of the v9 scenario-family and change-direction results; no participant keys."
+    },
+    {
+      "published_file": "data/aggregate/scenario_family/scenario_family_rank_relation_transitions.csv",
+      "source_files": [
+        {
+          "path": "Results/manuscript_20261009_v9/tables/trust_rank_relation_transitions.csv",
+          "sha256": "4138a91e6ec899d53ff24ddfdd03a069a09f00558ecf76af3859e086e657f4a6"
+        }
+      ],
+      "published_sha256": "4138a91e6ec899d53ff24ddfdd03a069a09f00558ecf76af3859e086e657f4a6",
+      "changes": "Aggregate CSV export of the v9 scenario-family and change-direction results; no participant keys."
+    },
+    {
+      "published_file": "data/aggregate/scenario_family/scenario_family_D_coefficients.csv",
+      "source_files": [
+        {
+          "path": "Results/manuscript_20261009_v9/tables/family_D_model_coefficients.csv",
+          "sha256": "674ccc2e212cd38507999d06f66362597b4d0e9f92246749ed8d181a7062d0d6"
+        }
+      ],
+      "published_sha256": "674ccc2e212cd38507999d06f66362597b4d0e9f92246749ed8d181a7062d0d6",
+      "changes": "Aggregate CSV export of the v9 scenario-family and change-direction results; no participant keys."
+    },
+    {
+      "published_file": "data/aggregate/scenario_family/scenario_family_D_equality_tests.csv",
+      "source_files": [
+        {
+          "path": "Results/manuscript_20261009_v9/tables/family_D_model_equality_tests.csv",
+          "sha256": "054c9c80503498845ee20849564865357a09a4055af49f473e86e35d0ff7a89d"
+        }
+      ],
+      "published_sha256": "054c9c80503498845ee20849564865357a09a4055af49f473e86e35d0ff7a89d",
+      "changes": "Aggregate CSV export of the v9 scenario-family and change-direction results; no participant keys."
+    },
+    {
+      "published_file": "data/aggregate/scenario_family/scenario_family_post_trust_coefficients.csv",
+      "source_files": [
+        {
+          "path": "Results/manuscript_20261009_v9/tables/family_post_trust_coefficients.csv",
+          "sha256": "c1e607dba7e243f51828220a3611d4a4cc0106b92995cad07464471cb1dbc685"
+        }
+      ],
+      "published_sha256": "c1e607dba7e243f51828220a3611d4a4cc0106b92995cad07464471cb1dbc685",
+      "changes": "Aggregate CSV export of the v9 scenario-family and change-direction results; no participant keys."
+    },
+    {
+      "published_file": "data/aggregate/scenario_family/scenario_family_post_trust_cross_outcome_contrasts.csv",
+      "source_files": [
+        {
+          "path": "Results/manuscript_20261009_v9/tables/family_post_trust_cross_outcome_contrasts.csv",
+          "sha256": "ac6a2e2f62a8fa3c2926a062dd0c0299356e5342b2a51a39e292c84d0978aeee"
+        }
+      ],
+      "published_sha256": "ac6a2e2f62a8fa3c2926a062dd0c0299356e5342b2a51a39e292c84d0978aeee",
+      "changes": "Aggregate CSV export of the v9 scenario-family and change-direction results; no participant keys."
+    },
+    {
+      "published_file": "data/aggregate/scenario_family/scenario_family_pooled_refit.csv",
+      "source_files": [
+        {
+          "path": "Results/manuscript_20261009_v9/tables/pooled_D_model_on_family_rows.csv",
+          "sha256": "ff4f003300cfd5346bb7f0223f539834b5b2653e5ab07a7961fc426635e37007"
+        }
+      ],
+      "published_sha256": "ff4f003300cfd5346bb7f0223f539834b5b2653e5ab07a7961fc426635e37007",
+      "changes": "Aggregate CSV export of the v9 scenario-family and change-direction results; no participant keys."
+    },
+    {
+      "published_file": "data/aggregate/scenario_family/scenario_family_feature_correlations.csv",
+      "source_files": [
+        {
+          "path": "Results/manuscript_20261009_v9/tables/family_feature_correlations.csv",
+          "sha256": "955ef710af67f943c48f4353eaef38cfbf298ae183dd0f815d2c9b270c51af41"
+        }
+      ],
+      "published_sha256": "955ef710af67f943c48f4353eaef38cfbf298ae183dd0f815d2c9b270c51af41",
+      "changes": "Aggregate CSV export of the v9 scenario-family and change-direction results; no participant keys."
     }
   ]
 }

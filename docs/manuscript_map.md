@@ -1,6 +1,6 @@
 # Manuscript map
 
-Generated from `config/manuscript_map.json`. Paths use the private workspace unless marked `data` or `repository`. Figure commands draw from numeric inputs. After all parents are rendered, `python manuscript.py panels` exports all 38 main panels with the frozen vector clipping/composition rules. Individual-record inputs require authorization; see the JSON access fields.
+Generated from `config/manuscript_map.json`. Paths use the private workspace unless marked `data` or `repository`. Figure commands draw from numeric inputs. After all parents are rendered, `python manuscript.py panels` exports all 38 main panels with the frozen vector clipping/composition rules. Individual-record inputs require authorization; see the JSON access fields. Supplementary Fig. S1 is author-supplied artwork (see `docs/figure_s1_provenance.md`).
 
 | ID | Producer / command | Numeric inputs | Output |
 |---|---|---|---|
@@ -42,8 +42,7 @@ Generated from `config/manuscript_map.json`. Paths use the private workspace unl
 | Fig5e | `python manuscript.py figures Fig5`<br>`presentation.figures.FigureBuilder.trust`<br>`python manuscript.py panels` | `workspace/outputs/core/tables/a2_trust_cv_increment.csv`<br>`workspace/outputs/core/tables/a2_shape_increment_multiplicity_sensitivity.csv` | `outputs/presentation/figures/figure_5_trust.pdf`<br>`outputs/presentation/panels/Fig5/Fig5e.pdf` |
 | Fig5f | `python manuscript.py figures Fig5`<br>`presentation.figures.FigureBuilder.trust`<br>`python manuscript.py panels` | `workspace/outputs/core/tables/m2_performance.csv` | `outputs/presentation/figures/figure_5_trust.pdf`<br>`outputs/presentation/panels/Fig5/Fig5f.pdf` |
 | Fig5g | `python manuscript.py figures Fig5`<br>`presentation.figures.FigureBuilder.trust`<br>`python manuscript.py panels` | `workspace/outputs/core/tables/m2_person_increment.csv` | `outputs/presentation/figures/figure_5_trust.pdf`<br>`outputs/presentation/panels/Fig5/Fig5g.pdf` |
-| FigS1a | `python manuscript.py figures FigS1`<br>`presentation.figures.FigureBuilder.workflow` | `repository/docs/study_protocol.json` | `outputs/presentation/figures/figure_s_workflow.pdf` |
-| FigS1b | `python manuscript.py figures FigS1`<br>`presentation.figures.FigureBuilder.workflow` | `workspace/outputs/core/tables/d2_sample_flow.csv`<br>`workspace/outputs/core/tables/d2_risk_missingness.csv` | `outputs/presentation/figures/figure_s_workflow.pdf` |
+| FigS1 | `see docs/figure_s1_provenance.md`<br>`author-supplied vector artwork (experimental pipeline schematic); not rendered by this repository` | `repository/docs/figure_s1_provenance.md` | `outputs/presentation/figures/figure_s_workflow.pdf` |
 | FigS2 | `python manuscript.py figures FigS2`<br>`presentation.figures.FigureBuilder.demographic_single` | `data/participants.parquet`<br>`workspace/outputs/core/tables/d2_demographics.csv` | `outputs/presentation/figures/figure_s_age.pdf` |
 | FigS3 | `python manuscript.py figures FigS3`<br>`presentation.figures.FigureBuilder.demographic_single` | `data/participants.parquet`<br>`workspace/outputs/core/tables/d2_demographics.csv` | `outputs/presentation/figures/figure_s_experience.pdf` |
 | FigS4 | `python manuscript.py figures FigS4`<br>`presentation.figures.FigureBuilder.coverage_single` | `workspace/outputs/core/tables/a2_position_means.csv` | `outputs/presentation/figures/figure_s_coverage.pdf` |
@@ -135,6 +134,8 @@ Generated from `config/manuscript_map.json`. Paths use the private workspace unl
 | TableS18 | `python manuscript.py tables`<br>`presentation.tables_parameters.build_tables` | `workspace/outputs/parameter_inference/tables/parameter_configurations.csv` | `outputs/presentation/tables/table_s18_configuration_hb.tex` |
 | TableS19 | `python manuscript.py tables`<br>`presentation.tables_parameters.build_tables` | `workspace/outputs/parameter_inference/tables/parameter_configurations.csv` | `outputs/presentation/tables/table_s19_configuration_mb.tex` |
 | TableS20 | `python manuscript.py tables`<br>`presentation.tables_parameters.build_tables` | `workspace/outputs/parameter_inference/tables/parameter_omnibus_tests.csv` | `outputs/presentation/tables/table_s20_parameter_omnibus.tex` |
+| TableS21 | `python manuscript.py tables`<br>`presentation.tables.build` | `workspace/outputs/parameters/tables/scenario_family_direction_classification.csv`<br>`workspace/outputs/parameters/tables/scenario_family_rank_relation_transitions.csv` | `outputs/presentation/tables/table_s21_change_direction.tex` |
+| TableS22 | `python manuscript.py tables`<br>`presentation.tables.build` | `workspace/outputs/parameters/tables/scenario_family_D_coefficients.csv`<br>`workspace/outputs/parameters/tables/scenario_family_D_equality_tests.csv`<br>`workspace/outputs/parameters/tables/scenario_family_post_trust_coefficients.csv`<br>`workspace/outputs/parameters/tables/scenario_family_post_trust_cross_outcome_contrasts.csv`<br>`workspace/outputs/parameters/tables/scenario_family_pooled_refit.csv` | `outputs/presentation/tables/table_s22_scenario_family_trust.tex` |
 
 ## Analysis stages
 
@@ -154,6 +155,7 @@ Generated from `config/manuscript_map.json`. Paths use the private workspace unl
 | `prepost` | dynamics | `outputs/prepost` |
 | `parameters` | Authorized inputs listed in the JSON registry | `outputs/parameters` |
 | `differential-trust` | dynamics | `outputs/parameters` |
+| `scenario-family` | dynamics, differential-trust | `outputs/parameters` |
 | `whatif` | risk-models | `outputs/whatif` |
 | `aggregate-figures` | Authorized inputs listed in the JSON registry | `outputs/public_aggregate_figures` |
 | `parameter-inference` | parameters | `outputs/parameter_inference` |

@@ -27,7 +27,7 @@ def check(config,workspace,data,check_inputs=False,check_outputs=False,manuscrip
             p={'workspace':workspace,'data':data,'repository':REPO}[q['base']]/q['path']
             dependencies[str(p)]={'relative':q['base']+'/'+q['path'],'producer':q.get('producer')}
             if check_inputs and not p.is_file() and q.get('producer')!='generated_during_render':errors.append(r['id']+': missing '+q['base']+'/'+q['path'])
-        if check_outputs and not (workspace/r['output']).is_file():errors.append(r['id']+': missing output '+r['output'])
+        if check_outputs and r['kind']!='supplement_figure_external' and not (workspace/r['output']).is_file():errors.append(r['id']+': missing output '+r['output'])
         if Path(r['output']).is_absolute() or '..' in Path(r['output']).parts:errors.append(r['id']+': unsafe output')
     stage_config=json.loads((REPO/config['analysis_config']).read_text())
     stage_ids={r['id'] for r in stage_config['stages']}
@@ -62,6 +62,8 @@ def check(config,workspace,data,check_inputs=False,check_outputs=False,manuscrip
         refs=lambda text:set(re.findall(r'\\includegraphics(?:\[[^]]*\])?\{figures/([^}]+)\}',text))
         table_refs=set(re.findall(r'\\input\{tables/([^}]+)\}',supp));table_refs={p if p.endswith('.tex') else p+'.tex' for p in table_refs}
         for kind,actual in [('main_figure',refs(main)),('supplement_figure',refs(supp)),('supplement_table',table_refs)]:
-            declared={Path(r['output']).name for r in rows if r['kind']==kind}
+            declared={Path(r['output']).name for r in rows if r['kind']==kind or (kind=='supplement_figure' and r['kind']=='supplement_figure_external')}
             if declared!=actual:errors.append(f'{kind} coverage differs: missing={sorted(actual-declared)} extra={sorted(declared-actual)}')
+    external=[r['id'] for r in rows if r['kind']=='supplement_figure_external']
+    if external:warnings.append('Author-supplied artwork not rendered by this repository: '+', '.join(external))
     return {'status':'pass' if not errors else 'fail','scope':'Declared renderer/output/panel coverage'+('; numeric-input presence' if check_inputs else '')+('; output presence' if check_outputs else ''),'counts':{k:sum(r['kind']==k for r in rows) for k in ['main_figure','supplement_figure','supplement_table']},'unique_input_files':len(dependencies),'errors':errors,'warnings':warnings,'model_refit':False}

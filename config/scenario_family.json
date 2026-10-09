@@ -1,0 +1,20 @@
+{
+  "analysis_identity": "Post-review exploratory addendum (manuscript v9, 2026-10-09): scenario-family decomposition of the differential trust-rating contrast, and descriptive classification of within-person ACC/LKS change directions. Not preregistered and not confirmatory.",
+  "motivation": "Three of four scenario types script longitudinal conflicts. The decomposition asks whether the pooled late-change association with D is carried by lateral (LC) or longitudinal (SVM/HB/MB) exposure. No coefficient, threshold or family definition is selected after seeing results.",
+  "direction_categories": ["acc_down_lks_up", "acc_up_lks_down", "both_up", "both_down", "acc_zero_lks_nonzero", "lks_zero_acc_nonzero", "both_zero"],
+  "direction_bootstrap": {"draws": 2000, "seed": 20261009, "interval": "percentile 95%"},
+  "lateral_family": ["B1"],
+  "longitudinal_family": ["B2", "B3", "B4"],
+  "feature_reconstruction": "Rebuild the participant x (scenario, position) matrix and the five participant folds exactly as analyse_dynamics.py (seed 20261012); training-fold high point per scenario; excursion = high point minus first position, late change = last position minus high point. The pooled reconstruction must match the saved a2_participant_risk_features.csv within 1e-9 and the saved fold peaks exactly, otherwise the stage aborts.",
+  "family_features": "Family mean = mean over available positions within the family; family excursion and late change = mean of the available scenario-specific values.",
+  "standardization": "Each family feature and positive_fraction standardized over all available participants (ddof=1) before complete-case selection; age_10 and experience_10 as in config/trust_contrast.json.",
+  "formula_D_family": "D ~ mean_lat_z + mean_long_z + excursion_lat_z + excursion_long_z + late_lat_z + late_long_z + positive_fraction_z + trust_pre_overall + trust_pre_acc + trust_pre_lks + accept_pre_delegate + accept_pre_monitor_raw + accept_pre_distract + age_10 + experience_10 + C(gender) + C(country)",
+  "formula_post_item": "trust_post_{item} ~ trust_pre_{item} + mean_lat_z + mean_long_z + excursion_lat_z + excursion_long_z + late_lat_z + late_long_z + positive_fraction_z + age_10 + experience_10 + C(gender) + C(country)",
+  "tests": "HC1 covariance, normal 95% intervals. BH over the six family coefficients of the D model; BH over three HC1 Wald equality tests (lateral = longitudinal) as a separate family; BH over 12 own-baseline post-task coefficients; BH over six joint-HC1 between-outcome (LKS minus ACC) contrasts.",
+  "pooled_reproduction": "Refit config/trust_contrast.json formula on the v5 complete-case rows and require the saved risk3 coefficients and HC1 standard errors to reproduce within 1e-6; also refit on the family complete-case rows for the same-rows comparison.",
+  "interpretation_limits": [
+    "Associational, participant-level, conditional on the sampled stimuli and cross-fitted high points; not mediation and not an exposure-effect estimate. Scenario content was not varied between participants.",
+    "Family features are correlated with each other and with the pooled features; equality tests compare conditional coefficients within one model.",
+    "Does not remove the pre/post referent shift or single-item measurement limits."
+  ]
+}

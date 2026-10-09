@@ -2,9 +2,9 @@
 
 Scientific analysis and manuscript-production code for *Shared risk patterns and divergent trust in automated driving: A systematic analysis of 179K ratings across 29 countries*.
 
-The repository contains the actual numeric rendering code for **all 5 main figures, every lettered main panel, 31 supplementary figures and 20 supplementary tables**, together with the analyses producing their inputs. [The manuscript map](config/manuscript_map.json) links each ID to its input files, producer, command and output. Figures are redrawn from numbers; the rendering commands do not copy old PDFs.
+The repository contains the actual numeric rendering code for **all 5 main figures, every lettered main panel, 30 of the 31 supplementary figures and all 22 supplementary tables**, together with the analyses producing their inputs. Supplementary Fig. S1 is author-supplied schematic artwork (see [its provenance note](docs/figure_s1_provenance.md)). [The manuscript map](config/manuscript_map.json) links each ID to its input files, producer, command and output. Figures are redrawn from numbers; the rendering commands do not copy old PDFs.
 
-Original questionnaires, participant-level derived tables, OOF/SHAP records, model bundles and individual boxplot fliers are **not included**. Exact full reproduction needs authorized inputs. Included aggregates support runnable examples and inspection of all 189 parameter boxes, 195 paired comparisons and 12 joint-factor tests, with individual fliers removed. They cannot reconstruct every manuscript panel on their own.
+Original questionnaires, participant-level derived tables, OOF/SHAP records, model bundles and individual boxplot fliers are **not included**. Exact full reproduction needs authorized inputs. Included aggregates support runnable examples and inspection of all 189 parameter boxes, 195 paired comparisons and 12 joint-factor tests, with individual fliers removed, and the complete scenario-family trust decomposition and change-direction counts behind Supplementary Tables S21–S22 (`data/aggregate/scenario_family/`). They cannot reconstruct every manuscript panel on their own.
 
 No reuse license has yet been selected; see [LICENSE_STATUS.md](LICENSE_STATUS.md).
 
@@ -44,7 +44,7 @@ python run.py --workspace /path/to/private-workspace --questionnaire /path/to/qu
 # Existing derived data can be supplied with --data-dir on subsequent commands.
 python run.py --workspace /path/to/private-workspace metadata describe risk-distribution dynamics country
 python run.py --workspace /path/to/private-workspace risk-models trust-models
-python run.py --workspace /path/to/private-workspace trust-contrasts multiplicity prepost parameters differential-trust whatif parameter-inference
+python run.py --workspace /path/to/private-workspace trust-contrasts multiplicity prepost parameters differential-trust scenario-family whatif parameter-inference
 
 # Render from the resulting saved numeric outputs, without refitting.
 python manuscript.py --workspace /path/to/private-workspace prepare

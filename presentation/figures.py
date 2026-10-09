@@ -354,6 +354,8 @@ class FigureBuilder(RenderBase):
         self.save(f,name)
 
     def workflow(self):
+        """Superseded (manuscript v9): Supplementary Fig. S1 is now author-supplied artwork; see docs/figure_s1_provenance.md.
+        Retained for its participant/response accounting identity checks; not referenced by the manuscript map."""
         b=self;f=b.figure(124,180)
         flow=b.table('d2_sample_flow').set_index('measure')['n'].to_dict()
         required={'completed_licensed':2164,'assigned_events':34624,'events_with_nonzero_risk':34566,'administered_window_slots':181776,'zero_no_operation_windows':1810,'valid_nonzero_risk_ratings':179966}

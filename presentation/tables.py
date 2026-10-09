@@ -18,6 +18,16 @@ def build(workspace):
         manifest['tables'].append({'number':number,'file':str(target.relative_to(root)),
             'sha256':tables_extra.sha(target),'sources':[{'path':str(source.relative_to(root)),'sha256':tables_extra.sha(source)}],
             'n_display_rows':len(audit),'conversion':'Saved values formatted; no new estimation'})
+    family=root/'outputs/parameters/tables'
+    for number,name,fn,sourcefiles in [
+        (21,'table_s21_change_direction.tex',tables_extra.table21,['scenario_family_direction_classification.csv','scenario_family_rank_relation_transitions.csv']),
+        (22,'table_s22_scenario_family_trust.tex',tables_extra.table22,['scenario_family_D_coefficients.csv','scenario_family_D_equality_tests.csv','scenario_family_post_trust_coefficients.csv','scenario_family_post_trust_cross_outcome_contrasts.csv','scenario_family_pooled_refit.csv']),
+    ]:
+        sources=[family/f for f in sourcefiles]
+        content,audit=fn(*[tables_extra.rows(f) for f in sources]);target=tables/name;target.write_text(content)
+        manifest['tables'].append({'number':number,'file':str(target.relative_to(root)),
+            'sha256':tables_extra.sha(target),'sources':[{'path':str(f.relative_to(root)),'sha256':tables_extra.sha(f)} for f in sources],
+            'n_display_rows':len(audit),'conversion':'Saved values formatted; no new estimation'})
     from .tables_parameters import build_tables
     extra=build_tables(root/'outputs/parameter_inference', root/'outputs/presentation')
     for r in extra['tables']:

@@ -2,7 +2,7 @@
 
 `config/manuscript_map.json` is the figure/panel/table registry. It identifies every main panel, every supplementary figure and every supplementary table by manuscript ID, producer, input and output. `config/analysis_stages.json` identifies the analysis commands that create the required numeric files. Paths are relative to one of three explicit roots: the repository, the private workspace, or the authorized derived-data directory.
 
-The current target is **5 main figures (37 lettered panels plus the Fig. 1a inset), 31 supplementary figures and 20 supplementary tables**. The workflow has two explanatory parts. The new four scenario figures contain three parameter panels each. The first 27 SI figures and first 15 SI tables retain their previous numbering.
+The current target is **5 main figures (37 lettered panels plus the Fig. 1a inset), 31 supplementary figures (30 rendered here; Fig. S1 is author-supplied artwork) and 22 supplementary tables**. Tables S21–S22 come from the `scenario-family` stage (SI Section S11). The workflow has two explanatory parts. The new four scenario figures contain three parameter panels each. The first 27 SI figures and first 15 SI tables retain their previous numbering.
 
 ## Two reproduction modes
 
@@ -38,7 +38,7 @@ python manuscript.py check
 # Create scientific outputs. Expensive modeling remains an explicit choice.
 python run.py --workspace /path/to/private-workspace metadata describe risk-distribution dynamics country
 python run.py --workspace /path/to/private-workspace risk-models trust-models
-python run.py --workspace /path/to/private-workspace trust-contrasts multiplicity prepost parameters differential-trust whatif parameter-inference
+python run.py --workspace /path/to/private-workspace trust-contrasts multiplicity prepost parameters differential-trust scenario-family whatif parameter-inference
 
 # Rebuild only descriptive SD summaries used in the artwork. Reuses saved CIs.
 python manuscript.py --workspace /path/to/private-workspace prepare
